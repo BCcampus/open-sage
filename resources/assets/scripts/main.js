@@ -2,7 +2,7 @@
 import 'jquery';
 
 // Import everything from autoload
-import './autoload/**/*'
+import './autoload/_bootstrap'
 
 // import local dependencies
 import Router from './util/Router';
