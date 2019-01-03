@@ -1,9 +1,9 @@
-# [Sage](https://roots.io/sage/)
-[![Packagist](https://img.shields.io/packagist/vpre/roots/sage.svg?style=flat-square)](https://packagist.org/packages/roots/sage)
-[![devDependency Status](https://img.shields.io/david/dev/roots/sage.svg?style=flat-square)](https://david-dm.org/roots/sage#info=devDependencies)
-[![Build Status](https://img.shields.io/travis/roots/sage.svg?style=flat-square)](https://travis-ci.org/roots/sage)
+# open-sage
 
-Sage is a WordPress starter theme with a modern development workflow.
+open-sage is the theme for the BCcampus open site, based on [Sage](https://roots.io/sage/).
+
+[![Build Status](https://travis-ci.com/BCcampus/open-sage.svg?branch=dev)](https://travis-ci.com/BCcampus/open-sage)
+
 
 ## Features
 
