@@ -58,7 +58,12 @@
     "roots/sage-installer": "~1.6"
   },
   "scripts": {
-    "test": ["phpcs"],
+    "test": [
+      "vendor/bin/phpunit --configuration=phpunit.xml"
+    ],
+    "standards":[
+      "vendor/bin/phpcs --standard=phpcs.ruleset.xml ."
+    ],
     "post-create-project-cmd": [
       "Roots\\Sage\\Installer\\ComposerScript::postCreateProject"
     ]
