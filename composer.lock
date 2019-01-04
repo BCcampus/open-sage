@@ -4,8 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "91ef84ab157259ae116d6ddc15c729e8",
+    "content-hash": "fac9dc0eafecdf0a71146a303b6e993a",
     "packages": [
+        {
+            "name": "bccampus/opentextbooks",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BCcampus/opentextbooks.git",
+                "reference": "4b0099515feb6f81a551b3138602296672eb1e14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BCcampus/opentextbooks/zipball/4b0099515feb6f81a551b3138602296672eb1e14",
+                "reference": "4b0099515feb6f81a551b3138602296672eb1e14",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "visualappeal/matomo-php-api": "^1.4.2",
+                "weberhofer/jsonrpcphp": "^2.2.1"
+            },
+            "require-dev": {
+                "humanmade/coding-standards": "^0.2.1|^0.5.0",
+                "phpunit/phpunit": "^5.7|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BCcampus\\Opentextbooks\\": "inc/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "@standards"
+                ],
+                "standards": [
+                    "vendor/bin/phpcs --standard=phpcs.ruleset.xml ."
+                ]
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Brad Payne",
+                    "homepage": "https://github.com/bdolor"
+                }
+            ],
+            "description": "Open Textbook Application exploits REST api",
+            "homepage": "https://github.com/bccampus/opentextbooks",
+            "support": {
+                "source": "https://github.com/BCcampus/opentextbooks/tree/3.1.0",
+                "issues": "https://github.com/BCcampus/opentextbooks/issues"
+            },
+            "time": "2018-11-23T18:27:05+00:00"
+        },
         {
             "name": "brain/hierarchy",
             "version": "2.4.0",
@@ -1413,6 +1467,188 @@
             "time": "2018-11-11T19:52:12+00:00"
         },
         {
+            "name": "symfony/polyfill-iconv",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-iconv.git",
+                "reference": "97001cfc283484c9691769f51cdf25259037eba2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-iconv/zipball/97001cfc283484c9691769f51cdf25259037eba2",
+                "reference": "97001cfc283484c9691769f51cdf25259037eba2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-iconv": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Iconv\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Iconv extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "iconv",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2018-09-21T06:26:08+00:00"
+        },
+        {
+            "name": "symfony/polyfill-intl-grapheme",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
+                "reference": "378c8743ff5352fe124c9c2b32d5f03e798f33d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/378c8743ff5352fe124c9c2b32d5f03e798f33d3",
+                "reference": "378c8743ff5352fe124c9c2b32d5f03e798f33d3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Grapheme\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for intl's grapheme_* functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "grapheme",
+                "intl",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2018-09-21T06:26:08+00:00"
+        },
+        {
+            "name": "symfony/polyfill-intl-normalizer",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
+                "reference": "f8ed52909fc049b42a772c64ec1e6b31792abad6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/f8ed52909fc049b42a772c64ec1e6b31792abad6",
+                "reference": "f8ed52909fc049b42a772c64ec1e6b31792abad6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Normalizer\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for intl's Normalizer class and related functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "intl",
+                "normalizer",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2018-09-21T06:26:08+00:00"
+        },
+        {
             "name": "symfony/polyfill-mbstring",
             "version": "v1.10.0",
             "source": {
@@ -1465,6 +1701,61 @@
             "keywords": [
                 "compatibility",
                 "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2018-09-21T13:07:52+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php72",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php72.git",
+                "reference": "9050816e2ca34a8e916c3a0ae8b9c2fccf68b631"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/9050816e2ca34a8e916c3a0ae8b9c2fccf68b631",
+                "reference": "9050816e2ca34a8e916c3a0ae8b9c2fccf68b631",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php72\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
                 "polyfill",
                 "portable",
                 "shim"
@@ -1543,6 +1834,219 @@
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
             "time": "2018-12-06T10:45:32+00:00"
+        },
+        {
+            "name": "visualappeal/matomo-php-api",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/VisualAppeal/Matomo-PHP-API.git",
+                "reference": "1ec48ed40fe07d9cef3673f0e268ed7fc8c60571"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/VisualAppeal/Matomo-PHP-API/zipball/1ec48ed40fe07d9cef3673f0e268ed7fc8c60571",
+                "reference": "1ec48ed40fe07d9cef3673f0e268ed7fc8c60571",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7",
+                "voku/httpful": "0.4.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "7.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "VisualAppeal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "API wrapper for matomo",
+            "time": "2018-11-26T13:01:59+00:00"
+        },
+        {
+            "name": "voku/httpful",
+            "version": "v0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/voku/httpful.git",
+                "reference": "df2396fca781f8c16aa709dbdfc230b46a10c4d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/voku/httpful/zipball/df2396fca781f8c16aa709dbdfc230b46a10c4d0",
+                "reference": "df2396fca781f8c16aa709dbdfc230b46a10c4d0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=7.0",
+                "voku/portable-utf8": "~5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Httpful": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nate Good",
+                    "email": "me@nategood.com",
+                    "homepage": "http://nategood.com"
+                },
+                {
+                    "name": "Lars Moelleken",
+                    "email": "lars@moelleken.org",
+                    "homepage": "http://moelleken.org/"
+                }
+            ],
+            "description": "A Readable, Chainable, REST friendly, PHP HTTP Client",
+            "homepage": "http://github.com/voku/httpful",
+            "keywords": [
+                "api",
+                "curl",
+                "http",
+                "requests",
+                "rest",
+                "restful"
+            ],
+            "time": "2017-12-23T02:27:37+00:00"
+        },
+        {
+            "name": "voku/portable-utf8",
+            "version": "5.2.16",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/voku/portable-utf8.git",
+                "reference": "4ae9da3b211085034acc309c58b4f9d639866d71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/4ae9da3b211085034acc309c58b4f9d639866d71",
+                "reference": "4ae9da3b211085034acc309c58b4f9d639866d71",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0",
+                "symfony/polyfill-iconv": "~1.0",
+                "symfony/polyfill-intl-grapheme": "~1.0",
+                "symfony/polyfill-intl-normalizer": "~1.0",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php72": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0|~7.0"
+            },
+            "suggest": {
+                "ext-ctype": "Use Ctype for e.g. hexadecimal digit detection",
+                "ext-fileinfo": "Use Fileinfo for better binary file detection",
+                "ext-iconv": "Use iconv for best performance",
+                "ext-intl": "Use Intl for best performance",
+                "ext-json": "Use JSON for string detection",
+                "ext-mbstring": "Use Mbstring for best performance"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "voku\\": "src/voku/",
+                    "voku\\tests\\": "tests/"
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(Apache-2.0 or GPL-2.0)"
+            ],
+            "authors": [
+                {
+                    "name": "Hamid Sarfraz",
+                    "homepage": "http://pageconfig.com/"
+                },
+                {
+                    "name": "Lars Moelleken",
+                    "homepage": "http://www.moelleken.org/"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                }
+            ],
+            "description": "Portable UTF-8 library with polyfill / shim for Iconv, Intl, Mbstring, Normalizrer etc.",
+            "homepage": "https://github.com/voku/portable-utf8",
+            "keywords": [
+                "UTF",
+                "clean",
+                "php",
+                "unicode",
+                "utf-8",
+                "utf8"
+            ],
+            "time": "2019-01-02T02:46:40+00:00"
+        },
+        {
+            "name": "weberhofer/jsonrpcphp",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/weberhofer/jsonrpcphp.git",
+                "reference": "e1a79bb3f08e20ae04e1e32deaff6a32eed4dad2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/weberhofer/jsonrpcphp/zipball/e1a79bb3f08e20ae04e1e32deaff6a32eed4dad2",
+                "reference": "e1a79bb3f08e20ae04e1e32deaff6a32eed4dad2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "org\\jsonrpcphp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes Weberhofer",
+                    "email": "jweberhofer@weberhofer.at",
+                    "homepage": "http://www.weberhofer.at",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sergio Vaccaro",
+                    "email": "info@jsonrpcphp.org",
+                    "homepage": "http://jsonrpcphp.org/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "JSON-RPC for PHP 5.3+",
+            "homepage": "https://github.com/weberhofer/jsonrpcphp",
+            "keywords": [
+                "json",
+                "rpc"
+            ],
+            "time": "2015-07-08T05:49:59+00:00"
         }
     ],
     "packages-dev": [
