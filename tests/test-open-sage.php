@@ -1,14 +1,11 @@
 <?php
 /**
- * Class SampleTest
+ * Class OpenTest
  *
  * @package Open_Sage
  */
 
-/**
- * Sample test case.
- */
-class SampleTest extends WP_UnitTestCase {
+class OpenTest extends WP_UnitTestCase {
 
 	/**
 	 * A single example test.
