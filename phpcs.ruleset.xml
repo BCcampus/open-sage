@@ -34,6 +34,14 @@
 		<exclude-pattern>/bin/*</exclude-pattern>
 		<exclude-pattern>/tests/</exclude-pattern>
 	</rule>
+	<rule ref="PSR1">
+		<exclude-pattern>/tests/</exclude-pattern>
+	</rule>
+
+	<rule ref="HM.Functions.NamespacedFunctions.MissingNamespace">
+		<exclude-pattern>/bin/*</exclude-pattern>
+		<exclude-pattern>/tests/</exclude-pattern>
+	</rule>
 
 	<!-- Sage specific -->
 	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
