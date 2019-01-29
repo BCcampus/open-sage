@@ -28,7 +28,8 @@ cache:
 before_install:
 - composer self-update
 - source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION && nvm use $TRAVIS_NODE_VERSION
-- export PATH=$HOME/.yarn/bin:$PATH && travis_retry curl -o- -L https://yarnpkg.com/install.sh | bash
+- export PATH=$HOME/.yarn/bin:$PATH && travis_retry curl -o- -L https://yarnpkg.com/install.sh
+  | bash
 install:
 - node -v && yarn -V
 - travis_retry yarn
@@ -53,3 +54,12 @@ before_deploy:
 - cd ../
 - wp dist-archive $TRAVIS_PROJECT_SLUG $TRAVIS_BUILD_DIR/$TRAVIS_PROJECT_SLUG-$TRAVIS_TAG.zip
 - cd $TRAVIS_BUILD_DIR
+deploy:
+  provider: releases
+  skip cleanup: true
+  api_key:
+    secure: LVzr6XMGSqjmHljGvIC+19J1Iq9kGZPCQ1vzx0fhnGb0epBUSZnz62JUGppfs/e/3PDnxrC2Pg4L3sPjW32ghfn1g+7q8773wkQrV2QWo8EPWYFdaPCL3J16vkoCtz5Q8w/WiH8RqK8BOTXEPQK8svYWKQHKGFGEnRdwG7CuvZwmPWRZKdglKWoHAygCIEMBTPydGONvACI0XjIeV1/8UKgeKzF05g4GBYQvQl1rEnSWUBv5FfrC4bukHjPXwpXjYU9uNMSvvXkkvbTwT48oiSnqjBzNJhlAxJoz5N3XrUu90AqoV9hhwzawuEcbjbHBewU1830mQ2PeOqWg8ovl+FN5pLOeWnGpgLma9e3D7zXxMZ5vkuCS54O6hj/TkcokEn5GBJZgEi3M9s+K4drqPwmJudXSo558dj7kZHVjXozt0/EtVHLNoLMBpBBzOdo9A8/7rw7Bk/TPqcvTpLLBsfJCQB8oQiDmdZ0UxyTGX0/j+KLzdfYh0Ek4bgPxYpoyuKbuMcVXtSP8gNUrPh/lRapmfwQL1/nH2SWQUslok6a3bU7SFA5e6kzmdjHTqO3j93a3ZG2MGZsLgYs4sQ22cm2i+EXGztiTj3FXv5RQDJZyBFyCwUxCF25ydneY/lMtR1TWi1xOgNbm9aUYPUWD7Bd8VZK7vm9vstoOSKcTl4k=
+  file: open-sage-$TRAVIS_TAG.zip
+  on:
+    tags: true
+    repo: BCcampus/open-sage
