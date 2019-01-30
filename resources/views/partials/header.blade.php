@@ -7,16 +7,16 @@
 			<div class="p-2 col-md-6 justify-content-end shady-bkgd-md">
 				<nav class="navbar navbar-light bg-faded rounded navbar-expand-md header_navigation">
 				<div id="containerNavbar1">
-					@if (has_nav_menu('header_navigation'))
-						{!! wp_nav_menu([
-                        'theme_location' => 'header_navigation',
-                        'menu' => 'Header Navigation',
-                        'menu_class' => 'navbar-nav ml-auto',
-                        'depth' => 1,
-                        'echo' => true,
-                        'fallback_cb' => '__return_empty_string',
-                        'walker' => $nav_walker ]) !!}
-					@endif
+					{{--@if (has_nav_menu('header_navigation'))--}}
+						{{--{!! wp_nav_menu([--}}
+                        {{--'theme_location' => 'header_navigation',--}}
+                        {{--'menu' => 'Header Navigation',--}}
+                        {{--'menu_class' => 'navbar-nav ml-auto',--}}
+                        {{--'depth' => 1,--}}
+                        {{--'echo' => true,--}}
+                        {{--'fallback_cb' => '__return_empty_string',--}}
+                        {{--'walker' => $nav_walker ]) !!}--}}
+					{{--@endif--}}
 				</div>
 			</nav>
 			</div>
@@ -32,17 +32,17 @@
 				</button>
 
 				<div class="collapse navbar-collapse" id="containerNavbar2">
-					@if (has_nav_menu('primary_navigation'))
-						{!! wp_nav_menu([
-                        'theme_location' => 'primary_navigation',
-                        'menu' => 'Primary Navigation',
-                        'container_class' => 'navbar-collapse justify-content-end',
-                    	'menu_class' => 'nav navbar-nav',
-                        'depth' => 3,
-                        'echo' => TRUE,
-                        'fallback_cb' => '__return_empty_string',
-                        'walker' => $nav_walker ]) !!}
-					@endif
+					{{--@if (has_nav_menu('primary_navigation'))--}}
+						{{--{!! wp_nav_menu([--}}
+                        {{--'theme_location' => 'primary_navigation',--}}
+                        {{--'menu' => 'Primary Navigation',--}}
+                        {{--'container_class' => 'navbar-collapse justify-content-end',--}}
+                    	{{--'menu_class' => 'nav navbar-nav',--}}
+                        {{--'depth' => 3,--}}
+                        {{--'echo' => TRUE,--}}
+                        {{--'fallback_cb' => '__return_empty_string',--}}
+                        {{--'walker' => $nav_walker ]) !!}--}}
+					{{--@endif--}}
 				</div>
 			</nav>
 	</div>
