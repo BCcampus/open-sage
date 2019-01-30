@@ -5,12 +5,13 @@
 
 .search-form label {
   @extend .form-group;
-
   font-weight: normal;
+  flex: 1 1 auto;
 }
 
 .search-form .search-field {
   @extend .form-control;
+  width: 100%;
 }
 
 .search-form .search-submit {
