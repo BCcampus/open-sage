@@ -13,12 +13,14 @@
 @import "~font-awesome/scss/font-awesome";
 
 /** Import theme styles */
+@import "common/mixins";
 @import "common/global";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
 @import "components/wp-classes";
 @import "components/uio";
+@import "components/nav";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";

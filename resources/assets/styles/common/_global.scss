@@ -1,0 +1,64 @@
+body {
+  @include awesome-font;
+
+  color: $color-black;
+  padding-top: 0;
+  line-height: 1.5em;
+}
+
+/** Headers **/
+
+h1 {
+  font-weight: normal;
+  line-height: 1.4em;
+  font-size: 2.375em;
+}
+
+h2 {
+  font-size: 2.125em;
+  line-height: 1.3em;
+  font-weight: lighter;
+}
+
+h3 {
+  font-size: 1.6875em;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.4375em;
+  line-height: 1.1em;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 1.125em;
+  line-height: 1.0em;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.container-fluid {
+  max-width: 1280px;
+
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/** Links **/
+a {
+  color: $color-blue-dark;
+
+  &:hover,
+  &:focus {
+    text-decoration-style: solid;
+    color: $color-black;
+  }
+}

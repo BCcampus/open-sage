@@ -1,0 +1,29 @@
+nav {
+  .submenu {
+    background-color: $color-grey-light;
+    padding-left: 1.70rem;
+
+    a {
+      font-size: smaller;
+    }
+  }
+
+  &.breadcrumb {
+    background-color: $color-white;
+    padding: 0.75em 0;
+    margin-bottom: 0;
+  }
+
+  &.header_navigation {
+    ul {
+      li {
+        a {
+          font-size: 0.95rem;
+          font-weight: 500;
+          padding-right: .5rem;
+          padding-left: .5rem;
+        }
+      }
+    }
+  }
+}
