@@ -22,7 +22,7 @@ mix.setResourceRoot('../');
 // BrowserSync
 mix.browserSync({
     host: 'localhost',
-    proxy: 'http://open.test/',
+    proxy: 'https://open.test/',
     port: 3000,
     files: [
         `${app}/**/*.php`,

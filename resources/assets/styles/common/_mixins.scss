@@ -1,0 +1,7 @@
+@mixin awesome-font {
+  font: {
+    family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  color: $color-black;
+}

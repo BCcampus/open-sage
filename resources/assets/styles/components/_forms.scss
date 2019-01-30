@@ -17,3 +17,9 @@
   @extend .btn;
   @extend .btn-secondary;
 }
+
+form {
+  .search-form {
+    width: 100%;
+  }
+}
