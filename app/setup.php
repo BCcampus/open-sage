@@ -14,6 +14,11 @@ add_action(
 	'wp_enqueue_scripts', function () {
 		wp_enqueue_style( 'sage/main.css', asset_path( 'styles/main.css' ), false, null );
 		wp_enqueue_script( 'sage/main.js', asset_path( 'scripts/main.js' ), [ 'jquery' ], null, true );
+		wp_enqueue_script( 'uio.js', get_theme_file_uri() . '/lib/infusion/infusion-uiOptions.js', [ 'jquery' ], null, true );
+
+		/* convey PHP data into the JavaScript */
+		$php_data = [ 'pluginUrl' => get_theme_file_uri() ];
+		wp_localize_script( 'uio.js', 'phpData', $php_data );
 
 		if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );

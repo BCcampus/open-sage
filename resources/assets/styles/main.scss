@@ -10,6 +10,7 @@
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
 // @import "~some-node-module";
+@import "~font-awesome/scss/font-awesome";
 
 /** Import theme styles */
 @import "common/global";
@@ -17,6 +18,7 @@
 @import "components/comments";
 @import "components/forms";
 @import "components/wp-classes";
+@import "components/uio";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";

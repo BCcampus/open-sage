@@ -20,17 +20,17 @@ mix.setPublicPath(dist);
 mix.setResourceRoot('../');
 
 // BrowserSync
-// mix.browserSync({
-//     host: 'localhost',
-//     proxy: 'http://dev.test-wp.ca/wp/bcc',
-//     port: 3000,
-//     files: [
-//         `${app}/**/*.php`,
-//         `${resources}/**/*.php`,
-//         `${dist}/**/*.css`,
-//         `${dist}/**/*.js`,
-//     ],
-// });
+mix.browserSync({
+    host: 'localhost',
+    proxy: 'http://open.test/',
+    port: 3000,
+    files: [
+        `${app}/**/*.php`,
+        `${resources}/!**!/!*.php`,
+        `${dist}/!**!/!*.css`,
+        `${dist}/!**/!*.js`,
+    ],
+});
 
 // Sass
 mix.sass(`${assets}/styles/main.scss`, `${dist}/styles/main.css`)
