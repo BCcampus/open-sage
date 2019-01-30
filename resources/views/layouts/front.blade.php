@@ -8,7 +8,6 @@
 @include('partials.header')
 <div class="wrap container" role="document">
 	<main class="main">
-		@include('partials.front-page-hero')
 		@yield('content')
 	</main>
 </div>
