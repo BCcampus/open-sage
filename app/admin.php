@@ -37,22 +37,22 @@ add_action(
 add_action(
 	'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
 
-	$wp_customize->add_setting(
-		'homepage_hero', [
-			'default'    => '',
-			'capability' => 'edit_theme_options',
+		$wp_customize->add_setting(
+			'homepage_hero', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
 
-		]
-	);
+			]
+		);
 
-	$wp_customize->add_control(
-		'homepage_hero', [
-			'type' => 'dropdown-pages',
-			'label'    => __( 'Hero section', 'open-sage' ),
-			'section'  => 'static_front_page',
-			'settings' => 'homepage_hero',
-			'description' => __( 'Page with a featured image' ),
-		]
-	);
-}
+		$wp_customize->add_control(
+			'homepage_hero', [
+				'type' => 'dropdown-pages',
+				'label'    => __( 'Hero section', 'open-sage' ),
+				'section'  => 'static_front_page',
+				'settings' => 'homepage_hero',
+				'description' => __( 'Page with a featured image' ),
+			]
+		);
+	}
 );
