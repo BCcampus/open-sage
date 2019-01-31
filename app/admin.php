@@ -56,3 +56,8 @@ add_action(
 		);
 	}
 );
+
+/**
+ * Enables excerpts on pages
+ */
+add_post_type_support( 'page', 'excerpt' );
