@@ -15,7 +15,7 @@
                     @endif
                 </p>
                 <div class="col text-center">
-                    <a class="btn btn-primary" href="{{ get_permalink($get_hero_page_id) }}" role="button">Learn More</a>
+                    <a class="btn btn-primary" href="{{ get_permalink($get_left_card_id) }}" role="button">Learn More</a>
                 </div>
             </div>
             <meta itemprop="author" content="{{get_post_field('post_author', $get_left_card_id)}}"/>
@@ -46,7 +46,7 @@
                 @endif
             </p>
             <div class="col text-center">
-                <a class="btn btn-primary" href="{{ get_permalink($get_hero_page_id) }}" role="button">Learn More</a>
+                <a class="btn btn-primary" href="{{ get_permalink($get_right_card_id) }}" role="button">Learn More</a>
             </div>
         </div>
         <meta itemprop="author" content="{{get_post_field('post_author', $get_right_card_id)}}"/>
