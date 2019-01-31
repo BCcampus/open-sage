@@ -28,3 +28,31 @@ add_action(
 		wp_enqueue_script( 'sage/customizer.js', asset_path( 'scripts/customizer.js' ), [ 'customize-preview' ], null, true );
 	}
 );
+
+
+/**
+ *  Adds page select list to the "Homepage Settings" section for the Hero Section
+ */
+
+add_action(
+	'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
+
+		$wp_customize->add_setting(
+			'homepage_hero', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'homepage_hero', [
+				'type' => 'dropdown-pages',
+				'label'    => __( 'Hero section', 'open-sage' ),
+				'section'  => 'static_front_page',
+				'settings' => 'homepage_hero',
+				'description' => __( 'Page with a featured image' ),
+			]
+		);
+	}
+);
