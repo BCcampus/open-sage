@@ -62,3 +62,12 @@ a {
     color: $color-black;
   }
 }
+
+/** Global **/
+.blue-bkgd {
+  color: $color-white;
+  &:hover {
+    background: $color_black;
+  }
+  background: $color_blue-dark;
+}

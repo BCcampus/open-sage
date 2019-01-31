@@ -16,5 +16,27 @@ class FrontPage extends Controller {
 
 		return $id;
 	}
+
+	/**
+	 * Returns the Left Card Page ID that was set in the customizer menu
+	 *
+	 * @return string
+	 */
+	public function getLeftCardId() {
+		$id = get_theme_mod( 'homepage_card_left', '' );
+
+		return $id;
+	}
+
+	/**
+	 * Returns the Right Card Page ID that was set in the customizer menu
+	 *
+	 * @return string
+	 */
+	public function getRightCardId() {
+		$id = get_theme_mod( 'homepage_card_right', '' );
+
+		return $id;
+	}
 }
 

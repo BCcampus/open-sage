@@ -56,7 +56,7 @@ add_action(
 		);
 
 	$wp_customize->add_setting(
-		'homepage_card_1', [
+		'homepage_card_left', [
 			'default'    => '',
 			'capability' => 'edit_theme_options',
 
@@ -64,17 +64,17 @@ add_action(
 	);
 
 	$wp_customize->add_control(
-		'homepage_card_1', [
+		'homepage_card_left', [
 			'type' => 'dropdown-pages',
 			'label'    => __( 'Left card', 'open-sage' ),
 			'section'  => 'static_front_page',
-			'settings' => 'homepage_card_1',
+			'settings' => 'homepage_card_left',
 			'description' => __( 'Page with a featured image and excerpt' ),
 		]
 	);
 
 	$wp_customize->add_setting(
-		'homepage_card_2', [
+		'homepage_card_right', [
 			'default'    => '',
 			'capability' => 'edit_theme_options',
 
@@ -82,11 +82,11 @@ add_action(
 	);
 
 	$wp_customize->add_control(
-		'homepage_card_2', [
+		'homepage_card_right', [
 			'type' => 'dropdown-pages',
 			'label'    => __( 'Right card', 'open-sage' ),
 			'section'  => 'static_front_page',
-			'settings' => 'homepage_card_2',
+			'settings' => 'homepage_card_right',
 			'description' => __( 'Page with a featured image and excerpt' ),
 		]
 	);
