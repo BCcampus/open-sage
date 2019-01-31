@@ -51,9 +51,45 @@ add_action(
 				'label'    => __( 'Hero section', 'open-sage' ),
 				'section'  => 'static_front_page',
 				'settings' => 'homepage_hero',
-				'description' => __( 'Page with a featured image' ),
+				'description' => __( 'Page with a featured image and excerpt' ),
 			]
 		);
+
+	$wp_customize->add_setting(
+		'homepage_card_1', [
+			'default'    => '',
+			'capability' => 'edit_theme_options',
+
+		]
+	);
+
+	$wp_customize->add_control(
+		'homepage_card_1', [
+			'type' => 'dropdown-pages',
+			'label'    => __( 'Left card', 'open-sage' ),
+			'section'  => 'static_front_page',
+			'settings' => 'homepage_card_1',
+			'description' => __( 'Page with a featured image and excerpt' ),
+		]
+	);
+
+	$wp_customize->add_setting(
+		'homepage_card_2', [
+			'default'    => '',
+			'capability' => 'edit_theme_options',
+
+		]
+	);
+
+	$wp_customize->add_control(
+		'homepage_card_2', [
+			'type' => 'dropdown-pages',
+			'label'    => __( 'Right card', 'open-sage' ),
+			'section'  => 'static_front_page',
+			'settings' => 'homepage_card_2',
+			'description' => __( 'Page with a featured image and excerpt' ),
+		]
+	);
 	}
 );
 
