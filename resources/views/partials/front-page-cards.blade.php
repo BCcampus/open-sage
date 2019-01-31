@@ -14,6 +14,9 @@
                         Please add excerpt text in your page to replace this message.
                     @endif
                 </p>
+                <div class="col text-center">
+                    <a class="btn btn-primary" href="{{ get_permalink($get_hero_page_id) }}" role="button">Learn More</a>
+                </div>
             </div>
             <meta itemprop="author" content="{{get_post_field('post_author', $get_left_card_id)}}"/>
             <meta itemprop="image" content="{!! get_the_post_thumbnail_url($get_left_card_id) !!}"/>
@@ -42,6 +45,9 @@
                     Please add excerpt text in your page to replace this message.
                 @endif
             </p>
+            <div class="col text-center">
+                <a class="btn btn-primary" href="{{ get_permalink($get_hero_page_id) }}" role="button">Learn More</a>
+            </div>
         </div>
         <meta itemprop="author" content="{{get_post_field('post_author', $get_right_card_id)}}"/>
         <meta itemprop="image" content="{!! get_the_post_thumbnail_url($get_right_card_id) !!}"/>
