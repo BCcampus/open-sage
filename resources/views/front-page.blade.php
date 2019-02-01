@@ -3,10 +3,10 @@
 @section('content')
 	<span itemscope itemtype="http://schema.org/ItemPage">
 		<div class="row">
-			@include('partials.front-page-hero')
+			{{--@include('partials.front-page-hero')--}}
 		</div>
 		<div class="row">
-			@include('partial.search-collection')
+			@include('partials.search-collection')
 		</div>
 		<div class="row mt-sm-4">
 	  	<div class="col-md-6">
