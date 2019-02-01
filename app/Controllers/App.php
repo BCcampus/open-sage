@@ -30,4 +30,19 @@ class App extends Controller {
 		}
 		return get_the_title();
 	}
+
+	/**
+	 * Return authors name outside of the loop when given the post ID, otherwise an empty string
+	 *
+	 * @param $id
+	 *
+	 * @return string
+	 */
+	public static function getPostAuthor( $id ) {
+		$author_id = get_post_field( 'post_author', $id );
+		$author    = get_the_author_meta( 'display_name', $author_id );
+
+		return $author;
+	}
+
 }

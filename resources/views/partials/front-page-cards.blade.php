@@ -18,7 +18,7 @@
                     <a class="btn btn-primary mb-3" href="{{ get_permalink($get_left_card_id) }}" role="button">Learn More</a>
                 </div>
             </div>
-            <meta itemprop="author" content="{{get_post_field('post_author', $get_left_card_id)}}"/>
+            <meta itemprop="author" content="{{\App\Controllers\App::getPostAuthor($get_left_card_id)}}"/>
             <meta itemprop="image" content="{!! get_the_post_thumbnail_url($get_left_card_id) !!}"/>
             <meta itemprop="datePublished" content="{{ get_post_time('c', true, $get_left_card_id) }}"/>
             <meta itemprop="headline" content="{{get_the_title($get_left_card_id)}}"/>
@@ -49,7 +49,7 @@
                 <a class="btn btn-primary mb-3" href="{{ get_permalink($get_right_card_id) }}" role="button">Learn More</a>
             </div>
         </div>
-        <meta itemprop="author" content="{{get_post_field('post_author', $get_right_card_id)}}"/>
+        <meta itemprop="author" content="{{\App\Controllers\App::getPostAuthor($get_left_card_id)}}"/>
         <meta itemprop="image" content="{!! get_the_post_thumbnail_url($get_right_card_id) !!}"/>
         <meta itemprop="datePublished" content="{{ get_post_time('c', true, $get_right_card_id) }}"/>
         <meta itemprop="headline" content="{{get_the_title($get_right_card_id)}}"/>
