@@ -9,7 +9,7 @@
             <div class="row-fluid min-height-md">
                 <p class="p-3">{{\App\Controllers\App::getPostExcerpt($get_left_card_id)}}</p>
                 <div class="col text-center">
-                    <a class="btn btn-primary mb-3" href="{{\App\Controllers\App::maybeGuid($get_left_card_id, get_post_field($get_left_card_id))}}" role="button">Learn More</a>
+                    <a class="btn btn-primary mb-3" href="{{\App\Controllers\App::maybeGuid($get_left_card_id, get_post_field('post_name', $get_left_card_id))}}" role="button">Learn More</a>
                 </div>
             </div>
             <meta itemprop="author" content="{{\App\Controllers\App::getPostAuthor($get_left_card_id)}}"/>
@@ -34,7 +34,7 @@
         <div class="row-fluid min-height-md">
             <p class="p-3">{{\App\Controllers\App::getPostExcerpt($get_right_card_id)}}</p>
             <div class="col text-center">
-                <a class="btn btn-primary mb-3" href="{{\App\Controllers\App::maybeGuid($get_right_card_id, get_post_field($get_right_card_id))}}" role="button">Learn More</a>
+                <a class="btn btn-primary mb-3" href="{{\App\Controllers\App::maybeGuid($get_right_card_id, get_post_field('post_name', $get_right_card_id))}}" role="button">Learn More</a>
             </div>
         </div>
         <meta itemprop="author" content="{{\App\Controllers\App::getPostAuthor($get_left_card_id)}}"/>
