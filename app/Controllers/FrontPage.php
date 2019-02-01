@@ -14,7 +14,7 @@ class FrontPage extends Controller {
 	public function getHeroPageId() {
 		$id = get_theme_mod( 'homepage_hero', '' );
 
-		return $id;
+		return intval( $id );
 	}
 
 	/**
@@ -25,7 +25,7 @@ class FrontPage extends Controller {
 	public function getLeftCardId() {
 		$id = get_theme_mod( 'homepage_card_left', '' );
 
-		return $id;
+		return intval( $id );
 	}
 
 	/**
@@ -36,7 +36,7 @@ class FrontPage extends Controller {
 	public function getRightCardId() {
 		$id = get_theme_mod( 'homepage_card_right', '' );
 
-		return $id;
+		return intval( $id );
 	}
 }
 
