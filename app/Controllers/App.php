@@ -32,6 +32,23 @@ class App extends Controller {
 	}
 
 	/**
+	 * Returns the url of the post thumbnail, or default img url
+	 *
+	 * @param $id
+	 *
+	 * @return mixed
+	 */
+	public static function getThumbUrl( $id ) {
+
+		if ( has_post_thumbnail( $id ) ) {
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'single-post-thumbnail' );
+		} else {
+			$image[] = \App\asset_path( 'images/placeholder-image-300x200.jpg' );
+		}
+		return $image[0];
+	}
+
+	/**
 	 * Return authors name outside of the loop when given the post ID, otherwise an empty string
 	 *
 	 * @param $id
