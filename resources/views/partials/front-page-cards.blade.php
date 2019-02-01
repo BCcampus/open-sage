@@ -7,13 +7,7 @@
                 </div>
             </a>
             <div class="row-fluid min-height-md">
-                <p class="p-3">
-                    @if (has_excerpt($get_left_card_id))
-                        {{ get_the_excerpt($get_left_card_id) }}
-                    @else
-                        Please add excerpt text in your page to replace this message.
-                    @endif
-                </p>
+                <p class="p-3">{{\App\Controllers\App::getPostExcerpt($get_left_card_id)}}</p>
                 <div class="col text-center">
                     <a class="btn btn-primary mb-3" href="{{ get_permalink($get_left_card_id) }}" role="button">Learn More</a>
                 </div>
@@ -38,13 +32,7 @@
             </div>
         </a>
         <div class="row-fluid min-height-md">
-            <p class="p-3">
-                @if (has_excerpt($get_right_card_id))
-                    {{ get_the_excerpt($get_right_card_id) }}
-                @else
-                    Please add excerpt text in your page to replace this message.
-                @endif
-            </p>
+            <p class="p-3">{{\App\Controllers\App::getPostExcerpt($get_right_card_id)}}</p>
             <div class="col text-center">
                 <a class="btn btn-primary mb-3" href="{{ get_permalink($get_right_card_id) }}" role="button">Learn More</a>
             </div>

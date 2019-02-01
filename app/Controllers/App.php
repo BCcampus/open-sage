@@ -62,4 +62,18 @@ class App extends Controller {
 		return $author;
 	}
 
+	/**
+	 * Return the excerpt given a post ID, otherwise placeholder text
+	 *
+	 * @param $id
+	 *
+	 * @return string
+	 */
+	public static function getPostExcerpt( $id ) {
+		$excerpt = has_excerpt( $id );
+
+		( $excerpt ) ? $excerpt_text = get_the_excerpt( $id ) : $excerpt_text = 'Please add excerpt text in your page to replace this message.';
+
+		return $excerpt_text;
+	}
 }
