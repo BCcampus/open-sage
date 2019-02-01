@@ -1,5 +1,5 @@
 .featured-topic {
-  min-height: 180px;
+  min-height: 200px;
 
   article:first-of-type {
     padding-left: 0;
@@ -23,13 +23,16 @@
   background-position: center center;
   h4 {
     color: $color-white;
-    font-weight: normal;
-    padding: 1.25rem;
+    font-weight: lighter;
+    padding: .3em;
     margin: 0;
     line-height: 1.3em;
-    font-size: 1.5em;
-    time {
-      font-weight: 300;
-    }
+    font-size: 1.6em;
+  }
+}
+
+.homepage-cards {
+  .row-fluid {
+    background-color: $color-grey-light;
   }
 }
