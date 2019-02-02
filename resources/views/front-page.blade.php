@@ -1,8 +1,15 @@
 @extends('layouts.front')
 
 @section('content')
-	<span itemscope itemtype="http://schema.org/ItemPage">
-		@include('partials.front-page-hero')
-        @include('partials.front-page-cards')
-  </span>
+    <span itemscope itemtype="http://schema.org/ItemPage">
+		<div class="row">
+			@include('partials.front-page-hero')
+		</div>
+		<div class="row">
+			@include('partials.front-page-cards')
+		</div>
+		<div class="row">
+			@include('partials.search-collection')
+		</div>
+  	</span>
 @endsection

@@ -63,11 +63,22 @@ a {
   }
 }
 
-/** Global **/
 .blue-bkgd {
   color: $color-white;
   &:hover {
     background: $color-black;
   }
   background: $color-blue-navy;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.bkgd-grey-light {
+  background-color: $color-grey-light;
+}
+
+.text-blue-navy {
+  color: $color-blue-navy;
 }
