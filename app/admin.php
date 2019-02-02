@@ -51,8 +51,49 @@ add_action(
 				'label'    => __( 'Hero section', 'open-sage' ),
 				'section'  => 'static_front_page',
 				'settings' => 'homepage_hero',
-				'description' => __( 'Page with a featured image' ),
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'homepage_card_left', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'homepage_card_left', [
+				'type' => 'dropdown-pages',
+				'label'    => __( 'Left card', 'open-sage' ),
+				'section'  => 'static_front_page',
+				'settings' => 'homepage_card_left',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'homepage_card_right', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'homepage_card_right', [
+				'type' => 'dropdown-pages',
+				'label'    => __( 'Right card', 'open-sage' ),
+				'section'  => 'static_front_page',
+				'settings' => 'homepage_card_right',
+				'description' => __( 'Page with a featured image and excerpt' ),
 			]
 		);
 	}
 );
+
+/**
+ * Enables excerpts on pages
+ */
+add_post_type_support( 'page', 'excerpt' );
