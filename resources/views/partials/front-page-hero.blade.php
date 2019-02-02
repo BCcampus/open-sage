@@ -1,10 +1,10 @@
-<div class="row">
-    <div class="col-md-6">
-        <h2>{{ $get_hero_page->post_title }}</h2>
-        <p>{!! $get_hero_page->post_content !!}</p>
-        <a class="btn btn-primary" href="{{ get_permalink($get_hero_page->ID) }}" role="button">Learn More</a>
-    </div>
-    <div class="col-md-6">
-        {!! get_the_post_thumbnail($get_hero_page->ID) !!}
-    </div>
+<section class="d-flex flex-row flex-wrap">
+<div class="col-md-6">
+    <h2>{{ get_the_title($get_hero_page_id) }}</h2>
+    <p class="p-3">{{\App\Controllers\App::getPostExcerpt($get_hero_page_id)}}</p>
+    <a class="btn btn-primary mb-3" href="{{\App\Controllers\App::maybeGuid($get_hero_page_id, get_post_field('post_name', $get_hero_page_id))}}" role="button">Learn More</a>
 </div>
+<div class="col-md-6">
+    {!! get_the_post_thumbnail($get_hero_page_id) !!}
+</div>
+</section>

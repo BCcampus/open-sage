@@ -6,6 +6,9 @@
 			@include('partials.front-page-hero')
 		</div>
 		<div class="row">
+			@include('partials.front-page-cards')
+		</div>
+		<div class="row">
 			@include('partials.search-collection')
 		</div>
   	</span>

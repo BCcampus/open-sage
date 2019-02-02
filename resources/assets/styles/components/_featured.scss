@@ -1,0 +1,36 @@
+.featured-topic {
+  min-height: 200px;
+
+  article:first-of-type {
+    padding-left: 0;
+  }
+
+  article:last-of-type {
+    padding-right: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .col-md-3, .col-md-4, .col-sm-6 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+}
+
+.featured-topic {
+  background-size: cover;
+  background-position: center center;
+  h4 {
+    color: $color-white;
+    font-weight: lighter;
+    line-height: 1.3em;
+    font-size: 1.6em;
+  }
+}
+
+.homepage-cards {
+  .row-fluid {
+    background-color: $color-grey-light;
+  }
+}

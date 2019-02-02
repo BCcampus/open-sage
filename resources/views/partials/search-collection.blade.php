@@ -1,5 +1,5 @@
 @php
-    $link = site_url() . '/find-open-textbooks';
+    $link = get_home_url() . '/find-open-textbooks';
     $nonce = wp_create_nonce('find-oer')
 @endphp
 <section class="bkgd-grey-light full-width py-4 px-5">
