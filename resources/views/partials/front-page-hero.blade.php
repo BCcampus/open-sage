@@ -1,4 +1,4 @@
-<section class="d-flex flex-row flex-wrap">
+<section class="d-flex flex-row flex-wrap full-width">
 <div class="col-md-6">
     <h2>{{ get_the_title($get_hero_page_id) }}</h2>
     <p class="p-3">{{\App\Controllers\App::getPostExcerpt($get_hero_page_id)}}</p>
