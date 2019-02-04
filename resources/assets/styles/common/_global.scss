@@ -63,7 +63,7 @@ a {
   }
 }
 
-.blue-bkgd {
+.blue-bkgd-special {
   color: $color-white;
   &:hover {
     background: $color-black;
@@ -77,6 +77,10 @@ a {
 
 .bkgd-grey-light {
   background-color: $color-grey-light;
+}
+
+.bkgd-blue-navy {
+  background-color: $color-blue-navy;
 }
 
 .text-blue-navy {

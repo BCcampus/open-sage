@@ -11,5 +11,8 @@
 		<div class="row">
 			@include('partials.front-page-cards')
 		</div>
+		<div class="row">
+			@include('partials.stats-collection')
+		</div>
   	</span>
 @endsection
