@@ -1,4 +1,4 @@
-<section class="homepage-cards d-flex flex-row flex-wrap">
+<section class="homepage-cards d-flex flex-row flex-wrap full-width">
         <article class="homepage-cards-item col-md-6 mb-2" itemscope itemtype="http://schema.org/Article">
             <a href="{{ get_permalink($get_left_card_id) }}" class="img-link">
                 <div class="featured-topic row-fluid d-flex" style="background-image: url({{\App\Controllers\App::getThumbUrl($get_left_card_id)}});">
