@@ -6,13 +6,16 @@
 			@include('partials.front-page-hero')
 		</div>
 		<div class="row">
-			@include('partials.search-collection')
+			@include('partials.collection-search')
 		</div>
 		<div class="row">
 			@include('partials.front-page-cards')
 		</div>
 		<div class="row">
-			@include('partials.stats-collection')
+			@include('partials.collection-stats')
+		</div>
+		<div class="row">
+			@include('partials.collection-guides')
 		</div>
   	</span>
 @endsection
