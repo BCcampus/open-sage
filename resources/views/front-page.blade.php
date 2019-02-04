@@ -6,10 +6,10 @@
 			@include('partials.front-page-hero')
 		</div>
 		<div class="row">
-			@include('partials.front-page-cards')
+			@include('partials.search-collection')
 		</div>
 		<div class="row">
-			@include('partials.search-collection')
+			@include('partials.front-page-cards')
 		</div>
   	</span>
 @endsection

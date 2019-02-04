@@ -2,7 +2,7 @@
     $link = get_home_url() . '/find-open-textbooks';
     $nonce = wp_create_nonce('find-oer')
 @endphp
-<section class="bkgd-grey-light full-width py-4 px-5">
+<section class="bkgd-grey-light full-width py-4 px-5 mb-3">
     <h4 class="text-center text-blue-navy">Search the BC Open Textbook Collection</h4>
     <form class='form-group input-group' action='{{$link}}' method='post' role="search">
         <label for="find-oer-1" class="sr-only">Search the BC Open Textbook Collection</label>
