@@ -1,5 +1,5 @@
 @php
-    $link = get_home_url() . '/find-open-textbooks';
+    $link = get_home_url() . '/find-open-textbooks/?subject=Guides';
 @endphp
 <section class="bkgd-blue-navy d-flex flex-row flex-wrap full-width mt-3">
     <div class="col-12 py-3 text-center text-white">
