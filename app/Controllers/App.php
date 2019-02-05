@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use Inc2734\WP_Breadcrumbs;
 use Sober\Controller\Controller;
 
 class App extends Controller {
@@ -98,5 +99,15 @@ class App extends Controller {
 			$url = $current_domain . '/' . $name;
 		}
 		return $url;
+	}
+
+	/**
+	 * robust breadcrumb functionality
+	 *
+	 * @return array
+	 */
+	public function breadCrumbs() {
+		$bc = new WP_Breadcrumbs\Breadcrumbs();
+		return $bc->get();
 	}
 }
