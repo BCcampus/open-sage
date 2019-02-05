@@ -1,3 +1,139 @@
 footer {
+  color: $color-black;
+  font-size: 1em;
+  clear: both;
+  a {
+    text-decoration: none;
 
+    &:hover {
+      color: $color-black;
+    }
+
+    &.related-links {
+      color: $color-blue;
+      &:after {
+        color: $color-black;
+        padding-left: 5px;
+      }
+
+      &:last-child {
+        content: "";
+      }
+    }
+  }
+
+  #top-foot {
+    padding: 1rem;
+    background-color: $color-grey-light;
+  }
+
+  #bottom-foot {
+    background-color: $color-black;
+    padding: .75rem 0rem;
+    color: $color-white;
+    font-size: .8em;
+    a {
+      color: $color-white;
+      &:hover {
+        color: $color-blue;
+        text-decoration: none;
+      }
+    }
+  }
+
+  nav {
+    h4 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .widget {
+
+    &.col-sm-3 {
+      float: left;
+    }
+
+    &.col-sm-6 {
+      float: left;
+      text-align: right;
+    }
+    ul {
+      list-style-type: disc;
+      list-style: inside;
+      color: $color-blue-dark;
+
+      li {
+        line-height: 2;
+        a {
+          color: $color-blue;
+          &:hover,&:focus{
+            color:$color-blue-dark;
+          }
+        }
+      }
+    }
+  }
+  .subscribe-box {
+    padding: 0 0.65em;
+  }
+  .footer-links {
+    float: none;
+    clear: both;
+
+    &.horizontal {
+      flex-direction: row;
+
+      ul {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+        display: flex;
+      }
+    }
+  }
+
+  p.copyright {
+    line-height: 17px;
+    text-align: left;
+    display: inline-block;
+    font-size: 12px;
+    img {
+      padding-right: 10px;
+    }
+  }
+
+  p.attribution {
+    text-align: center;
+  }
+
+  .shady-bkgd {
+    background-color: $color-grey-light;
+  }
+
+  .black-bkgd{
+    background-color: $color-black;
+  }
+
+  li.social-media {
+    padding: 0 2px;
+    a {
+      display: inline-block;
+      background: #00a5e1;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+      -webkit-transition: 0.5s ease;
+      transition: 0.5s ease;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      &:hover {
+        background: #000;
+      }
+    }
+  }
 }
