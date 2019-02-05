@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h1>{!! App::title() !!}</h1>
+	<h1>{!! \App\Controllers\App::title() !!}</h1>
 </div>
 @if( ! is_front_page() )
 	<nav class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
