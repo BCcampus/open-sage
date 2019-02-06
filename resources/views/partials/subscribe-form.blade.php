@@ -795,7 +795,7 @@
         </select>
     </p>
     <p>
-        <button class="js-cm-submit-button" type="submit">Subscribe</button>
+        <button class="js-cm-submit-button btn btn-primary" type="submit">Subscribe</button>
     </p>
 </form>
 <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
