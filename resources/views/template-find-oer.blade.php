@@ -2,14 +2,13 @@
   Template Name: Find OER
 --}}
 
-@extends('layouts.app')
+@extends('layouts.full')
 
 @section('content')
-    @while(have_posts()) @php the_post() @endphp
     @include('partials.page-header')
+    @while(have_posts()) @php the_post() @endphp
+    @endwhile
     <div class="row">
         @include('partials.content-find-oer')
     </div>
-    @endwhile
-
 @endsection
