@@ -35,7 +35,7 @@
 						</nav>
 					@endif
 					<div class="col-md-4 py-2">
-						{{--@include('partials.subscribe')--}}
+						@include('partials.subscribe')
 					</div>
 				</div>
 			</div>
