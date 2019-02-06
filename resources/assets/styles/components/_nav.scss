@@ -30,3 +30,12 @@ nav {
     background-color:$color-grey-light;
   }
 }
+
+/**
+Enable drop-down hover for desktop, keep on click for smaller devices
+ */
+@media only screen and (min-width: 768px) {
+  .dropdown:hover .dropdown-menu{
+    display:block;
+  }
+}
