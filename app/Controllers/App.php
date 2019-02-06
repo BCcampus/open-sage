@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use BCcampus\OpenTextBooks\Controllers\Catalogue;
+use BCcampus\OpenTextBooks\Controllers\Reviews;
 use Inc2734\WP_Breadcrumbs;
 use Sober\Controller\Controller;
 
@@ -109,5 +111,28 @@ class App extends Controller {
 	public function breadCrumbs() {
 		$bc = new WP_Breadcrumbs\Breadcrumbs();
 		return $bc->get();
+	}
+
+	/**
+	 * Returns the main catalogue of books
+	 *
+	 * @param string $args
+	 */
+	public static function getCollection( $args = [] ) {
+		$args['type_of'] = 'books';
+
+		new Catalogue\Otb( $args );
+
+		if ( isset( $args['uuid'] ) && $args['uuid'] !== '' ) {
+
+			// overwrite variable
+			$args['type_of'] = 'reviews';
+
+			try {
+				new Reviews\LimeSurvey( $args );
+			} catch ( \Exception $exc ) {
+				error_log( $exc->getMessage(), 0 ); //@codingStandardsIgnoreLine
+			}
+		}
 	}
 }
