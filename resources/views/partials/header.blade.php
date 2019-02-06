@@ -23,8 +23,9 @@
                 {{get_search_form()}}
             </div>
         </div>
-        <div class="row">
-            <nav class="navbar navbar-light bg-faded rounded navbar-expand-md primary_navigation navbar-megamenu shady-bkgd-md px-sm-2">
+    </div>
+            <nav class="navbar navbar-light bg-light rounded navbar-expand-md primary_navigation px-sm-2">
+                <div class="container-fluid">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         data-target="#containerNavbar2" aria-controls="containerNavbar2" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -36,7 +37,7 @@
                         {!! wp_nav_menu([
                         'theme_location' => 'primary_navigation',
                         'menu' => 'Primary Navigation',
-                        'container_class' => 'navbar-collapse justify-content-end',
+                        'container_class' => 'navbar-collapse',
                         'menu_class' => 'nav navbar-nav',
                         'depth' => 2,
                         'echo' => true,
@@ -44,7 +45,6 @@
                         'walker' => $nav_walker ]) !!}
                     @endif
                 </div>
+                </div>
             </nav>
-        </div>
-    </div>
 </header>
