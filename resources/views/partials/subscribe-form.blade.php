@@ -1,25 +1,25 @@
 <section class="subscribe-form form-group">
-<form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A9335FD31A103A8FD0E4D80F7D0782DDB61AB787B97D7DE5AAFA39E83D0AFEAC38493B9A61A2E52DEC7F204365A64BAFA">
+<form id="subForm" class="js-cm-form col-md-4" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A9335FD31A103A8FD0E4D80F7D0782DDB61AB787B97D7DE5AAFA39E83D0AFEAC38493B9A61A2E52DEC7F204365A64BAFA">
     <p>
         <label for="fieldName">Name</label>
         <br />
-        <input id="fieldName" name="cm-name" type="text" />
+        <input id="fieldName" name="cm-name" class="form-control" type="text" />
     </p>
     <p>
         <label for="fieldEmail">Email</label>
         <br />
-        <input id="fieldEmail" name="cm-jrkudj-jrkudj" type="email" class="js-cm-email-input"
+        <input id="fieldEmail" name="cm-jrkudj-jrkudj" type="email" class="form-control js-cm-email-input"
                required />
     </p>
     <p>
         <label for="fieldaahd">IP address</label>
         <br />
-        <input id="fieldaahd" name="cm-f-aahd" type="text" />
+        <input id="fieldaahd" name="cm-f-aahd" class="form-control" type="text" />
     </p>
     <p>
         <label for="fieldaahh">Status</label>
         <br />
-        <input id="fieldaahh" name="cm-f-aahh" type="text" />
+        <input id="fieldaahh" name="cm-f-aahh" class="form-control" type="text" />
     </p>
     <p>
         <label for="fieldaahk">Subscription date</label>
@@ -552,17 +552,17 @@
     <p>
         <label for="fielddklkq">If you selected 'Other' above, please describe your role.</label>
         <br />
-        <input id="fielddklkq" name="cm-f-dklkq" type="text" />
+        <input id="fielddklkq" name="cm-f-dklkq" class="form-control" type="text" />
     </p>
     <p>
         <label for="fielddudue">First Name</label>
         <br />
-        <input id="fielddudue" name="cm-f-dudue" type="text" />
+        <input id="fielddudue" name="cm-f-dudue" class="form-control" type="text" />
     </p>
     <p>
         <label for="fielddudug">Last Name</label>
         <br />
-        <input id="fielddudug" name="cm-f-dudug" type="text" />
+        <input id="fielddudug" name="cm-f-dudug" class="form-control" type="text" />
     </p>
     <p>
         <label for="fieldhdvul">Date Added</label>
