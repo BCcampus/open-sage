@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-            <nav class="navbar navbar-light bg-light rounded navbar-expand-md primary_navigation px-sm-2">
+            <nav class="navbar navbar-light rounded navbar-expand-md primary_navigation px-sm-2">
                 <div class="container-fluid">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         data-target="#containerNavbar2" aria-controls="containerNavbar2" aria-expanded="false"
