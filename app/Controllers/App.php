@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use BCcampus\BootWalker;
 use Inc2734\WP_Breadcrumbs;
 use Sober\Controller\Controller;
 
@@ -18,6 +19,7 @@ class App extends Controller {
 			if ( $home ) {
 				return get_the_title( $home );
 			}
+
 			return __( 'Latest Posts', 'sage' );
 		}
 		if ( is_archive() ) {
@@ -29,6 +31,7 @@ class App extends Controller {
 		if ( is_404() ) {
 			return __( 'Not Found', 'sage' );
 		}
+
 		return get_the_title();
 	}
 
@@ -46,6 +49,7 @@ class App extends Controller {
 		} else {
 			$image[] = \App\asset_path( 'images/placeholder-image-300x200.jpg' );
 		}
+
 		return $image[0];
 	}
 
@@ -98,6 +102,7 @@ class App extends Controller {
 		if ( 0 !== strcmp( $current, $incoming ) ) {
 			$url = $current_domain . '/' . $name;
 		}
+
 		return $url;
 	}
 
@@ -108,6 +113,14 @@ class App extends Controller {
 	 */
 	public function breadCrumbs() {
 		$bc = new WP_Breadcrumbs\Breadcrumbs();
+
 		return $bc->get();
+	}
+
+	/**
+	 * @return BootWalker
+	 */
+	public function navWalker() {
+		return new BootWalker();
 	}
 }

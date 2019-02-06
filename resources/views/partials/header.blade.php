@@ -40,7 +40,8 @@
                         'menu_class' => 'nav navbar-nav',
                         'depth' => 2,
                         'echo' => true,
-                        'fallback_cb' => '__return_empty_string' ]) !!}
+                        'fallback_cb' => '__return_empty_string',
+                        'walker' => $nav_walker ]) !!}
                     @endif
                 </div>
             </nav>
