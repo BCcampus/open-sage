@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use BCcampus\BootWalker;
 use BCcampus\OpenTextBooks\Controllers\Catalogue;
 use BCcampus\OpenTextBooks\Controllers\Reviews;
 use Inc2734\WP_Breadcrumbs;
@@ -198,5 +199,12 @@ class App extends Controller {
 		$html = $maybe_parent_title;
 
 		return $html;
+	}
+
+	/**
+	 * @return BootWalker
+	 */
+	public function navWalker() {
+		return new BootWalker();
 	}
 }
