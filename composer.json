@@ -46,10 +46,6 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/BCcampus/opentextbooks.git"
-    },
-    {
-      "type": "vcs",
       "url": "https://github.com/BCcampus/wp-bootwalker.git"
     }
   ],
@@ -61,7 +57,6 @@
     "inc2734/wp-breadcrumbs": "^1.0",
     "bt/rocketchat-php": "^1.1",
     "soberwp/controller": "~2.1.0",
-    "bccampus/opentextbooks": "^3.1.0",
     "bccampus/wp-bootwalker": "^1.0.0"
   },
   "require-dev": {
