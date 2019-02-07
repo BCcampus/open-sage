@@ -164,30 +164,3 @@ add_action(
 		);
 	}
 );
-
-/**
- * Anonymous closure function for otb error messages
- *
- * @param $message
- * @param string $subtitle
- * @param string $title
- */
-$otb_error = function ( $message, $subtitle = '', $title = '' ) {
-	$title   = $title ?: __( 'Open Sage &rsaquo; Error', 'open-sage' );
-	$footer  = '<a href="https://github.com/BCcampus/opentextbooks">opentextbooks application</a>';
-	$message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
-	wp_die( $message, $title );
-};
-
-/**
- * To bring in the opentextbook application
- */
-if ( ! class_exists( 'BCcampus\\Opentextbooks\\Config' ) ) {
-	if ( ! file_exists( $opentextbooks = ABSPATH . 'wp-content/opentextbooks/autoloader.php' ) ) {
-		$otb_error(
-			__( 'You must include <code>git clone https://github.com/BCcampus/opentextbooks</code> in wp/wp-content/.', 'open-sage' ),
-			__( 'Dependency not found.', 'open-sage' )
-		);
-	}
-	require_once $opentextbooks;
-}
