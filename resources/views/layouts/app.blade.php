@@ -7,15 +7,13 @@
     @php do_action('get_header') @endphp
     @include('partials.header')
     <div class="wrap container-fluid" role="document">
-      <div class="content">
-        <main class="main">
+      <div class="content row">
+        <main class="main col-lg-8">
           @yield('content')
         </main>
-        @if (App\display_sidebar())
-          <aside class="sidebar">
+          <aside class="sidebar col-lg-3 offset-lg-1">
             @include('partials.sidebar')
           </aside>
-        @endif
       </div>
     </div>
     @php do_action('get_footer') @endphp
