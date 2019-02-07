@@ -19,7 +19,6 @@ class App extends Controller {
 			if ( $home ) {
 				return get_the_title( $home );
 			}
-
 			return __( 'Latest Posts', 'sage' );
 		}
 		if ( is_archive() ) {
@@ -31,7 +30,6 @@ class App extends Controller {
 		if ( is_404() ) {
 			return __( 'Not Found', 'sage' );
 		}
-
 		return get_the_title();
 	}
 
@@ -49,7 +47,6 @@ class App extends Controller {
 		} else {
 			$image[] = \App\asset_path( 'images/placeholder-image-300x200.jpg' );
 		}
-
 		return $image[0];
 	}
 
@@ -102,7 +99,6 @@ class App extends Controller {
 		if ( 0 !== strcmp( $current, $incoming ) ) {
 			$url = $current_domain . '/' . $name;
 		}
-
 		return $url;
 	}
 
@@ -113,7 +109,6 @@ class App extends Controller {
 	 */
 	public function breadCrumbs() {
 		$bc = new WP_Breadcrumbs\Breadcrumbs();
-
 		return $bc->get();
 	}
 
@@ -122,5 +117,28 @@ class App extends Controller {
 	 */
 	public function navWalker() {
 		return new BootWalker();
+	}
+
+	/**
+	 * Returns the main catalogue of books
+	 *
+	 * @param string $args
+	 */
+	public static function getCollection( $args = [] ) {
+		$args['type_of'] = 'books';
+
+		new Catalogue\Otb( $args );
+
+		if ( isset( $args['uuid'] ) && $args['uuid'] !== '' ) {
+
+			// overwrite variable
+			$args['type_of'] = 'reviews';
+
+			try {
+				new Reviews\LimeSurvey( $args );
+			} catch ( \Exception $exc ) {
+				error_log( $exc->getMessage(), 0 ); //@codingStandardsIgnoreLine
+			}
+		}
 	}
 }

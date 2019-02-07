@@ -6,7 +6,7 @@
 @include('partials.uio')
 @php(do_action('get_header'))
 @include('partials.header')
-<div class="wrap container-fluid" role="document">
+<div class="container-fluid" role="document">
     <main class="main">
         @yield('content')
     </main>
