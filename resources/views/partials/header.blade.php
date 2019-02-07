@@ -4,7 +4,7 @@
             <div class="py-2 col-md-5"><a class="navbar-brand" href="{{ site_url('/') }}">
                     <img src="@asset('images/logo-sm.png')" alt="Logo for Open Education"></a>
             </div>
-            <div class="p-2 col-md-5 justify-content-end shady-bkgd-md">
+            <div class="d-none d-md-block p-2 col-md-5 justify-content-end shady-bkgd-md">
                 <nav class="navbar navbar-light bg-faded rounded navbar-expand-md header_navigation">
                     <div id="containerNavbar1">
                         @if (has_nav_menu('header_navigation'))
