@@ -39,3 +39,22 @@ Enable drop-down hover for desktop, keep on click for smaller devices
     display:block;
   }
 }
+
+// rm carets
+  .dropdown-toggle::after {
+  display:none;
+}
+
+.nav-link, .banner .nav a {
+  &:hover, &:focus{
+    color: $color-blue;
+    background-color: transparent;
+  }
+}
+
+.dropdown-item {
+  border-bottom: 1px solid #eee;
+  &:last-child {
+    border-bottom: 0;
+  }
+}
