@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.full')
 
 @section('content')
     <span itemscope itemtype="http://schema.org/ItemPage">

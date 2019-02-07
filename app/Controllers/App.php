@@ -135,4 +135,68 @@ class App extends Controller {
 			}
 		}
 	}
+
+	/**
+	 * Useful in `wp_list_pages` to switch context based on the existence of
+	 * children
+	 *
+	 * @param $id
+	 *
+	 * @return false|int
+	 */
+	public static function getChildOf( $id ) {
+		// check for children
+		$args = [
+			'post_parent' => $id,
+			'post_type'   => 'page',
+			'post_status' => 'publish',
+		];
+
+		$children = get_children( $args, ARRAY_A );
+
+		if ( empty( $children ) ) {
+			$parent_id = wp_get_post_parent_id( $id );
+		} else {
+			$parent_id = $id;
+		}
+
+		return $parent_id;
+	}
+
+	/**
+	 * Useful in `wp_list_pages` to return different title based on
+	 * ancestry context
+	 *
+	 * @param $id
+	 *
+	 * @return string
+	 */
+	public static function getListHeading( $id ) {
+		// check for children
+		$args = [
+			'post_parent' => $id,
+			'post_type'   => 'page',
+			'post_status' => 'publish',
+		];
+
+		$children  = get_children( $args );
+		$parent_id = wp_get_post_parent_id( $id );
+
+		// no sub-pages heading will be a parent
+		if ( empty( $children ) ) {
+			// top of the tree, return id of front page
+			if ( 0 === $parent_id ) {
+				$parent_id = get_option( 'page_on_front' );
+			}
+
+			$maybe_parent_title = get_the_title( $parent_id );
+		} else {
+			// heading will be current post
+			$maybe_parent_title = get_the_title( $id );
+		}
+
+		$html = $maybe_parent_title;
+
+		return $html;
+	}
 }

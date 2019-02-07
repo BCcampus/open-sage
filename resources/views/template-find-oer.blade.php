@@ -9,11 +9,11 @@
     @while(have_posts()) @php the_post() @endphp
     @endwhile
     <div class="row">
-        <div class="col-md-3">
-            @include('partials.collection-menu')
-        </div>
         <div class="col-md-9">
         @include('partials.collection-find-oer')
+        </div>
+        <div class="col-md-3">
+            @include('partials.collection-menu')
         </div>
     </div>
 @endsection
