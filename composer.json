@@ -47,7 +47,7 @@
     {
       "type": "vcs",
       "url": "https://github.com/BCcampus/wp-bootwalker.git"
-    }	    }
+    }
   ],
   "require": {
     "php": ">=7.1",
