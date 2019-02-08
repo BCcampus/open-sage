@@ -1,4 +1,4 @@
-@if(is_page() && ! is_page(['contact-us']))
+@if(is_page())
 
     @php($hasChildren = wp_list_pages( 'title_li=&child_of='.$post->ID.'&echo=0' ))
     @php($isChild = get_post_ancestors($post->ID))
