@@ -9,7 +9,7 @@
         <label for="find-oer-1" class="sr-only">Search the BC Open Textbook Collection</label>
         <input type='text' class='form-control' placeholder='my search terms' name='search' id='find-oer-1' aria-label="search terms" aria-describedby="find-oer-2"/>
         <div class="input-group-append">
-            <button type='submit' class='btn btn-primary' id="find-oer-2">Search Collection</button>
+            <button type='submit' class='btn btn-primary' id="find-oer-2">Search</button>
         </div>
         <input type='hidden' value='{{$nonce}}'/>
     </form>
