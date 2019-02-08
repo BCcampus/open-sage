@@ -35,7 +35,7 @@ footer {
     a {
       color: $color-white;
       &:hover {
-        color: $color-blue;
+        color: $color-grey-light;
         text-decoration: none;
       }
     }
@@ -66,8 +66,8 @@ footer {
         line-height: 2;
         a {
           color: $color-blue;
-          &:hover,&:focus{
-            color:$color-blue-light;
+          &:hover, &:focus {
+            color: $color-blue-light;
           }
         }
       }
@@ -114,7 +114,7 @@ footer {
     background-color: $color-grey-light;
   }
 
-  .black-bkgd{
+  .black-bkgd {
     background-color: $color-black;
   }
 

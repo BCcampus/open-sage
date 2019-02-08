@@ -49,7 +49,7 @@ Enable drop-down hover for desktop, keep on click for smaller devices
   color: $color-black;
   &:hover, &:focus {
     color: $color-blue-light;
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
