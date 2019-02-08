@@ -26,7 +26,7 @@
     </div>
     <nav class="navbar navbar-light rounded navbar-expand-md primary_navigation px-sm-2">
             <div class="container-fluid">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            <button class="navbar-toggler ml-2" type="button" data-toggle="collapse"
                         data-target="#containerNavbar2" aria-controls="containerNavbar2" aria-expanded="false"
                         aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
