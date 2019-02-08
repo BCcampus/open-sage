@@ -4,7 +4,7 @@
             <div class="py-2 col-md-5"><a class="navbar-brand" href="{{ site_url('/') }}">
                     <img src="@asset('images/logo-sm.png')" alt="Logo for Open Education"></a>
             </div>
-            <div class="p-2 col-md-5 justify-content-end shady-bkgd-md">
+            <div class="d-none d-md-block p-2 col-md-5 justify-content-end shady-bkgd-md">
                 <nav class="navbar navbar-light bg-faded rounded navbar-expand-md header_navigation">
                     <div id="containerNavbar1">
                         @if (has_nav_menu('header_navigation'))
@@ -23,9 +23,10 @@
                 {{get_search_form()}}
             </div>
         </div>
-        <div class="row">
-            <nav class="navbar navbar-light bg-faded rounded navbar-expand-md primary_navigation navbar-megamenu shady-bkgd-md px-sm-2">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+    </div>
+    <nav class="navbar navbar-light rounded navbar-expand-md primary_navigation px-sm-2">
+            <div class="container-fluid">
+            <button class="navbar-toggler ml-2" type="button" data-toggle="collapse"
                         data-target="#containerNavbar2" aria-controls="containerNavbar2" aria-expanded="false"
                         aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -36,14 +37,14 @@
                         {!! wp_nav_menu([
                         'theme_location' => 'primary_navigation',
                         'menu' => 'Primary Navigation',
-                        'container_class' => 'navbar-collapse justify-content-end',
+                        'container_class' => 'navbar-collapse',
                         'menu_class' => 'nav navbar-nav',
                         'depth' => 2,
                         'echo' => true,
-                        'fallback_cb' => '__return_empty_string' ]) !!}
+                        'fallback_cb' => '__return_empty_string',
+                        'walker' => $nav_walker ]) !!}
                     @endif
                 </div>
-            </nav>
-        </div>
-    </div>
+            </div>
+        </nav>
 </header>
