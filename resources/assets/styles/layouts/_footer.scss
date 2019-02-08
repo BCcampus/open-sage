@@ -60,14 +60,14 @@ footer {
     ul {
       list-style-type: disc;
       list-style: inside;
-      color: $color-blue-dark;
+      color: $color-blue-light;
 
       li {
         line-height: 2;
         a {
           color: $color-blue;
           &:hover,&:focus{
-            color:$color-blue-dark;
+            color:$color-blue-light;
           }
         }
       }

@@ -45,9 +45,18 @@ Enable drop-down hover for desktop, keep on click for smaller devices
   display: none;
 }
 
-.nav-link, .banner .nav a {
+.navbar-light .navbar-nav .nav-link {
+  color: $color-black;
   &:hover, &:focus {
-    color: $color-blue;
+    color: $color-blue-light;
+    text-decoration: underline;
+  }
+}
+
+.nav-link, .banner .nav a {
+  color: $color-blue-navy;
+  &:hover, &:focus {
+    color: $color-blue-light;
     background-color: transparent;
   }
 }
@@ -62,6 +71,7 @@ Enable drop-down hover for desktop, keep on click for smaller devices
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
+
 .navbar-toggler {
   background: $color-grey-light;
 }
