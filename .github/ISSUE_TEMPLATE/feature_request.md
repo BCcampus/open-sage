@@ -17,7 +17,6 @@ A clear and concise description of what you want to happen.
 A clear and concise description of any alternative solutions or features you've considered.
 
 **Additional context**
-Add any other context, user story or screenshots about the feature request here.
 As a...[type of user]
 I would like...[some goal]
-So that I can...[some reason]
+So that I can...[some benefit]

@@ -1195,7 +1195,7 @@
         },
         {
             "name": "roots/sage-lib",
-            "version": "9.0.7",
+            "version": "9.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/sage-lib.git",
@@ -2667,16 +2667,16 @@
         },
         {
             "name": "roots/sage-installer",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/sage-installer.git",
-                "reference": "60c329d6f5d750f78804b9577f2944c05b3a24dc"
+                "reference": "4be68fc1f4d39c521fb3e6ca441fbb29636fc166"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/sage-installer/zipball/60c329d6f5d750f78804b9577f2944c05b3a24dc",
-                "reference": "60c329d6f5d750f78804b9577f2944c05b3a24dc",
+                "url": "https://api.github.com/repos/roots/sage-installer/zipball/4be68fc1f4d39c521fb3e6ca441fbb29636fc166",
+                "reference": "4be68fc1f4d39c521fb3e6ca441fbb29636fc166",
                 "shasum": ""
             },
             "require": {
@@ -2723,7 +2723,7 @@
                 "theme",
                 "wordpress"
             ],
-            "time": "2018-12-28T17:48:45+00:00"
+            "time": "2019-02-12T02:41:05+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -3452,7 +3452,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
