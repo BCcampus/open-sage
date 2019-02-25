@@ -90,6 +90,50 @@ add_action(
 				'description' => __( 'Page with a featured image and excerpt' ),
 			]
 		);
+
+		// Use Open section
+		$wp_customize->add_section(
+			'use_open', [
+				'title'    => __( 'Use Open Textbooks', 'open-sage' ),
+				'priority' => 120,
+			]
+		);
+
+		$wp_customize->add_setting(
+			'use_open_card_left', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'use_open_card_left', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Left card', 'open-sage' ),
+				'section'     => 'use_open',
+				'settings'    => 'use_open_card_left',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'use_open_card_right', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'open_card_right', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Right card', 'open-sage' ),
+				'section'     => 'use_open',
+				'settings'    => 'use_open_card_right',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
 	}
 );
 
