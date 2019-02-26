@@ -5,6 +5,7 @@ namespace App\Controllers;
 use BCcampus\BootWalker;
 use BCcampus\OpenTextBooks\Controllers\Catalogue;
 use BCcampus\OpenTextBooks\Controllers\Reviews;
+use BCcampus\OpenTextBooks\Models;
 use Inc2734\WP_Breadcrumbs;
 use Sober\Controller\Controller;
 
@@ -206,5 +207,37 @@ class App extends Controller {
 	 */
 	public function navWalker() {
 		return new BootWalker();
+	}
+
+	/**
+	 * @param array $args
+	 *
+	 * @return string
+	 */
+	public static function getLatestAdditions( $args = [] ) {
+		$default  = [
+			'type_of'               => 'books',
+			'lists'                 => 'latest_additions',
+			'subject_class_level_2' => 'Guides,Toolkits',
+			'limit'                 => 4,
+		];
+		$merged   = array_merge( $default, $args );
+		$rest_api = new Models\Api\Equella();
+		$data     = new Models\OtbBooks( $rest_api, $merged );
+		$sorted   = $data->sortByCreatedDate();
+		$html     = '';
+		$i        = 0;
+
+		foreach ( $sorted as $datum ) {
+			$i ++;
+			$meta_xml = \simplexml_load_string( $datum['metadata'] );
+			$cover    = preg_replace( '/^http:\/\//iU', '//', $meta_xml->item->cover );
+			$html    .= ( $meta_xml->item->cover ) ? sprintf( '<a href="/%1$s/?uuid=%2$s"><img itemprop="image" class="img-polaroid" src="%3$s" alt="image of %4$s" width="151px" height="196px" /></a><p>%4$s</p>', 'https://open.test', $datum['uuid'], $cover, $datum['name'] ) : sprintf( '<p>%1$s</p>', $datum['name'] );
+			if ( $i === $merged['limit'] ) {
+				break;
+			}
+		}
+
+		echo $html;
 	}
 }
