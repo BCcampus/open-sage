@@ -1,4 +1,4 @@
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p>Open textbooks in the B.C. Open Textbook Collection come in multiple formats. Many can be read online or delivered via PDF, EPUB (for most e-readers) and MOBI (for Kindle) format for free, or can be printed via our print-on-demand service for a nominal fee.</p>
 
 <section class="homepage-cards d-flex flex-row flex-wrap full-width">
         <article class="homepage-cards-item col-md-4 mb-2" itemscope itemtype="http://schema.org/Article">
