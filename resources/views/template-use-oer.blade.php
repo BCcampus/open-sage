@@ -6,7 +6,13 @@
 
 @section('content')
     @include('partials.page-header')
-    @while(have_posts()) @php the_post() @endphp
-    @endwhile
-
+    <div class="row">
+        @include('partials.use-open-page-cards')
+    </div>
+    <div class="row">
+        @include('partials.use-open-page-triple-cards')
+    </div>
+    <div class="row">
+        @include('partials.use-open-page-guides')
+    </div>
 @endsection

@@ -1,6 +1,3 @@
-<div class="page-header">
-	<h1>{!! \App\Controllers\App::title() !!}</h1>
-</div>
 @if( (! is_front_page()) && ! is_page(['subscribe', 'subscribe-confirm']))
 	<nav class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 		@foreach ( $bread_crumbs as $key => $item )
@@ -19,3 +16,7 @@
 		@endforeach
 	</nav>
 @endif
+
+<div class="page-header">
+	<h1>{!! \App\Controllers\App::title() !!}</h1>
+</div>
