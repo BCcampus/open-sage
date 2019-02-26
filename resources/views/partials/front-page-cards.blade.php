@@ -2,7 +2,7 @@
         <article class="homepage-cards-item col-md-6 mb-2" itemscope itemtype="http://schema.org/Article">
             <a href="{{ get_permalink($get_left_card_id) }}" class="img-link">
                 <div class="featured-topic row-fluid d-flex" style="background-image: url({{\App\Controllers\App::getThumbUrl($get_left_card_id)}});">
-                    <h4 itemprop="name" class="blue-bkgd-special text-inverse col-sm mt-auto text-center m-0 p-2">{{get_the_title($get_left_card_id)}}
+                    <h4 itemprop="name" class="blue-bkgd-special text-inverse col-sm mt-auto text-center m-0 p-2">{!!get_the_title($get_left_card_id)!!}
                     </h4>
                 </div>
             </a>
@@ -15,7 +15,7 @@
             <meta itemprop="author" content="{{\App\Controllers\App::getPostAuthor($get_left_card_id)}}"/>
             <meta itemprop="image" content="{!! get_the_post_thumbnail_url($get_left_card_id) !!}"/>
             <meta itemprop="datePublished" content="{{ get_post_time('c', true, $get_left_card_id) }}"/>
-            <meta itemprop="headline" content="{{get_the_title($get_left_card_id)}}"/>
+            <meta itemprop="headline" content="{!!get_the_title($get_left_card_id)!!}"/>
             <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 				<meta itemprop="name" content="BCCampus"/>
 				<span itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
@@ -27,7 +27,7 @@
     <article class="homepage-cards-item col-md-6 mb-2" itemscope itemtype="http://schema.org/Article">
         <a href="{{ get_permalink($get_right_card_id) }}" class="img-link">
             <div class="featured-topic row-fluid d-flex" style="background-image: url({{\App\Controllers\App::getThumbUrl($get_left_card_id)}});">
-                <h4 itemprop="name" class="blue-bkgd-special text-inverse col-sm mt-auto text-center m-0 p-2">{{get_the_title($get_right_card_id)}}
+                <h4 itemprop="name" class="blue-bkgd-special text-inverse col-sm mt-auto text-center m-0 p-2">{!!get_the_title($get_right_card_id)!!}
                 </h4>
             </div>
         </a>
@@ -40,7 +40,7 @@
         <meta itemprop="author" content="{{\App\Controllers\App::getPostAuthor($get_left_card_id)}}"/>
         <meta itemprop="image" content="{!! get_the_post_thumbnail_url($get_right_card_id) !!}"/>
         <meta itemprop="datePublished" content="{{ get_post_time('c', true, $get_right_card_id) }}"/>
-        <meta itemprop="headline" content="{{get_the_title($get_right_card_id)}}"/>
+        <meta itemprop="headline" content="{!!get_the_title($get_right_card_id)!!}"/>
         <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 				<meta itemprop="name" content="BCCampus"/>
 				<span itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
