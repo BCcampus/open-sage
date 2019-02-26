@@ -5,10 +5,12 @@
         'limit'                 => 4
     ];
 @endphp
-<section class="bkgd-blue-navy d-flex flex-row flex-wrap full-width mt-3">
-    <div class="col-12 py-3 text-center text-white">
-        <h4>Getting Started</h4>
-        {{ \App\Controllers\App::getLatestAdditions($args) }}
+<section class="bkgd-blue-navy d-flex flex-row flex-wrap full-width py-3 mt-3 text-center text-white">
+    <div class="col-12">
+        <h4 class="text-center">Getting Started</h4>
+    </div>
+    {{ \App\Controllers\App::getLatestAdditions($args) }}
+    <div class="col-12">
         <a class="btn btn-primary" href="{{$link}}" role="button">Browse All Guides and Toolkits</a>
     </div>
 </section>

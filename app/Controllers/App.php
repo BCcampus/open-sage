@@ -22,6 +22,7 @@ class App extends Controller {
 			if ( $home ) {
 				return get_the_title( $home );
 			}
+
 			return __( 'Latest Posts', 'sage' );
 		}
 		if ( is_archive() ) {
@@ -33,6 +34,7 @@ class App extends Controller {
 		if ( is_404() ) {
 			return __( 'Not Found', 'sage' );
 		}
+
 		return get_the_title();
 	}
 
@@ -50,6 +52,7 @@ class App extends Controller {
 		} else {
 			$image[] = \App\asset_path( 'images/placeholder-image-300x200.jpg' );
 		}
+
 		return $image[0];
 	}
 
@@ -102,6 +105,7 @@ class App extends Controller {
 		if ( 0 !== strcmp( $current, $incoming ) ) {
 			$url = $current_domain . '/' . $name;
 		}
+
 		return $url;
 	}
 
@@ -112,6 +116,7 @@ class App extends Controller {
 	 */
 	public function breadCrumbs() {
 		$bc = new WP_Breadcrumbs\Breadcrumbs();
+
 		return $bc->get();
 	}
 
@@ -232,7 +237,7 @@ class App extends Controller {
 			$i ++;
 			$meta_xml = \simplexml_load_string( $datum['metadata'] );
 			$cover    = preg_replace( '/^http:\/\//iU', '//', $meta_xml->item->cover );
-			$html    .= ( $meta_xml->item->cover ) ? sprintf( '<a href="/%1$s/?uuid=%2$s"><img itemprop="image" class="img-polaroid" src="%3$s" alt="image of %4$s" width="151px" height="196px" /></a><p>%4$s</p>', 'https://open.test', $datum['uuid'], $cover, $datum['name'] ) : sprintf( '<p>%1$s</p>', $datum['name'] );
+			$html    .= sprintf( '<article class="col-md-3 mb-2" itemscope itemtype="http://schema.org/Article"><a href="/%1$s/?uuid=%2$s"><img itemprop="image" class="img-polaroid" src="%3$s" alt="image of %4$s" width="151px" height="196px" /></a><p>%4$s</p></article>', 'https://open.test', $datum['uuid'], $cover, $datum['name'] );
 			if ( $i === $merged['limit'] ) {
 				break;
 			}
