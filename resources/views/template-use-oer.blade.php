@@ -9,4 +9,10 @@
     <div class="row">
         @include('partials.use-open-page-cards')
     </div>
+    <div class="row">
+        @include('partials.use-open-page-triple-cards')
+    </div>
+    <div class="row">
+        @include('partials.use-open-page-guides')
+    </div>
 @endsection

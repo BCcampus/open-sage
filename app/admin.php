@@ -110,7 +110,7 @@ add_action(
 		$wp_customize->add_control(
 			'use_open_card_left', [
 				'type'        => 'dropdown-pages',
-				'label'       => __( 'Left card', 'open-sage' ),
+				'label'       => __( 'Top section left card', 'open-sage' ),
 				'section'     => 'use_open',
 				'settings'    => 'use_open_card_left',
 				'description' => __( 'Page with a featured image and excerpt' ),
@@ -128,12 +128,66 @@ add_action(
 		$wp_customize->add_control(
 			'open_card_right', [
 				'type'        => 'dropdown-pages',
-				'label'       => __( 'Right card', 'open-sage' ),
+				'label'       => __( 'Top section right card', 'open-sage' ),
 				'section'     => 'use_open',
 				'settings'    => 'use_open_card_right',
 				'description' => __( 'Page with a featured image and excerpt' ),
 			]
 		);
+
+		$wp_customize->add_setting(
+			'use_open_triple_card_left', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+			]
+		);
+
+		$wp_customize->add_control(
+			'use_open_triple_card_left', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Left mid-section card', 'open-sage' ),
+				'section'     => 'use_open',
+				'settings'    => 'use_open_triple_card_left',
+				'description' => __( 'Page with a featured image' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'use_open_triple_card_middle', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'use_open_triple_card_middle', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Center mid-section card', 'open-sage' ),
+				'section'     => 'use_open',
+				'settings'    => 'use_open_triple_card_middle',
+				'description' => __( 'Page with a featured image' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'use_open_triple_card_right', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'use_open_triple_card_right', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Right mid-section card', 'open-sage' ),
+				'section'     => 'use_open',
+				'settings'    => 'use_open_triple_card_right',
+				'description' => __( 'Page with a featured image' ),
+			]
+		);
+
 	}
 );
 
