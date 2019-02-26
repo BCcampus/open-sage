@@ -1,4 +1,4 @@
-<p>Open textbooks in the B.C. Open Textbook Collection come in multiple formats. Many can be read online or delivered via PDF, EPUB (for most e-readers) and MOBI (for Kindle) format for free, or can be printed via our print-on-demand service for a nominal fee.</p>
+<p class="p-3">Open textbooks in the B.C. Open Textbook Collection come in multiple formats. Many can be read online or delivered via PDF, EPUB (for most e-readers) and MOBI (for Kindle) format for free, or can be printed via our print-on-demand service for a nominal fee.</p>
 
 <section class="homepage-cards d-flex flex-row flex-wrap full-width">
         <article class="homepage-cards-item col-md-4 mb-2" itemscope itemtype="http://schema.org/Article">
