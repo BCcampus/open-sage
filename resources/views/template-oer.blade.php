@@ -12,7 +12,9 @@
         @include('partials.collection-search')
     </div>
     <div class="row">
+        @include('partials.collection-latest-additions')
+    </div>
+    <div class="row">
         @include('partials.oer-cards')
     </div>
-
 @endsection
