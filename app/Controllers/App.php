@@ -5,6 +5,7 @@ namespace App\Controllers;
 use BCcampus\BootWalker;
 use BCcampus\OpenTextBooks\Controllers\Catalogue;
 use BCcampus\OpenTextBooks\Controllers\Reviews;
+use BCcampus\OpenTextBooks\Models;
 use Inc2734\WP_Breadcrumbs;
 use Sober\Controller\Controller;
 
@@ -21,6 +22,7 @@ class App extends Controller {
 			if ( $home ) {
 				return get_the_title( $home );
 			}
+
 			return __( 'Latest Posts', 'sage' );
 		}
 		if ( is_archive() ) {
@@ -32,6 +34,7 @@ class App extends Controller {
 		if ( is_404() ) {
 			return __( 'Not Found', 'sage' );
 		}
+
 		return get_the_title();
 	}
 
@@ -49,6 +52,7 @@ class App extends Controller {
 		} else {
 			$image[] = \App\asset_path( 'images/placeholder-image-300x200.jpg' );
 		}
+
 		return $image[0];
 	}
 
@@ -101,6 +105,7 @@ class App extends Controller {
 		if ( 0 !== strcmp( $current, $incoming ) ) {
 			$url = $current_domain . '/' . $name;
 		}
+
 		return $url;
 	}
 
@@ -111,6 +116,7 @@ class App extends Controller {
 	 */
 	public function breadCrumbs() {
 		$bc = new WP_Breadcrumbs\Breadcrumbs();
+
 		return $bc->get();
 	}
 
@@ -206,5 +212,37 @@ class App extends Controller {
 	 */
 	public function navWalker() {
 		return new BootWalker();
+	}
+
+	/**
+	 * @param array $args
+	 *
+	 * @return string
+	 */
+	public static function getLatestAdditions( $args = [] ) {
+		$default  = [
+			'type_of'               => 'books',
+			'lists'                 => 'latest_additions',
+			'subject_class_level_2' => 'Guides,Toolkits',
+			'limit'                 => 4,
+		];
+		$merged   = array_merge( $default, $args );
+		$rest_api = new Models\Api\Equella();
+		$data     = new Models\OtbBooks( $rest_api, $merged );
+		$sorted   = $data->sortByCreatedDate();
+		$html     = '';
+		$i        = 0;
+
+		foreach ( $sorted as $datum ) {
+			$i ++;
+			$meta_xml = \simplexml_load_string( $datum['metadata'] );
+			$cover    = preg_replace( '/^http:\/\//iU', '//', $meta_xml->item->cover );
+			$html    .= sprintf( '<article class="col-md-3 mb-2" itemscope itemtype="http://schema.org/Article"><a href="%1$s/find-open-textbooks/?uuid=%2$s"><img itemprop="image" class="img-polaroid" src="%3$s" alt="image of %4$s" width="151px" height="196px" /></a><p>%4$s</p></article>', get_home_url(), $datum['uuid'], $cover, $datum['name'] );
+			if ( $i === $merged['limit'] ) {
+				break;
+			}
+		}
+
+		echo $html;
 	}
 }
