@@ -11,5 +11,8 @@
     <div class="row">
         @include('partials.collection-search')
     </div>
+    <div class="row">
+        @include('partials.find-open-cards')
+    </div>
 
 @endsection
