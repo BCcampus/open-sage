@@ -7,6 +7,28 @@
 class Page extends Controller {
 
 	/**
+	 * Returns the Left Card Page ID that was set in the customizer menu for section "Find Open Textbooks"
+	 *
+	 * @return string
+	 */
+	public function getOerLeftCardId() {
+		$id = get_theme_mod( 'oer_card_left', '' );
+
+		return intval( $id );
+	}
+
+	/**
+	 * Returns the Right Card Page ID that was set in the customizer menu for section "Find Open Textbooks"
+	 *
+	 * @return string
+	 */
+	public function getOerRightCardId() {
+		$id = get_theme_mod( 'oer_card_right', '' );
+
+		return intval( $id );
+	}
+
+	/**
 	 * Returns the Left Card Page ID that was set in the customizer menu for section "Use Open Textbooks"
 	 *
 	 * @return string

@@ -188,6 +188,50 @@ add_action(
 			]
 		);
 
+		// Find Open section
+		$wp_customize->add_section(
+			'oer', [
+				'title'    => __( 'OER Landing Page', 'open-sage' ),
+				'priority' => 130,
+			]
+		);
+
+		$wp_customize->add_setting(
+			'oer_card_left', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'oer_card_left', [
+				'type' => 'dropdown-pages',
+				'label'    => __( 'Left card', 'open-sage' ),
+				'section'  => 'oer',
+				'settings' => 'oer_card_left',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'oer_card_right', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'oer_card_right', [
+				'type' => 'dropdown-pages',
+				'label'    => __( 'Right card', 'open-sage' ),
+				'section'  => 'oer',
+				'settings' => 'oer_card_right',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
 	}
 );
 
