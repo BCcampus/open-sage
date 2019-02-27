@@ -237,7 +237,7 @@ class App extends Controller {
 			$i ++;
 			$meta_xml = \simplexml_load_string( $datum['metadata'] );
 			$cover    = preg_replace( '/^http:\/\//iU', '//', $meta_xml->item->cover );
-			$html    .= sprintf( '<article class="col-md-3 mb-2" itemscope itemtype="http://schema.org/Article"><a href="/%1$s/?uuid=%2$s"><img itemprop="image" class="img-polaroid" src="%3$s" alt="image of %4$s" width="151px" height="196px" /></a><p>%4$s</p></article>', 'https://open.test', $datum['uuid'], $cover, $datum['name'] );
+			$html    .= sprintf( '<article class="col-md-3 mb-2" itemscope itemtype="http://schema.org/Article"><a href="%1$s/find-open-textbooks/?uuid=%2$s"><img itemprop="image" class="img-polaroid" src="%3$s" alt="image of %4$s" width="151px" height="196px" /></a><p>%4$s</p></article>', get_home_url(), $datum['uuid'], $cover, $datum['name'] );
 			if ( $i === $merged['limit'] ) {
 				break;
 			}
