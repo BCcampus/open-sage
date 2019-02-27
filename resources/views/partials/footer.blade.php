@@ -4,14 +4,14 @@
 			<div id="top-foot" class="clearfix">
 				<div id="widget-footer" class="clearfix row">
 					<div class="widget col-md-4 py-2">
-						<ul class="inline no-margin mb-5">
+						<ul class="inline pl-0 mb-5">
 							<li class="social-media">
 								<a href="https://www.facebook.com/BCcampus"><img
 										src="@asset('images/icon-facebook.svg')"
 										alt="facebook icon"></a>
 							</li>
 							<li class="social-media">
-								<a href="https://twitter.com/bccampus"><img src="@asset('images/icon-twitter.svg')"
+								<a href="https://twitter.com/bcopentext"><img src="@asset('images/icon-twitter.svg')"
 																			alt="twitter icon"></a>
 							</li>
 							<li class="social-media">
