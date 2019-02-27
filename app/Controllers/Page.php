@@ -11,8 +11,8 @@ class Page extends Controller {
 	 *
 	 * @return string
 	 */
-	public function getFindOpenLeftCardId() {
-		$id = get_theme_mod( 'find_card_left', '' );
+	public function getOerLeftCardId() {
+		$id = get_theme_mod( 'oer_card_left', '' );
 
 		return intval( $id );
 	}
@@ -22,8 +22,8 @@ class Page extends Controller {
 	 *
 	 * @return string
 	 */
-	public function getFindOpenRightCardId() {
-		$id = get_theme_mod( 'find_card_right', '' );
+	public function getOerRightCardId() {
+		$id = get_theme_mod( 'oer_card_right', '' );
 
 		return intval( $id );
 	}

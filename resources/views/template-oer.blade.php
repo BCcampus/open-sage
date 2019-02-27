@@ -12,7 +12,7 @@
         @include('partials.collection-search')
     </div>
     <div class="row">
-        @include('partials.find-open-cards')
+        @include('partials.oer-cards')
     </div>
 
 @endsection

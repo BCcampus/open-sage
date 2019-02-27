@@ -190,14 +190,14 @@ add_action(
 
 		// Find Open section
 		$wp_customize->add_section(
-			'find_open', [
-				'title'    => __( 'Find Open Textbooks', 'open-sage' ),
+			'oer', [
+				'title'    => __( 'OER Landing Page', 'open-sage' ),
 				'priority' => 130,
 			]
 		);
 
 		$wp_customize->add_setting(
-			'find_card_left', [
+			'oer_card_left', [
 				'default'    => '',
 				'capability' => 'edit_theme_options',
 
@@ -205,17 +205,17 @@ add_action(
 		);
 
 		$wp_customize->add_control(
-			'find_card_left', [
+			'oer_card_left', [
 				'type' => 'dropdown-pages',
 				'label'    => __( 'Left card', 'open-sage' ),
-				'section'  => 'find_open',
-				'settings' => 'find_card_left',
+				'section'  => 'oer',
+				'settings' => 'oer_card_left',
 				'description' => __( 'Page with a featured image and excerpt' ),
 			]
 		);
 
 		$wp_customize->add_setting(
-			'find_card_right', [
+			'oer_card_right', [
 				'default'    => '',
 				'capability' => 'edit_theme_options',
 
@@ -223,11 +223,11 @@ add_action(
 		);
 
 		$wp_customize->add_control(
-			'find_card_right', [
+			'oer_card_right', [
 				'type' => 'dropdown-pages',
 				'label'    => __( 'Right card', 'open-sage' ),
-				'section'  => 'find_open',
-				'settings' => 'find_card_right',
+				'section'  => 'oer',
+				'settings' => 'oer_card_right',
 				'description' => __( 'Page with a featured image and excerpt' ),
 			]
 		);
