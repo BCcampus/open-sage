@@ -217,32 +217,34 @@ class App extends Controller {
 	/**
 	 * @param array $args
 	 *
-	 * @return string
+	 * @return array
 	 */
 	public static function getLatestAdditions( $args = [] ) {
 		$default  = [
 			'type_of'               => 'books',
 			'lists'                 => 'latest_additions',
-			'subject_class_level_2' => 'Guides,Toolkits',
 			'limit'                 => 4,
 		];
 		$merged   = array_merge( $default, $args );
 		$rest_api = new Models\Api\Equella();
 		$data     = new Models\OtbBooks( $rest_api, $merged );
 		$sorted   = $data->sortByCreatedDate();
-		$html     = '';
+		$result   = [];
 		$i        = 0;
 
 		foreach ( $sorted as $datum ) {
 			$i ++;
-			$meta_xml = \simplexml_load_string( $datum['metadata'] );
-			$cover    = preg_replace( '/^http:\/\//iU', '//', $meta_xml->item->cover );
-			$html    .= sprintf( '<article class="col-md-3 mb-2" itemscope itemtype="http://schema.org/Article"><a href="%1$s/find-open-textbooks/?uuid=%2$s"><img itemprop="image" class="img-polaroid" src="%3$s" alt="image of %4$s" width="151px" height="196px" /></a><p>%4$s</p></article>', get_home_url(), $datum['uuid'], $cover, $datum['name'] );
+			$meta_xml                     = \simplexml_load_string( $datum['metadata'] );
+			$cover                        = \preg_replace( '/^http:\/\//iU', '//', $meta_xml->item->cover );
+			$result[ $i ]['name']         = $datum['name'];
+			$result[ $i ]['created_date'] = date( 'M j, Y', strtotime( $datum['createdDate'] ) );
+			$result[ $i ]['uuid']         = $datum['uuid'];
+			$result[ $i ]['cover_url']    = $cover;
+			$result[ $i ]['book_url']     = \sprintf( '%1$s%2$s%3$s', get_home_url(), '/find-open-textbooks/?uuid=', $datum['uuid'] );
 			if ( $i === $merged['limit'] ) {
 				break;
 			}
 		}
-
-		echo $html;
+		return $result;
 	}
 }

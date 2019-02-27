@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c746a0caf56fbfc4d469babcc235600",
+    "content-hash": "073f93428b3fedcac46af25706e0b511",
     "packages": [
         {
             "name": "bccampus/wp-bootwalker",
@@ -860,16 +860,16 @@
         },
         {
             "name": "inc2734/wp-breadcrumbs",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inc2734/wp-breadcrumbs.git",
-                "reference": "0be5bea0e1bad8456e9db926c117dbca7624c344"
+                "reference": "06ee439c7846ffad18bebd0078141f9503139974"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inc2734/wp-breadcrumbs/zipball/0be5bea0e1bad8456e9db926c117dbca7624c344",
-                "reference": "0be5bea0e1bad8456e9db926c117dbca7624c344",
+                "url": "https://api.github.com/repos/inc2734/wp-breadcrumbs/zipball/06ee439c7846ffad18bebd0078141f9503139974",
+                "reference": "06ee439c7846ffad18bebd0078141f9503139974",
                 "shasum": ""
             },
             "require": {
@@ -904,7 +904,7 @@
                 }
             ],
             "description": "A library for WordPress breadcrumbs.",
-            "time": "2019-01-21T06:15:24+00:00"
+            "time": "2019-02-21T00:35:36+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -1195,7 +1195,7 @@
         },
         {
             "name": "roots/sage-lib",
-            "version": "9.0.8",
+            "version": "9.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/sage-lib.git",
@@ -2667,16 +2667,16 @@
         },
         {
             "name": "roots/sage-installer",
-            "version": "1.6.1",
+            "version": "1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/sage-installer.git",
-                "reference": "4be68fc1f4d39c521fb3e6ca441fbb29636fc166"
+                "reference": "bff412234f9852a73d3c2f2e49bfb959f7f732e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/sage-installer/zipball/4be68fc1f4d39c521fb3e6ca441fbb29636fc166",
-                "reference": "4be68fc1f4d39c521fb3e6ca441fbb29636fc166",
+                "url": "https://api.github.com/repos/roots/sage-installer/zipball/bff412234f9852a73d3c2f2e49bfb959f7f732e8",
+                "reference": "bff412234f9852a73d3c2f2e49bfb959f7f732e8",
                 "shasum": ""
             },
             "require": {
@@ -2723,7 +2723,7 @@
                 "theme",
                 "wordpress"
             ],
-            "time": "2019-02-12T02:41:05+00:00"
+            "time": "2019-02-14T01:13:25+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -3652,7 +3652,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.1"
+        "php": ">=7.1",
+        "ext-simplexml": "*"
     },
     "platform-dev": [],
     "platform-overrides": {

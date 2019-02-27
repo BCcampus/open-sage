@@ -11,5 +11,7 @@
     <div class="row">
         @include('partials.collection-search')
     </div>
-
+    <div class="row">
+        @include('partials.collection-latest-additions')
+    </div>
 @endsection
