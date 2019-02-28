@@ -221,10 +221,11 @@ class App extends Controller {
 	 */
 	public static function getLatestAdditions( $args = [] ) {
 		$default  = [
-			'type_of' => 'books',
-			'lists'   => 'latest_additions',
-			'limit'   => 4,
-			'random'  => false,
+			'type_of'  => 'books',
+			'lists'    => 'latest_additions',
+			'limit'    => 4,
+			'random'   => false,
+			'featured' => false,
 		];
 		$merged   = array_merge( $default, $args );
 		$rest_api = new Models\Api\Equella();
@@ -232,12 +233,18 @@ class App extends Controller {
 		$sorted   = $data->sortByCreatedDate();
 		$result   = [];
 		$i        = 0;
+		$featured = 'FeaturedYese3f7e81dfdb9f7b171b36e572613a3cb';
 
 		if ( true === $merged['random'] ) {
 			shuffle( $sorted );
 		}
 
 		foreach ( $sorted as $datum ) {
+			// skip all non-curated books
+			if ( true === $merged['featured'] && false === mb_strpos( $datum['metadata'], $featured ) ) {
+				continue;
+			}
+
 			$i ++;
 			$meta_xml                     = \simplexml_load_string( $datum['metadata'] );
 			$cover                        = \preg_replace( '/^http:\/\//iU', '//', $meta_xml->item->cover );

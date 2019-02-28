@@ -2,7 +2,8 @@
     $link = get_home_url() . '/find-open-textbooks/?subject=Support%20Resources';
     $args = [
         'subject_class_level_2' => 'Guides,Toolkits',
-        'limit'                 => 4
+        'limit'                 => 4,
+        'featured'              => true,
     ];
 @endphp
 <section class="bkgd-blue-navy d-flex flex-row flex-wrap full-width py-3 mt-3 text-center text-white">
