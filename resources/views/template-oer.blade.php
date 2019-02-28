@@ -15,6 +15,9 @@
         @include('partials.collection-latest-additions')
     </div>
     <div class="row">
+        @include('partials.collection-guides-toolkits')
+    </div>
+    <div class="row">
         @include('partials.oer-cards')
     </div>
 @endsection

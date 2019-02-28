@@ -221,9 +221,10 @@ class App extends Controller {
 	 */
 	public static function getLatestAdditions( $args = [] ) {
 		$default  = [
-			'type_of'               => 'books',
-			'lists'                 => 'latest_additions',
-			'limit'                 => 4,
+			'type_of' => 'books',
+			'lists'   => 'latest_additions',
+			'limit'   => 4,
+			'random'  => false,
 		];
 		$merged   = array_merge( $default, $args );
 		$rest_api = new Models\Api\Equella();
@@ -231,6 +232,10 @@ class App extends Controller {
 		$sorted   = $data->sortByCreatedDate();
 		$result   = [];
 		$i        = 0;
+
+		if ( true === $merged['random'] ) {
+			shuffle( $sorted );
+		}
 
 		foreach ( $sorted as $datum ) {
 			$i ++;
