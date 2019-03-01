@@ -1,8 +1,10 @@
 <?php
 
-	namespace App\Controllers;
+namespace App\Controllers;
 
-	use Sober\Controller\Controller;
+use BCcampus\OpenTextBooks\Models\Webform;
+use BCcampus\Utility;
+use Sober\Controller\Controller;
 
 class Page extends Controller {
 
@@ -81,6 +83,31 @@ class Page extends Controller {
 		$id = get_theme_mod( 'use_open_triple_card_right', '' );
 
 		return intval( $id );
+	}
+
+	/**
+	 *
+	 *
+	 * @return mixed
+	 */
+	public function getOtbStats() {
+		setlocale( LC_MONETARY, 'en_CA' );
+		$data     = new Webform();
+		$limit    = 5;
+		$savings  = $data->getStudentSavings();
+		$top_inst = $data->getTopInstitutions( $limit );
+
+		$stats['num_students']     = $data->getNumStudents();
+		$stats['num_institutions'] = $data->getNumInstitutions();
+		$stats['num_faculty']      = $data->getNumFaculty();
+		$stats['num_adoptions']    = $data->getTotalAdoptions();
+		$stats['low']              = money_format( '%n ', $savings['100'] );
+		$stats['high']             = money_format( '%n ', $savings['actual'] );
+		$stats['top']              = Utility\array_to_csv( $top_inst );
+		$stats['this_year']        = date( 'Y', time() );
+		$stats['limit']            = $limit;
+
+		return $stats;
 	}
 
 }
