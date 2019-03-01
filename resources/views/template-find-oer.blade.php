@@ -16,4 +16,7 @@
             @include('partials.collection-menu')
         </div>
     </div>
+    <div class="row">
+        @include('partials.collection-reviews')
+    </div>
 @endsection
