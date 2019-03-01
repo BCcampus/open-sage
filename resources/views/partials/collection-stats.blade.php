@@ -5,12 +5,12 @@
     </div>
     <span class="col-md-3 text-center text-white"><a href="#" class="stats-icons">
             <img src="@asset('images/statsicon-institution.svg')" alt="icon representing an institution"></a>
-        <p>PLACEHOLDER</p>
+        <p>{{$get_summary_stats['institutions']}}</p>
         <p>Institutions</p>
     </span>
     <span class="col-md-3 text-center text-white"><a href="#" class="stats-icons">
             <img src="@asset('images/statsicon-faculty.svg')" alt="icon representing faculty"></a>
-        <p>PLACEHOLDER</p>
+        <p>{{$get_summary_stats['adoptions']}}</p>
         <p>Faculty</p>
     </span>
     <span class="col-md-3 text-center text-white"><a href="#" class="stats-icons">
@@ -20,7 +20,7 @@
     </span>
     <span class="col-md-3 text-center text-white"><a href="#" class="stats-icons">
             <img src="@asset('images/statsicon-savings.svg')" alt="icon representing savings"></a>
-        <p>$ PLACEHOLDER</p>
+        <p>{{$get_summary_stats['savings-min']}} - {{$get_summary_stats['savings-max']}}</p>
         <p>Savings</p>
     </span>
 </section>
