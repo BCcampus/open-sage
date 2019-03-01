@@ -140,14 +140,14 @@ class App extends Controller {
 	 *
 	 * @return Reviews\LimeSurvey|string
 	 */
-	public static function getReviews ($args = []) {
+	public static function getReviews( $args = [] ) {
 
 		if ( isset( $args['uuid'] ) && $args['uuid'] !== '' ) {
 
 			$args['type_of'] = 'reviews';
 
 			try {
-			new Reviews\LimeSurvey( $args );
+				new Reviews\LimeSurvey( $args );
 			} catch ( \Exception $exc ) {
 				error_log( $exc->getMessage(), 0 ); //@codingStandardsIgnoreLine
 			}
