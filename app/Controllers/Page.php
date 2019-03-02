@@ -2,6 +2,8 @@
 
 	namespace App\Controllers;
 
+	use BCcampus\OpenTextBooks\Controllers\Catalogue;
+	use BCcampus\OpenTextBooks\Controllers\Reviews;
 	use Sober\Controller\Controller;
 
 class Page extends Controller {
@@ -81,6 +83,40 @@ class Page extends Controller {
 		$id = get_theme_mod( 'use_open_triple_card_right', '' );
 
 		return intval( $id );
+	}
+
+	/**
+	 * Returns the main catalogue of books
+	 *
+	 * @param array $args
+	 *
+	 * @return Catalogue\Otb
+	 */
+	public static function getCollection( $args = [] ) {
+		$args['type_of'] = 'books';
+
+		new Catalogue\Otb( $args );
+	}
+
+	/**
+	 * Returns the reviews if there's a UUID
+	 *
+	 * @param array $args
+	 *
+	 * @return Reviews\LimeSurvey|string
+	 */
+	public static function getReviews( $args = [] ) {
+
+		if ( isset( $args['uuid'] ) && $args['uuid'] !== '' ) {
+
+			$args['type_of'] = 'reviews';
+
+			try {
+				new Reviews\LimeSurvey( $args );
+			} catch ( \Exception $exc ) {
+				error_log( $exc->getMessage(), 0 ); //@codingStandardsIgnoreLine
+			}
+		}
 	}
 
 }
