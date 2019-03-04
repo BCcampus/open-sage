@@ -1,13 +1,18 @@
 @php
-    $visits = \App\Controllers\Page::getAnalyticsByVisits(['site_id'=>8]);
+    $analytics = \App\Controllers\Page::getLikelyAdoptions([]);
 @endphp
 
 <ul class="nav nav-tabs no-bullets" role="tablist">
-    <li class="nav-item" role="presentation"><a class="nav-link active" href="#webform_stats" data-toggle="tab" aria-controls="form" role="tab">Adoptions</a></li>
-    <li class="nav-item" role="presentation"><a class="nav-link" href="#opentext_stats" data-toggle="tab" aria-controls="opentextbc" role="tab">opentextbc.ca</a></li>
-    <li class="nav-item" role="presentation"><a class="nav-link" href="#open_stats" data-toggle="tab" aria-controls="open" role="tab">open.bccampus.ca</a></li>
-    <li class="nav-item" role="presentation"><a class="nav-link" href="#review_stats" data-toggle="tab" aria-controls="reviews" role="tab">Reviews</a></li>
-    <li class="nav-item" role="presentation"><a class="nav-link" href="#subject_stats" data-toggle="tab" aria-controls="subjects" role="tab">Subjects</a></li>
+    <li class="nav-item" role="presentation"><a class="nav-link active" href="#webform_stats" data-toggle="tab"
+                                                aria-controls="form" role="tab">Adoptions</a></li>
+    <li class="nav-item" role="presentation"><a class="nav-link" href="#opentext_stats" data-toggle="tab"
+                                                aria-controls="opentextbc" role="tab">opentextbc.ca</a></li>
+    <li class="nav-item" role="presentation"><a class="nav-link" href="#open_stats" data-toggle="tab"
+                                                aria-controls="open" role="tab">open.bccampus.ca</a></li>
+    <li class="nav-item" role="presentation"><a class="nav-link" href="#review_stats" data-toggle="tab"
+                                                aria-controls="reviews" role="tab">Reviews</a></li>
+    <li class="nav-item" role="presentation"><a class="nav-link" href="#subject_stats" data-toggle="tab"
+                                                aria-controls="subjects" role="tab">Subjects</a></li>
 </ul>
 
 <div class="tab-content">
@@ -52,9 +57,8 @@
                 sections. A faculty member is only counted once.
             </dd>
             <dt>Savings</dt>
-            <dd>Savings include a range as reported in our blog, <a
-                        href='{{get_home_url()}}/2015/02/18/calculating-student-savings/'>Calculating Student
-                    Savings</a>.
+            <dd>Savings include a range as reported in our blog,
+                <a href='{{get_home_url()}}/2015/02/18/calculating-student-savings/'>Calculating Student Savings</a>.
             </dd>
             <dd>The number at the lower end is calculated as follows: number of students (see "Students") x $100 (This
                 number was derived by OpenStax College based on a formula that takes into account used textbook
@@ -73,36 +77,37 @@
         <h3>Based on visits <a class='btn btn btn-outline-primary' role='button' tabindex='0' data-target='#likely'
                                data-toggle='modal'
                                title='Likely adoptions explained'>What is this?</a></h3></h3><h4>Date
-            range: {{$visits['start']}} - {{$visits['end']}}</h4><h5>Site: opentextbc.ca</h5>
+            range: {{$analytics['start']}} - {{$analytics['end']}}</h4><h5>Site: opentextbc.ca</h5>
         <table class='table table-striped'>
             <tbody>
             <tr>
                 <td>Number of books in the collection</td>
-                <td>{{$visits['num_books']}}</td>
+                <td>{{$analytics['num_books']}}</td>
             </tr>
             <tr>
                 <td>Number of web-based books
                     <small><a href='//opentextbc.ca'>opentextbc.ca <i class='fa fa-external-link-alt'></i></a></small>
                 </td>
-                <td>{{$visits['num_books']}}</td>
+                <td>{{$analytics['count']}}</td>
             </tr>
             <tr>
-                <td>Number of visits to all {{$visits['count']}} web-based books
+                <td>Number of visits to all {{$analytics['count']}} web-based books
                     <small><a href='//opentextbc.ca'>opentextbc.ca <i class='fa fa-external-link-alt'></i></a></small>
                 </td>
-                <td>{{$visits['visits']}}</td>
+                <td>{{$analytics['visits']}}</td>
             </tr>
             <tr>
                 <td>Number of likely adoptions in the last 4 months
                     <small><a href='//opentextbc.ca'>opentextbc.ca <i class='fa fa-external-link-alt'></i></a></small>
                 </td>
-                <td>{{$visits['low']}} - {{$visits['high']}}</td>
+                <td>{{$analytics['low']}} - {{$analytics['high']}}</td>
             </tr>
             <tr>
                 <td>Predictions
                     <small><a href='//opentextbc.ca'>opentextbc.ca <i class='fa fa-external-link-alt'></i></a></small>
                 </td>
-                <td>1 adoption is likely to occur every {{$visits['low_prob_future']}} - {{$visits['high_prob_future']}}
+                <td>1 adoption is likely to occur every {{$analytics['low_prob_future']}}
+                    - {{$analytics['high_prob_future']}}
                     hours
                 </td>
             </tr>
@@ -123,7 +128,8 @@
                         <dl>
                             <dt>Assumptions</dt>
                             <dd>Knowing that an adoption is not possible without first downloading a file or viewing a
-                                webpage, this analysis assumes a correlation between online activities (visits) and adoption. Since there is no way of confirming
+                                webpage, this analysis assumes a correlation between online activities (visits) and
+                                adoption. Since there is no way of confirming
                                 what percentage of visits translates to an actual adoption, adjusting the
                                 probability is going to affect both the number of adoptions counted and the prediction
                                 of future adoptions. A liberal estimate is that 1 in every 500 visits <b>(0.002)</b>
@@ -132,9 +138,11 @@
                             </dd>
                             <dt>Visits vs Downloads</dt>
                             <dd>Downloading a file is treated as a different measurement of a likely adoption than a
-                                'visit' to a web-based book. For instance, when faculty members and students access a web-based book throughout the
+                                'visit' to a web-based book. For instance, when faculty members and students access a
+                                web-based book throughout the
                                 duration of the course, the volume of tracked events will be higher than they would be
-                                with a downloaded file. Thus, the probability is adjusted to make a more realistic estimate of how many visits
+                                with a downloaded file. Thus, the probability is adjusted to make a more realistic
+                                estimate of how many visits
                                 translates to 1 adoption.
                             </dd>
                         </dl>
@@ -142,6 +150,89 @@
                 </div>
             </div>
         </div>
+
+        <h3>Based on downloads <a class='btn btn btn-outline-primary' role='button' tabindex='0'
+                                  data-target='#likely-downloads' data-toggle='modal'
+                                  title='Likely adoptions explained'>What is this?</a></h3></h3><h4>Date
+            range: {{$analytics['start']}} - {{$analytics['end']}}</h4><h5>Site: opentextbc.ca</h5>
+        <table class='table table-striped'>
+            <tbody>
+            <tr>
+                <td>Number of books in the collection</td>
+                <td>{{$analytics['num_books']}}</td>
+            </tr>
+
+            <tr>
+                <td>Number of web-based books
+                    <small><a href='//opentextbc.ca'>opentextbc.ca <i class='fa fa-external-link-alt'></i></a></small>
+                </td>
+                <td>{{$analytics['downloads']['num_books']}}</td>
+            </tr>
+
+            <tr>
+                <td>Number of downloads of all {{$analytics['downloads']['num_books']}} web-based books
+                    <small><a href='//opentextbc.ca'>opentextbc.ca <i class='fa fa-external-link-alt'></i></a></small>
+                </td>
+                <td>{{$analytics['downloads']['cumulative']}}</td>
+            </tr>
+
+            <tr>
+                <td>Number of likely adoptions in the last 4 months
+                    <small><a href='//opentextbc.ca'>opentextbc.ca <i class='fa fa-external-link-alt'></i></a></small>
+                </td>
+                <td>{{$analytics['downloads']['low_prob_adoption']}}
+                    - {{$analytics['downloads']['high_prob_adoption']}}</td>
+            </tr>
+
+            <tr>
+                <td>Predictions
+                    <small><a href='//opentextbc.ca'>opentextbc.ca <i class='fa fa-external-link-alt'></i></a></small>
+                </td>
+                <td>1 adoption is likely to occur every {{$analytics['downloads']['high_prob_future']}}
+                    - {{$analytics['downloads']['low_prob_future']}} hours
+                </td>
+            </tr>
+
+
+            </tbody>
+        </table>
+        <div class='modal fade' id='likely-downloads' tabindex='-1' role='dialog' aria-labelledby='likely-downloads'>
+            <div class='modal-dialog' role='document'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <h4 class='modal-title' id='myModalLabel'>Likely adoptions based on downloads</h4>
+                        <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span
+                                    aria-hidden='true'>&times;</span></button>
+                    </div>
+
+                    <div class='modal-body'>
+                        <dl>
+                            <dt>Assumptions</dt>
+                            <dd>Knowing that an adoption is not possible without first downloading a file or viewing a
+                                webpage, this analysis assumes a correlation
+                                between online activities (downloads) and adoption. Since there is no way of confirming
+                                what percentage of downloads translates to an actual adoption, adjusting the
+                                probability is going to affect both the number of adoptions counted and the prediction
+                                of future adoptions. A liberal estimate is that 1 in every 10 downloads <b>(0.01)</b>
+                                translates to an adoption, and a conservative estimate is that 1 in every 50
+                                <b>(0.02)</b> downloads translates to an adoption.
+                            </dd>
+                            <dt>Visits vs Downloads</dt>
+                            <dd>Downloading a file is treated as a different measurement of a likely adoption than a
+                                'visit' to a web-based book.
+                                For instance, a faculty member can download a file once (which is tracked) then make it
+                                available to their class through an LMS (not tracked).
+                                Conversely, a faculty member can download the file once then instruct their class to
+                                download the same file from the same location, in which case all
+                                35 students downloading the file will trigger a tracked event. In both scenarios,
+                                downloading a file has less tracked events than visiting a website.
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 

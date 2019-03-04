@@ -121,12 +121,13 @@ class Page extends Controller {
 	 * @return array
 	 * @throws \Exception
 	 */
-	public static function getAnalyticsByVisits( $args ) {
-		$env       = Config::getInstance()->get();
-		$low_prob  = 0.0006; // 1 out of every 1500
-		$high_prob = 0.002; // 1 out of every 500
-		$default   = [
-			'site_id' => 12,
+	public static function getLikelyAdoptions( $args ) {
+		$env                  = Config::getInstance()->get();
+		$results['downloads'] = 0;
+		$low_prob             = 0.0006; // 1 out of every 1500
+		$high_prob            = 0.002; // 1 out of every 500
+		$default              = [
+			'site_id' => 8,
 			'range'   => 4,
 		];
 
@@ -166,7 +167,7 @@ class Page extends Controller {
 			$results['visits'] = $results['visits'] + $site['visits'];
 		}
 
-		// Predictions
+		// Predictions via Visits
 		$freq_of_visits              = round( $results['visits'] / $days, 2 );
 		$results['low_prob_future']  = ( 0 === $freq_of_visits ) ? 0 : 24 * ( round( 1500 / $freq_of_visits, 2 ) );
 		$results['high_prob_future'] = ( 0 === $freq_of_visits ) ? 0 : 24 * ( round( 500 / $freq_of_visits, 2 ) );
@@ -174,6 +175,19 @@ class Page extends Controller {
 		$books_rest_api       = new Api\Equella();
 		$books_data           = new Models\OtbBooks( $books_rest_api, [ 'type_of' => 'books' ] );
 		$results['num_books'] = count( $books_data->getResponses() );
+
+		// add downloads stats
+		$results['downloads']['num_books'] = count( $data->getNumDownloads() );
+		foreach ( $data->getNumDownloads() as $download ) {
+			$results['downloads']['cumulative'] = $results['downloads']['cumulative'] + $download;
+		}
+
+		// Prediction via Downloads
+		$freq_of_downloads                          = round( $results['downloads']['cumulative'] / $days, 2 );
+		$results['downloads']['low_prob_adoption']  = round( 0.02 * $results['downloads']['cumulative'] );
+		$results['downloads']['high_prob_adoption'] = round( 0.1 * $results['downloads']['cumulative'] );
+		$results['downloads']['low_prob_future']    = ( 0 === $freq_of_downloads ) ? 0 : 24 * ( round( 50 / $freq_of_downloads, 2 ) );
+		$results['downloads']['high_prob_future']   = ( 0 === $freq_of_downloads ) ? 0 : 24 * ( round( 10 / $freq_of_downloads, 2 ) );
 
 		return $results;
 	}
