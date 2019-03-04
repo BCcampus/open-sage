@@ -122,11 +122,10 @@ class Page extends Controller {
 	 * @throws \Exception
 	 */
 	public static function getLikelyAdoptions( $args ) {
-		$env                  = Config::getInstance()->get();
-		$results['downloads'] = 0;
-		$low_prob             = 0.0006; // 1 out of every 1500
-		$high_prob            = 0.002; // 1 out of every 500
-		$default              = [
+		$env       = Config::getInstance()->get();
+		$low_prob  = 0.0006; // 1 out of every 1500
+		$high_prob = 0.002; // 1 out of every 500
+		$default   = [
 			'site_id' => 8,
 			'range'   => 4,
 		];
@@ -177,7 +176,8 @@ class Page extends Controller {
 		$results['num_books'] = count( $books_data->getResponses() );
 
 		// add downloads stats
-		$results['downloads']['num_books'] = count( $data->getNumDownloads() );
+		$results['downloads']['num_books']  = count( $data->getNumDownloads() );
+		$results['downloads']['cumulative'] = 0;
 		foreach ( $data->getNumDownloads() as $download ) {
 			$results['downloads']['cumulative'] = $results['downloads']['cumulative'] + $download;
 		}
