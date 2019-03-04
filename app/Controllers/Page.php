@@ -121,10 +121,11 @@ class Page extends Controller {
 	 * @return array
 	 * @throws \Exception
 	 */
-	public static function getLikelyAdoptions( $args ) {
+	public static function getAnalytics( $args ) {
 		$env       = Config::getInstance()->get();
 		$low_prob  = 0.0006; // 1 out of every 1500
 		$high_prob = 0.002; // 1 out of every 500
+		$otb_count = 0;
 		$default   = [
 			'site_id' => 8,
 			'range'   => 4,
@@ -144,8 +145,9 @@ class Page extends Controller {
 		$rest_api->setRange( $merged['range_start'], $merged['range_end'] );
 
 		// object for saving REST API data to local storage
-		$data  = new Models\Analytics( $rest_api, $merged );
-		$multi = $data->getMultiSites();
+		$data    = new Models\Analytics( $rest_api, $merged );
+		$multi   = $data->getMultiSites();
+		$flipped = array_flip( $data->getPublicOpentextbc() );
 
 		// start generating return statement
 		$results = [
@@ -164,16 +166,27 @@ class Page extends Controller {
 			$results['low']    = round( $results['low'] + ( $site['visits'] * $low_prob ) );
 			$results['high']   = round( $results['high'] + ( $site['visits'] * $high_prob ) );
 			$results['visits'] = $results['visits'] + $site['visits'];
+			if ( array_key_exists( $site['path'], $flipped ) ) {
+				$otb_count ++;
+				$results['books'][ $otb_count ]['visits']    = $site['visits'];
+				$results['books'][ $otb_count ]['path']      = $site['path'];
+				$results['books'][ $otb_count ]['actions']   = $site['actions'];
+				$results['books'][ $otb_count ]['pageviews'] = $site['pageviews'];
+				$results['books'][ $otb_count ]['label']     = $site['label'];
+				$results['books'][ $otb_count ]['id']        = $site['id'];
+			}
 		}
+		$results['otb_count'] = $otb_count;
 
 		// Predictions via Visits
 		$freq_of_visits              = round( $results['visits'] / $days, 2 );
 		$results['low_prob_future']  = ( 0 === $freq_of_visits ) ? 0 : 24 * ( round( 1500 / $freq_of_visits, 2 ) );
 		$results['high_prob_future'] = ( 0 === $freq_of_visits ) ? 0 : 24 * ( round( 500 / $freq_of_visits, 2 ) );
 
-		$books_rest_api       = new Api\Equella();
-		$books_data           = new Models\OtbBooks( $books_rest_api, [ 'type_of' => 'books' ] );
-		$results['num_books'] = count( $books_data->getResponses() );
+		$books_rest_api         = new Api\Equella();
+		$books_data             = new Models\OtbBooks( $books_rest_api, [ 'type_of' => 'books' ] );
+		$results['num_books']   = count( $books_data->getResponses() );
+		$results['otb_percent'] = round( 100 * ( $otb_count / $results['num_books'] ) );
 
 		// add downloads stats
 		$results['downloads']['num_books']  = count( $data->getNumDownloads() );

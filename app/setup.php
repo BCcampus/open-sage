@@ -20,6 +20,12 @@ add_action(
 		wp_enqueue_style( 'uio/prefseditor.css', get_theme_file_uri() . '/lib/infusion/src/framework/preferences/css/PrefsEditor.css', false, null );
 		wp_enqueue_style( 'uio/separatedpanelprefseditor.css', get_theme_file_uri() . '/lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css', false, null );
 		wp_enqueue_script( 'uio.js', get_theme_file_uri() . '/lib/infusion/infusion-uiOptions.js', [ 'jquery' ], null, true );
+
+		if ( is_page_template( [ 'views/template-stats.blade.php' ] ) ) {
+			wp_enqueue_script( 'tablesorter.js', asset_path( 'scripts/jquery.tablesorter.js' ), [ 'jquery' ], null, true );
+			wp_enqueue_script( 'tablesorter', asset_path( 'scripts/tablesorter.js' ), [ 'tablesorter.js' ], null, true );
+		}
+
 		/* convey PHP data into the JavaScript */
 		$php_data = [ 'pluginUrl' => get_theme_file_uri() ];
 		wp_localize_script( 'uio.js', 'phpData', $php_data );
