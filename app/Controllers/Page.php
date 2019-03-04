@@ -2,9 +2,13 @@
 
 namespace App\Controllers;
 
+use BCcampus\OpenTextBooks\Config;
+use BCcampus\OpenTextBooks\Models;
+use BCcampus\OpenTextBooks\Models\Api;
 use BCcampus\OpenTextBooks\Models\Webform;
 use BCcampus\Utility;
 use Sober\Controller\Controller;
+use VisualAppeal\Matomo;
 
 class Page extends Controller {
 
@@ -101,13 +105,77 @@ class Page extends Controller {
 		$stats['num_institutions'] = $data->getNumInstitutions();
 		$stats['num_faculty']      = $data->getNumFaculty();
 		$stats['num_adoptions']    = $data->getTotalAdoptions();
-		$stats['low']              = money_format( '%n ', $savings['100'] );
-		$stats['high']             = money_format( '%n ', $savings['actual'] );
+		$stats['low']              = \money_format( '%n ', $savings['100'] );
+		$stats['high']             = \money_format( '%n ', $savings['actual'] );
 		$stats['top']              = Utility\array_to_csv( $top_inst );
 		$stats['this_year']        = date( 'Y', time() );
 		$stats['limit']            = $limit;
 
 		return $stats;
+	}
+
+	/**
+	 *
+	 * @param $args
+	 *
+	 * @return array
+	 * @throws \Exception
+	 */
+	public static function getAnalyticsByVisits( $args ) {
+		$env       = Config::getInstance()->get();
+		$low_prob  = 0.0006; // 1 out of every 1500
+		$high_prob = 0.002; // 1 out of every 500
+		$default   = [
+			'site_id' => 12,
+			'range'   => 4,
+		];
+
+		// combine default args with supplied
+		$merged = array_merge( $args, $default );
+
+		$time_string           = "-{$merged['range']} months";
+		$t                     = strtotime( $time_string );
+		$merged['range_start'] = date( 'Y-m-d', $t );
+		$merged['range_end']   = date( 'Y-m-d', time() );
+
+		// instantiate REST API Analytics object
+		$rest_api = new Matomo( $env['matomo']['url'], $env['matomo']['token'], 12, Matomo::FORMAT_JSON );
+		$rest_api->setPeriod( Matomo::PERIOD_RANGE );
+		$rest_api->setRange( $merged['range_start'], $merged['range_end'] );
+
+		// object for saving REST API data to local storage
+		$data  = new Models\Analytics( $rest_api, $merged );
+		$multi = $data->getMultiSites();
+
+		// start generating return statement
+		$results = [
+			'low'    => 0,
+			'high'   => 0,
+			'visits' => 0,
+			'count'  => count( $multi ),
+		];
+
+		$range            = $data->getDateRange();
+		$days             = round( ( time() - strtotime( $range['start'] ) ) / 84600, 2 );
+		$results['start'] = $range['start'];
+		$results['end']   = $range['end'];
+
+		foreach ( $multi as $site ) {
+			$results['low']    = round( $results['low'] + ( $site['visits'] * $low_prob ) );
+			$results['high']   = round( $results['high'] + ( $site['visits'] * $high_prob ) );
+			$results['visits'] = $results['visits'] + $site['visits'];
+		}
+
+		// Predictions
+		$freq_of_visits              = round( $results['visits'] / $days, 2 );
+		$results['low_prob_future']  = ( 0 === $freq_of_visits ) ? 0 : 24 * ( round( 1500 / $freq_of_visits, 2 ) );
+		$results['high_prob_future'] = ( 0 === $freq_of_visits ) ? 0 : 24 * ( round( 500 / $freq_of_visits, 2 ) );
+
+		$books_rest_api       = new Api\Equella();
+		$books_data           = new Models\OtbBooks( $books_rest_api, [ 'type_of' => 'books' ] );
+		$results['num_books'] = count( $books_data->getResponses() );
+
+		return $results;
 	}
 
 }
