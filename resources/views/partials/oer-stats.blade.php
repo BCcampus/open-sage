@@ -22,27 +22,27 @@
         <table class='table bkgd-grey-light'>
             <tbody>
             <tr>
-                <td>Student savings</td>
+                <td width="50%"><i class="fa fa-bar-chart"></i>  Student savings</td>
                 <td>${{$get_otb_stats['low']}} - ${{$get_otb_stats['high']}}</td>
             </tr>
             <tr>
-                <td>Number of B.C. students using open textbooks</td>
+                <td><i class="fa fa-book"></i>  Number of B.C. students using open textbooks</td>
                 <td>{{$get_otb_stats['num_students']}}</td>
             </tr>
             <tr>
-                <td>Number of B.C. institutions currently adopting</td>
+                <td><i class="fa fa-flag"></i>  Number of B.C. institutions currently adopting</td>
                 <td>{{$get_otb_stats['num_institutions']}}</td>
             </tr>
             <tr>
-                <td>Top {{$get_otb_stats['limit']}} adopting institutions (in order)</td>
+                <td><i class="fa fa-star"></i> Top {{$get_otb_stats['limit']}} adopting institutions (in order)</td>
                 <td>{{$get_otb_stats['top']}}</td>
             </tr>
             <tr>
-                <td>Number of known B.C. faculty adopting</td>
+                <td><i class="fa fa-users"></i>  Number of known B.C. faculty adopting</td>
                 <td>{{$get_otb_stats['num_faculty']}}</td>
             </tr>
             <tr>
-                <td>Number of known B.C. adoptions</td>
+                <td><i class="fa fa-globe"></i>  Number of known B.C. adoptions</td>
                 <td>{{$get_otb_stats['num_adoptions']}}</td>
             </tr>
             </tbody>
@@ -270,8 +270,8 @@
                         <td>{{$site['visits']}}</td>
                         <td>{{$site['actions']}}</td>
                         <td>{{$site['pageviews']}}</td>
-                        <td><a href='analytics.php?site_id={{$site['id']}}&view=single'><i
-                                        class='fa fa-bar-chart-o'></i></a></td>
+                        {{--<td><a href='analytics.php?site_id={{$site['id']}}&view=single'><i class='fa fa-bar-chart-o'></i></a></td>--}}
+                        <td><i class='fa fa-bar-chart-o'></i></td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -309,7 +309,8 @@
                 <tr>
                     <td><a href="{{get_home_url()}}/find-open-textbooks/{{$uuid}}" target="_blank"><i
                                     class="fa fa-book"></i> - {{$name}}</a></td>
-                    <td><a href="analytics.php?uuid={{$uuid}}&view=single"><i class="fa fa-bar-chart-o"></i></a></td>
+                    {{--<td><a href="analytics.php?uuid={{$uuid}}&view=single"><i class="fa fa-bar-chart-o"></i></a></td>--}}
+                    <td><i class='fa fa-bar-chart-o'></i></td>
                 </tr>
             @endforeach
             </tbody>
@@ -326,7 +327,7 @@
     <div role="tabpanel" id="subject_stats" class="tab-pane">
 
         @php
-            $subject_stats = \App\Controllers\Page::getSubjectStats(true);
+            $subject_stats = \App\Controllers\Page::getSubjectStats();
         @endphp
 
         <h2>Summary</h2>

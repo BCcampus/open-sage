@@ -109,7 +109,7 @@ class Page extends Controller {
 		$stats['num_adoptions']    = $data->getTotalAdoptions();
 		$stats['low']              = \money_format( '%n ', $savings['100'] );
 		$stats['high']             = \money_format( '%n ', $savings['actual'] );
-		$stats['top']              = Utility\array_to_csv( $top_inst );
+		$stats['top']              = implode( ', ', $top_inst );
 		$stats['this_year']        = date( 'Y', time() );
 		$stats['limit']            = $limit;
 
