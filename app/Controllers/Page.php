@@ -247,4 +247,26 @@ class Page extends Controller {
 		$c = new Models\Storage\CleanUp();
 		$c->maybeRun( 'reviews', 'csv' );
 	}
+
+	/**
+	 * @return mixed
+	 */
+	public static function getSubjectStats() {
+		$rest_api                         = new Models\Api\Equella();
+		$data                             = new Models\OtbBooks( $rest_api, [] );
+		$results['summary']['num_sub1']   = count( $data->getSubjectAreas() );
+		$results['summary']['num_sub2']   = 0;
+		$results['summary']['cumulative'] = 0;
+
+		foreach ( $data->getSubjectAreas() as $key => $val ) {
+			$results['summary']['num_sub2'] = $results['summary']['num_sub2'] + count( $val );
+
+			foreach ( $val as $sub2 => $num ) {
+				$results['summary']['cumulative'] = $results['summary']['cumulative'] + intval( $num );
+				$results[ $key ][ $sub2 ]         = $num;
+			}
+		}
+
+		return $results;
+	}
 }

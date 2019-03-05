@@ -325,8 +325,30 @@
 
     <div role="tabpanel" id="subject_stats" class="tab-pane">
 
+        @php
+            $subject_stats = \App\Controllers\Page::getSubjectStats(true);
+        @endphp
 
+        <h2>Summary</h2>
+        <h4>Number of books in the collection: {{$subject_stats['summary']['cumulative']}}</h4>
+        <h4>Number of main subject areas: {{$subject_stats['summary']['num_sub1']}}</h4>
+        <h4>Number of secondary subject areas: {{$subject_stats['summary']['num_sub2']}}</h4>
+        <hr>
+        @php
+            unset($subject_stats['summary'])
+        @endphp
+
+        @foreach($subject_stats as $key=>$val)
+            <h4>{{$key}}</h4>
+            <ul>
+                @foreach($val as $sub2=>$num)
+                    <li>
+                        <a href="{{get_home_url()}}/find-open-textbooks/?subject={{\BCcampus\Utility\url_encode($sub2)}}">{{$sub2}}</a>
+                        ({{$num}})
+                    </li>
+                @endforeach
+            </ul>
+        @endforeach
     </div>
-
 
 </div>
