@@ -1,7 +1,7 @@
 @php
     $link = get_home_url() . '/find-open-textbooks';
     $nonce = wp_create_nonce('find-oer');
-    $bkgd = (is_page_template(['views/template-find-oer.blade.php'])) ? 'bkgd-blue-navy' : 'bkgd-grey-light';
+    $bkgd = (is_page_template(['views/template-oer.blade.php', 'views/template-find-oer.blade.php'])) ? 'bkgd-blue-navy' : 'bkgd-grey-light';
 @endphp
 <section class="{{$bkgd}} full-width py-4 px-5 mb-3">
     @if(! is_page_template(['views/template-find-oer.blade.php']))
