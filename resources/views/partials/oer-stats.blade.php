@@ -311,15 +311,15 @@
                                     class="fa fa-book"></i> - {{$name}}</a></td>
                     <td><a href="analytics.php?uuid={{$uuid}}&view=single"><i class="fa fa-bar-chart-o"></i></a></td>
                 </tr>
-        @endforeach
+            @endforeach
             </tbody>
         </table>
 
     </div>
 
-
     <div role="tabpanel" id="review_stats" class="tab-pane">
 
+        {{\App\Controllers\Page::getStatsBookReviews()}}
 
     </div>
 

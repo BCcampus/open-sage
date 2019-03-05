@@ -6,7 +6,9 @@ use BCcampus\OpenTextBooks\Config;
 use BCcampus\OpenTextBooks\Models;
 use BCcampus\OpenTextBooks\Models\Api;
 use BCcampus\OpenTextBooks\Models\Webform;
+use BCcampus\OpenTextBooks\Views;
 use BCcampus\Utility;
+use org\jsonrpcphp;
 use Sober\Controller\Controller;
 use VisualAppeal\Matomo;
 
@@ -127,7 +129,7 @@ class Page extends Controller {
 		$high_prob = 0.002; // 1 out of every 500
 		$otb_count = 0;
 		$default   = [
-			'site_id' => 12,
+			'site_id' => 12, // open.bccampus.ca
 			'range'   => 4,
 		];
 
@@ -229,5 +231,20 @@ class Page extends Controller {
 		array_multisort( $results, SORT_ASC | SORT_NATURAL );
 
 		return $results;
+	}
+
+
+	/**
+	 * TODO - update function to remove dependency on view from OTB app
+	 */
+	public static function getStatsBookReviews() {
+		$env        = Config::getInstance()->get();
+		$rpc_client = new jsonrpcphp\JsonRPCClient( $env['limesurvey']['url'] );
+		$data       = new Models\OtbReviews( $rpc_client, [] );
+		$view       = new Views\StatsBookReviews( $data );
+		$view->displayReports();
+
+		$c = new Models\Storage\CleanUp();
+		$c->maybeRun( 'reviews', 'csv' );
 	}
 }
