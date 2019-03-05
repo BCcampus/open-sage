@@ -1,5 +1,5 @@
 @php
-    $analytics = \App\Controllers\Page::getAnalytics([]);
+    $analytics = \App\Controllers\Page::getOpenAnalytics([]);
 @endphp
 
 <ul class="nav nav-tabs no-bullets" role="tablist">
@@ -232,11 +232,24 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- opentextbc stats -->
     <div role="tabpanel" id="opentext_stats" class="tab-pane">
+
+        <h2>Summary</h2>
+        <h4>Number of books in the collection: <b>{{$analytics['num_books']}}</b></h4>
+        <h4>Number of books in Pressbooks: <b>{{$analytics['otb_count']}}</b></h4>
+        <hr>
+        <h3>Percentage of books in the collection that have been imported into Pressbooks:</h3>
+        <div class='progress'>
+            <div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar'
+                 aria-valuemin='0' aria-valuenow='{{$analytics['otb_count']}}'
+                 aria-valuemax='{{$analytics['num_books']}}'
+                 style='width:{{$analytics['otb_percent']}}%;'>{{$analytics['otb_percent']}}%
+            </div>
+        </div>
+
         <div id='table-responsive'>
             <table id='opentextbc' class='table table-striped tablesorter'>
                 <caption>Stats below based on the date range: {{$analytics['start']}} to {{$analytics['end']}}</caption>
@@ -265,26 +278,45 @@
             </table>
         </div>
 
-        <h2>Summary</h2>
-        <h4>Number of books in the collection: <b>{{$analytics['num_books']}}</b></h4>
-        <h4>Number of books in Pressbooks: <b>{{$analytics['otb_count']}}</b></h4>
-        <hr>
-        <h3>Percentage of books in the collection that have been imported into Pressbooks:</h3>
-        <div class='progress'>
-            <div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar'
-                 aria-valuemin='0' aria-valuenow='{{$analytics['otb_count']}}'
-                 aria-valuemax='{{$analytics['num_books']}}'
-                 style='width:{{$analytics['otb_perc']}};'>{{$analytics['otb_perc']}}%
-            </div>
-        </div>
-
     </div>
 
     <!-- open.bccampus.ca stats -->
     <div role="tabpanel" id="open_stats" class="tab-pane">
 
+        <h2>Summary</h2>
+        <h4>Number of books in the collection: <b>{{$analytics['num_books']}}</b></h4>
+        <h4>Number of visits to the site in the last 4 months: <b>{{$analytics['open_visits']}}</b></h4>
+        <h4>Number of visits to the page 'find-open-textbooks': <b>{{$analytics['open_page_visits']}}</b></h4>
+        <hr>
+        <h3>Percentage of total visits to the page 'fin-open-textbooks: </h3>
+        <div class='progress'>
+            <div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar'
+                 aria-valuemin='0'
+                 aria-valuenow='{{$analytics['open_visits']}}' aria-valuemax='{{$analytics['open_visits']}}'
+                 style='width:{{$analytics['open_percentage']}}%;'>{{$analytics['open_percentage']}}%
+            </div>
+        </div>
+
+        <table id='opentext' class='table table-striped tablesorter'>
+            <thead>
+            <tr>
+                <th>Title&nbsp;<i class='fa fa-sort'></i></th>
+                <th>Download Stats</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($get_catalogue_titles as $uuid => $name)
+                <tr>
+                    <td><a href="{{get_home_url()}}/find-open-textbooks/{{$uuid}}" target="_blank"><i
+                                    class="fa fa-book"></i> - {{$name}}</a></td>
+                    <td><a href="analytics.php?uuid={{$uuid}}&view=single"><i class="fa fa-bar-chart-o"></i></a></td>
+                </tr>
+        @endforeach
+            </tbody>
+        </table>
 
     </div>
+
 
     <div role="tabpanel" id="review_stats" class="tab-pane">
 

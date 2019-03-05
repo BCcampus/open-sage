@@ -70,7 +70,7 @@
     "bootstrap": "v4.3.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.6",
+    "popper.js": "^1.14.7",
     "tablesorter": "^2.31.1"
   }
 }

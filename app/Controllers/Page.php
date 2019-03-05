@@ -121,13 +121,13 @@ class Page extends Controller {
 	 * @return array
 	 * @throws \Exception
 	 */
-	public static function getAnalytics( $args ) {
+	public static function getOpenAnalytics( $args ) {
 		$env       = Config::getInstance()->get();
 		$low_prob  = 0.0006; // 1 out of every 1500
 		$high_prob = 0.002; // 1 out of every 500
 		$otb_count = 0;
 		$default   = [
-			'site_id' => 8,
+			'site_id' => 12,
 			'range'   => 4,
 		];
 
@@ -140,14 +140,16 @@ class Page extends Controller {
 		$merged['range_end']   = date( 'Y-m-d', time() );
 
 		// instantiate REST API Analytics object
-		$rest_api = new Matomo( $env['matomo']['url'], $env['matomo']['token'], 12, Matomo::FORMAT_JSON );
+		$rest_api = new Matomo( $env['matomo']['url'], $env['matomo']['token'], $merged['site_id'], Matomo::FORMAT_JSON );
 		$rest_api->setPeriod( Matomo::PERIOD_RANGE );
 		$rest_api->setRange( $merged['range_start'], $merged['range_end'] );
 
 		// object for saving REST API data to local storage
-		$data    = new Models\Analytics( $rest_api, $merged );
-		$multi   = $data->getMultiSites();
-		$flipped = array_flip( $data->getPublicOpentextbc() );
+		$matomo = new Models\Analytics( $rest_api, $merged );
+
+		// opentextbc.ca - this gets all sites in Matomo, then filters for only opentextbc domains
+		$multi   = $matomo->getMultiSites();
+		$flipped = array_flip( $matomo->getPublicOpentextbc() );
 
 		// start generating return statement
 		$results = [
@@ -157,7 +159,7 @@ class Page extends Controller {
 			'count'  => count( $multi ),
 		];
 
-		$range            = $data->getDateRange();
+		$range            = $matomo->getDateRange();
 		$days             = round( ( time() - strtotime( $range['start'] ) ) / 84600, 2 );
 		$results['start'] = $range['start'];
 		$results['end']   = $range['end'];
@@ -189,9 +191,10 @@ class Page extends Controller {
 		$results['otb_percent'] = round( 100 * ( $otb_count / $results['num_books'] ) );
 
 		// add downloads stats
-		$results['downloads']['num_books']  = count( $data->getNumDownloads() );
+		$results['downloads']['num_books']  = count( $matomo->getNumDownloads() );
 		$results['downloads']['cumulative'] = 0;
-		foreach ( $data->getNumDownloads() as $download ) {
+
+		foreach ( $matomo->getNumDownloads() as $download ) {
 			$results['downloads']['cumulative'] = $results['downloads']['cumulative'] + $download;
 		}
 
@@ -202,7 +205,29 @@ class Page extends Controller {
 		$results['downloads']['low_prob_future']    = ( 0 === $freq_of_downloads ) ? 0 : 24 * ( round( 50 / $freq_of_downloads, 2 ) );
 		$results['downloads']['high_prob_future']   = ( 0 === $freq_of_downloads ) ? 0 : 24 * ( round( 10 / $freq_of_downloads, 2 ) );
 
+		// Open.bccampus.ca
+		$segment_title               = Utility\url_encode( 'pageTitle==Find Open Textbooks | BCcampus OpenEd Resources' );
+		$results['open_page_visits'] = $matomo->getVisits( $segment_title );
+		$results['open_visits']      = $matomo->getVisits();
+		$results['open_percentage']  = round( 100 * ( $results['open_page_visits'] / $results['open_visits'] ) );
+
 		return $results;
 	}
 
+	/**
+	 * @return mixed
+	 */
+	public function getCatalogueTitles() {
+		$args     = [ 'type_of' => 'books' ];
+		$rest_api = new Models\Api\Equella();
+		$books    = new Models\OtbBooks( $rest_api, $args );
+
+		foreach ( $books->getPrunedResults() as $book ) {
+			$results[ $book['uuid'] ] = $book['name'];
+		}
+
+		array_multisort( $results, SORT_ASC | SORT_NATURAL );
+
+		return $results;
+	}
 }
