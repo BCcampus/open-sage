@@ -49,7 +49,9 @@ mix.js(`${assets}/scripts/main.js`, `${dist}/scripts`)
 // Assets
 mix.copy(`${assets}/fonts`, `${dist}/fonts`, false)
     .copy(`${node}/font-awesome/fonts`, `${dist}/fonts`, false)
-    .copy(`${assets}/images`, `${dist}/images`, false);
+    .copy(`${assets}/images`, `${dist}/images`, false)
+    .copy(`${node}/tablesorter/dist/js/jquery.tablesorter.js`, `${dist}/scripts`, false)
+    .copy(`${assets}/scripts/tablesorter.js`, `${dist}/scripts`, false)
 
 // Options
 mix.options({
