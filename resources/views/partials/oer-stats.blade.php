@@ -23,7 +23,7 @@
             <tbody>
             <tr>
                 <td width="50%"><i class="fa fa-bar-chart"></i>  Student savings</td>
-                <td>${{$get_otb_stats['low']}} - ${{$get_otb_stats['high']}}</td>
+                <td>{{$get_otb_stats['low']}} - {{$get_otb_stats['high']}}</td>
             </tr>
             <tr>
                 <td><i class="fa fa-book"></i>  Number of B.C. students using open textbooks</td>
