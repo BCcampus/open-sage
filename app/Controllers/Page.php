@@ -249,9 +249,12 @@ class Page extends Controller {
 	}
 
 	/**
+	 * @param bool $summary
+	 * @param bool $alpha
+	 *
 	 * @return mixed
 	 */
-	public static function getSubjectStats() {
+	public static function getSubjectStats( $summary = true, $alpha = false ) {
 		$rest_api                         = new Models\Api\Equella();
 		$data                             = new Models\OtbBooks( $rest_api, [] );
 		$results['summary']['num_sub1']   = count( $data->getSubjectAreas() );
@@ -267,6 +270,20 @@ class Page extends Controller {
 			}
 		}
 
+		if ( false === $summary ) {
+			unset( $results['summary'] );
+		}
+
+		if ( true === $alpha ) {
+			ksort( $results, SORT_ASC );
+			foreach ( $results as $k => $v ) {
+				ksort( $v, SORT_ASC );
+				$tmp[ $k ] = $v;
+			}
+			$results = $tmp;
+		}
+
 		return $results;
 	}
+
 }

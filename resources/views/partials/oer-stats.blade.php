@@ -329,7 +329,7 @@
         @php
             $subject_stats = \App\Controllers\Page::getSubjectStats();
         @endphp
-
+@dump($subject_stats)
         <h2>Summary</h2>
         <h4>Number of books in the collection: {{$subject_stats['summary']['cumulative']}}</h4>
         <h4>Number of main subject areas: {{$subject_stats['summary']['num_sub1']}}</h4>
