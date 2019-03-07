@@ -16,7 +16,7 @@
                 <div id="collapse{{$abr}}" class="accordion-body collapse">
                     <ul>
                         @foreach($sub2 as $k=>$num)
-                            <li><a href="?{{$k}}">{{$k}}</a> ({{$num}})</li>
+                            <li><a href="?subject={{$k}}">{{$k}}</a> ({{$num}})</li>
                         @endforeach
                     </ul>
                 </div>
