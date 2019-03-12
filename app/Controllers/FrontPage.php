@@ -50,8 +50,9 @@ class FrontPage extends Controller {
 		$stats   = [
 			'savings-min'  => $savings['100'],
 			'savings-max'  => $savings['actual'],
-			'adoptions'    => $data->getTotalAdoptions(),
+			'faculty'      => $data->getNumFaculty(),
 			'institutions' => $data->getNumInstitutions(),
+			'students'     => $data->getNumStudents(),
 		];
 
 		return $stats;

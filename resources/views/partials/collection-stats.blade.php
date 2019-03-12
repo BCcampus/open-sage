@@ -5,22 +5,22 @@
     </div>
     <span class="col-md-3 text-center text-white"><a href="#" class="stats-icons">
             <img src="@asset('images/statsicon-institution.svg')" alt="icon representing an institution"></a>
-        <p>{{$get_summary_stats['institutions']}}</p>
+        <h3>{{$get_summary_stats['institutions']}}</h3>
         <p>Institutions</p>
     </span>
     <span class="col-md-3 text-center text-white"><a href="#" class="stats-icons">
             <img src="@asset('images/statsicon-faculty.svg')" alt="icon representing faculty"></a>
-        <p>{{$get_summary_stats['adoptions']}}</p>
+        <h3>{{$get_summary_stats['faculty']}}</h3>
         <p>Faculty</p>
     </span>
     <span class="col-md-3 text-center text-white"><a href="#" class="stats-icons">
             <img src="@asset('images/statsicon-students.svg')" alt="icon representing students"></a>
-        <p>PLACEHOLDER</p>
+        <h3>{{$get_summary_stats['students']}}</h3>
         <p>Students</p>
     </span>
     <span class="col-md-3 text-center text-white"><a href="#" class="stats-icons">
             <img src="@asset('images/statsicon-savings.svg')" alt="icon representing savings"></a>
-        <p>{{$get_summary_stats['savings-min']}} - {{$get_summary_stats['savings-max']}}</p>
+        <h3>${{$get_summary_stats['savings-min']}} - ${{$get_summary_stats['savings-max']}}</h3>
         <p>Savings</p>
     </span>
 </section>
