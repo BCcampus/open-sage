@@ -132,6 +132,11 @@ class App extends Controller {
 
 		if ( isset( $args['uuid'] ) && $args['uuid'] !== '' ) {
 
+			// get relevant based on uuid
+			$args['type_of'] = 'relevant';
+
+			new Catalogue\Otb( $args );
+
 			// overwrite variable
 			$args['type_of'] = 'reviews';
 

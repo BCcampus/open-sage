@@ -1,7 +1,7 @@
 @php
     $link = get_home_url() . '/find-open-textbooks/?subject=Support%20Resources';
     $args = [
-        'subject_class_level_2' => 'Guides,Toolkits',
+        'subject_class_level2' => 'Guides,Toolkits',
         'limit'                 => 4,
         'featured'              => true,
     ];

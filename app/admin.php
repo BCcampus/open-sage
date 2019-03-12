@@ -232,6 +232,49 @@ add_action(
 			]
 		);
 
+		// Create Open section
+		$wp_customize->add_section(
+			'create_open', [
+				'title'    => __( 'Create Open Textbooks', 'open-sage' ),
+				'priority' => 130,
+			]
+		);
+
+		$wp_customize->add_setting(
+			'create_hero', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'create_hero', [
+				'type' => 'dropdown-pages',
+				'label'    => __( 'Hero section', 'open-sage' ),
+				'section'  => 'create_open',
+				'settings' => 'create_hero',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'create_pb', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'create_pb', [
+				'type' => 'dropdown-pages',
+				'label'    => __( 'Pressbooks section', 'open-sage' ),
+				'section'  => 'create_open',
+				'settings' => 'create_pb',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
 	}
 );
 
