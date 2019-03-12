@@ -92,6 +92,28 @@ class Page extends Controller {
 	}
 
 	/**
+	 * Returns the Hero Page ID that was set in the customizer menu for the "Create OER" page
+	 *
+	 * @return string
+	 */
+	public function getHeroCreateOer() {
+		$id = get_theme_mod( 'create_hero', '' );
+
+		return intval( $id );
+	}
+
+	/**
+	 * Returns the PB section Page ID that was set in the customizer menu for the "Create OER" page
+	 *
+	 * @return string
+	 */
+	public function getPbCreateOer() {
+		$id = get_theme_mod( 'create_pb', '' );
+
+		return intval( $id );
+	}
+
+	/**
 	 *
 	 *
 	 * @return mixed
