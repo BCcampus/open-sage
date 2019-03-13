@@ -250,6 +250,8 @@ class App extends Controller {
 				continue;
 			}
 
+			$status = self::isNewOrUpdated( $datum['createdDate'], $datum['modifiedDate'] );
+
 			$i ++;
 			$meta_xml                     = \simplexml_load_string( $datum['metadata'] );
 			$cover                        = \preg_replace( '/^http:\/\//iU', '//', $meta_xml->item->cover );
@@ -258,10 +260,39 @@ class App extends Controller {
 			$result[ $i ]['uuid']         = $datum['uuid'];
 			$result[ $i ]['cover_url']    = $cover;
 			$result[ $i ]['book_url']     = \sprintf( '%1$s%2$s%3$s', get_home_url(), '/find-open-textbooks/?uuid=', $datum['uuid'] );
+			$result[ $i ]['status']       = $status;
 			if ( $i === $merged['limit'] ) {
 				break;
 			}
 		}
 		return $result;
+	}
+
+	/**
+	 * @param $date_created
+	 * @param $date_modified
+	 *
+	 * @return string
+	 */
+	private static function isNewOrUpdated( $date_created, $date_modified ) {
+		$now              = time();
+		$created          = strtotime( $date_created );
+		$modified         = strtotime( $date_modified );
+		$new_duration     = 60 * DAY_IN_SECONDS;
+		$updated_duration = 2 * $new_duration;
+		$status           = '';
+
+		// new
+		if ( ( $now - $created ) < $new_duration ) {
+			$status = 'new';
+		}
+
+		// updated
+		if ( ( $now - $created ) >= $new_duration && ( $now - $modified ) < $updated_duration ) {
+			$status = 'updated';
+		}
+
+		return $status;
+
 	}
 }
