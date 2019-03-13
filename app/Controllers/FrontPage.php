@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use BCcampus\OpenTextBooks\Models;
 use Sober\Controller\Controller;
 
 class FrontPage extends Controller {
@@ -37,6 +38,24 @@ class FrontPage extends Controller {
 		$id = get_theme_mod( 'homepage_card_right', '' );
 
 		return intval( $id );
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getSummaryStats() {
+		$data = new Models\WebForm();
+
+		$savings = $data->getStudentSavings();
+		$stats   = [
+			'savings-min'  => $savings['100'],
+			'savings-max'  => $savings['actual'],
+			'faculty'      => $data->getNumFaculty(),
+			'institutions' => $data->getNumInstitutions(),
+			'students'     => $data->getNumStudents(),
+		];
+
+		return $stats;
 	}
 }
 
