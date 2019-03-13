@@ -12,8 +12,8 @@
         <div class="col-md-9">
         @include('partials.collection-find-oer')
         </div>
-        <div class="col-md-3">
+        <aside id="accordion-catalogue-menu" class="col-md-3">
             @include('partials.collection-menu')
-        </div>
+        </aside>
     </div>
 @endsection
