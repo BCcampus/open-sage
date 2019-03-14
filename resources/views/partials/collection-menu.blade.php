@@ -3,7 +3,7 @@
     $summary = false;
     $subject_areas = \App\Controllers\Page::getSubjectStats($summary,$alpha)
 @endphp
-<div class="tabs-left accordion" id="accordion2">
+<div class="accordion" id="catalogue-menu">
     <ul class="accordion-group list-unstyled">
         <div class="accordion-group">
             <li class="accordion-heading"><a class="accordion-toggle" href="?subject=">All Subjects</a></li>
@@ -12,9 +12,9 @@
             <div class="accordion-group">
                 @php($abr=substr($sub1,0,4))
                 <li class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse"
-                                                 data-parent="#accordion2" href="#collapse{{$abr}}">{{$sub1}}</a></li>
+                                                 data-parent="#catalogue-menu" href="#collapse{{$abr}}">{{$sub1}}</a></li>
                 <div id="collapse{{$abr}}" class="accordion-body collapse">
-                    <ul>
+                    <ul class="children">
                         @foreach($sub2 as $k=>$num)
                             <li><a href="?subject={{$k}}">{{$k}}</a></li>
                         @endforeach
