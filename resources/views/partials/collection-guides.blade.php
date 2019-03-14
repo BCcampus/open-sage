@@ -12,6 +12,7 @@
     </div>
     @foreach(\App\Controllers\App::getLatestAdditions($args) as $book)
         <article class="col-md-3 mb-2" itemscope itemtype="http://schema.org/Article">
+            <span class="badge badge-success">{{ucfirst($book['status'])}}</span><br>
             <a href="{{$book['book_url']}}">
                 <img itemprop="image" class="img-polaroid" src="{{$book['cover_url']}}" alt="Image for the textbook titled {{$book['name']}}" width="151px" height="196px" />
             </a>
