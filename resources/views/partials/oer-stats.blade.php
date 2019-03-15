@@ -1,12 +1,13 @@
 @php
     $analytics = \App\Controllers\Page::getOpenAnalytics([]);
+    $range_start = date( 'M j, Y', strtotime('4 months') );
 @endphp
 
 <ul class="nav nav-tabs no-bullets" role="tablist">
     <li class="nav-item" role="presentation"><a class="nav-link active" href="#webform_stats" data-toggle="tab"
                                                 aria-controls="form" role="tab">Adoptions</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#opentext_stats" data-toggle="tab"
-                                                aria-controls="opentextbc" role="tab">opentextbc.ca</a></li>
+                                                aria-controls="opentextbc" role="tab">Pressbooks</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#open_stats" data-toggle="tab"
                                                 aria-controls="open" role="tab">open.bccampus.ca</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#review_stats" data-toggle="tab"
@@ -270,9 +271,28 @@
                         <td>{{$site['visits']}}</td>
                         <td>{{$site['actions']}}</td>
                         <td>{{$site['pageviews']}}</td>
-                        {{--<td><a href='analytics.php?site_id={{$site['id']}}&view=single'><i class='fa fa-bar-chart-o'></i></a></td>--}}
-                        <td><i class='fa fa-bar-chart-o'></i></td>
+                        <td><a role='button' tabindex='0' data-target='#downloads{{$site['id']}}'
+                               data-toggle='modal' title='Single download stats'><i class='fa fa-bar-chart-o'></i></a></td>
                     </tr>
+                    <div class='modal fade' id='downloads{{$site['id']}}' tabindex='-1' role='dialog' aria-labelledby='downloads{{$site['id']}}'>
+                        <div class='modal-dialog' role='document'>
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    <h4 class='modal-title' id='myModalLabel'>Downloads since {{$range_start}}</h4>
+                                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span
+                                                aria-hidden='true'>&times;</span></button>
+                                </div>
+                                <div class='modal-body'>
+                                    <ul>
+                                    @foreach(\App\Controllers\Page::getSingleSiteDownloads($site['id']) as $d)
+                                            <li>{{$d->label}}: <b>{{$d->nb_events}}</b></li>
+                                            <li>{{$d->label}}: <b>{{$d->nb_events}}</b></li>
+                                    @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
                 </tbody>
             </table>
@@ -288,7 +308,7 @@
         <h4>Number of visits to the site in the last 4 months: <b>{{$analytics['open_visits']}}</b></h4>
         <h4>Number of visits to the page 'find-open-textbooks': <b>{{$analytics['open_page_visits']}}</b></h4>
         <hr>
-        <h3>Percentage of total visits to the page 'fin-open-textbooks: </h3>
+        <h3>Percentage of total visits to the page 'find-open-textbooks: </h3>
         <div class='progress'>
             <div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar'
                  aria-valuemin='0'

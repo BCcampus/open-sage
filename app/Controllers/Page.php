@@ -308,4 +308,21 @@ class Page extends Controller {
 		return $results;
 	}
 
+	public static function getSingleSiteDownloads( $id ) {
+		$env         = Config::getInstance()->get();
+		$range_start = date( 'Y-m-d', strtotime( '4 months' ) );
+		$range_end   = date( 'Y-m-d', time() );
+		$rest_api    = new Matomo( $env['matomo']['url'], $env['matomo']['token'], $id, Matomo::FORMAT_JSON );
+		$rest_api->setPeriod( Matomo::PERIOD_RANGE );
+		$rest_api->setRange( $range_start, $range_end );
+		$data = new Models\Analytics( $rest_api, [ 'site_id' => $id ] );
+
+		$downloads = $data->getEventName( $id );
+
+		if ( $downloads ) {
+			return $downloads;
+		} else {
+			return [];
+		}
+	}
 }
