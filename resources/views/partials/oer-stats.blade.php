@@ -286,7 +286,6 @@
                                     <ul>
                                     @foreach(\App\Controllers\Page::getSingleSiteDownloads($site['id']) as $d)
                                             <li>{{$d->label}}: <b>{{$d->nb_events}}</b></li>
-                                            <li>{{$d->label}}: <b>{{$d->nb_events}}</b></li>
                                     @endforeach
                                     </ul>
                                 </div>
@@ -321,7 +320,7 @@
             <thead>
             <tr>
                 <th>Title&nbsp;<i class='fa fa-sort'></i></th>
-                <th>Download Stats</th>
+                {{--<th>Download Stats</th>--}}
             </tr>
             </thead>
             <tbody>
@@ -329,9 +328,27 @@
                 <tr>
                     <td><a href="{{get_home_url()}}/find-open-textbooks/{{$uuid}}" target="_blank"><i
                                     class="fa fa-book"></i> - {{$name}}</a></td>
-                    {{--<td><a href="analytics.php?uuid={{$uuid}}&view=single"><i class="fa fa-bar-chart-o"></i></a></td>--}}
-                    <td><i class='fa fa-bar-chart-o'></i></td>
+                    {{--<td><a class='muted' role='button' tabindex='0' data-target='#downloads{{$uuid}}'--}}
+                           {{--data-toggle='modal' title='Single download stats'><i class='fa fa-bar-chart-o'></i></a></td>--}}
                 </tr>
+                {{--<div class='modal fade' id='downloads{{$uuid}}' tabindex='-1' role='dialog' aria-labelledby='downloads{{$uuid}}'>--}}
+                    {{--<div class='modal-dialog' role='document'>--}}
+                        {{--<div class='modal-content'>--}}
+                            {{--<div class='modal-header'>--}}
+                                {{--<h4 class='modal-title' id='myModalLabel'>Downloads since {{$range_start}}</h4>--}}
+                                {{--<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span--}}
+                                            {{--aria-hidden='true'>&times;</span></button>--}}
+                            {{--</div>--}}
+                            {{--<div class='modal-body'>--}}
+                                {{--<ul>--}}
+                                    {{--@foreach(\App\Controllers\Page::getOpenDownloads( $name, $uuid ) as $label=>$num)--}}
+                                        {{--<li>{{$label}}: <b>{{$num}}</b></li>--}}
+                                    {{--@endforeach--}}
+                                {{--</ul>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             @endforeach
             </tbody>
         </table>
