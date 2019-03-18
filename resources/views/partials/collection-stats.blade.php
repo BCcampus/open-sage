@@ -2,8 +2,7 @@
 <section class="bkgd-blue-navy d-flex flex-row flex-wrap full-width mt-2">
     <div class="col-12 py-3 text-white text-center">
         <h4>Open Education at BCcampus</h4>
-        <p>The high cost of educational resources and textbooks creates a serious obstacle to the access of
-            post-secondary education</p>
+        <small>At BCcampus, we recognize and embrace the value of open technologies, actively facilitating, evaluating, and creating open educational resources to share with system partners and stakeholders across the province and around the world. Millions of student-dollars in B.C. have been saved through hundreds of open textbooks adopted in thousands of classrooms:</small>
     </div>
     <span class="col-md-3 text-center text-white"><a href="{{$link}}" class="stats-icons">
             <img src="@asset('images/statsicon-institution.svg')" alt="icon representing an institution"></a>
