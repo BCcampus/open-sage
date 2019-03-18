@@ -1,5 +1,5 @@
 .featured-topic {
-  min-height: 200px;
+  min-height: 100%;
 
   article:first-of-type {
     padding-left: 0;
@@ -33,4 +33,10 @@
   .row-fluid {
     background-color: $color-grey-light;
   }
+}
+
+.featured-cards  {
+  background-size: cover;
+  background-position: center center;
+  min-height: 200px;
 }
