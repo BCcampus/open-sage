@@ -80,7 +80,7 @@ class App extends Controller {
 	public static function getPostExcerpt( $id ) {
 		$excerpt = has_excerpt( $id );
 
-		( $excerpt ) ? $excerpt_text = wp_trim_words(get_the_excerpt( $id ), 40 ,'...') : $excerpt_text = 'Please add excerpt text in your page to replace this message.';
+		( $excerpt ) ? $excerpt_text = wp_trim_words( get_the_excerpt( $id ), 40, '...' ) : $excerpt_text = 'Please add excerpt text in your page to replace this message.';
 
 		return $excerpt_text;
 	}
