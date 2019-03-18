@@ -91,6 +91,23 @@ add_action(
 			]
 		);
 
+		$wp_customize->add_setting(
+			'homepage_quote', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'homepage_quote', [
+				'type' => 'dropdown-pages',
+				'label'    => __( 'Quote section', 'open-sage' ),
+				'section'  => 'static_front_page',
+				'settings' => 'homepage_quote',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
 		// Use Open section
 		$wp_customize->add_section(
 			'use_open', [
