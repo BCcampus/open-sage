@@ -4,7 +4,7 @@
     $bkgd = (is_page_template(['views/template-oer.blade.php', 'views/template-find-oer.blade.php'])) ? 'bkgd-blue-navy' : 'bkgd-grey-light';
 @endphp
 <section class="{{$bkgd}} full-width py-4 px-5 mb-3">
-        <h4 class="text-center text-blue-navy">Search the BC Open Textbook Collection</h4>
+        <h3 class="text-center text-blue-navy">Search the BC Open Textbook Collection</h3>
         <form class='form-group input-group mb-0' action='{{$link}}' method='get' role="search">
         <label for="find-oer-1" class="sr-only">Search the BC Open Textbook Collection</label>
         <input type='text' class='form-control' placeholder='Search...' name='search' id='find-oer-1' aria-label="search terms" aria-describedby="find-oer-2"/>
