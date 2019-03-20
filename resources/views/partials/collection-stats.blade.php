@@ -1,8 +1,8 @@
 @php($link=get_home_url().'/open-textbook-stats/')
 <section class="bkgd-blue-navy d-flex flex-row flex-wrap full-width mt-2">
-    <div class="col-12 py-3 text-white text-center">
-        <h4>Open Education at BCcampus</h4>
-        <small>At BCcampus, we’re using open technologies to facilitate, evaluate, and create open educational resources to share across the province and around the world; saving millions of student-dollars through hundreds of open textbooks adopted in thousands of classrooms:</small>
+    <div class="col-12 py-3 text-white text-left">
+        <h4 class="text-center">Open Education at BCcampus</h4>
+        At BCcampus, we’re using open technologies to facilitate, evaluate, and create open educational resources to share across the province and around the world; saving millions of student-dollars through hundreds of open textbooks adopted in thousands of classrooms:
     </div>
     <span class="col-md-3 text-center text-white"><a href="{{$link}}" class="stats-icons">
             <img src="@asset('images/statsicon-institution.svg')" alt="icon representing an institution"></a>
