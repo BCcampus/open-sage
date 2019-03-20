@@ -6,9 +6,9 @@
     <li class="nav-item" role="presentation"><a class="nav-link active" href="#webform_stats" data-toggle="tab"
                                                 aria-controls="form" role="tab">Adoptions</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#opentext_stats" data-toggle="tab"
-                                                aria-controls="opentextbc" role="tab">opentextbc.ca</a></li>
+                                                aria-controls="opentextbc" role="tab">Pressbooks</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#open_stats" data-toggle="tab"
-                                                aria-controls="open" role="tab">open.bccampus.ca</a></li>
+                                                aria-controls="open" role="tab">Collection</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#review_stats" data-toggle="tab"
                                                 aria-controls="reviews" role="tab">Reviews</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#subject_stats" data-toggle="tab"
@@ -238,6 +238,7 @@
     <div role="tabpanel" id="opentext_stats" class="tab-pane">
 
         <h2>Summary</h2>
+        <p>This page contains download and access stats from the last four months for all books in the B.C. Open Textbook Collection.</p>
         <h4>Number of books in the collection: <b>{{$analytics['num_books']}}</b></h4>
         <h4>Number of books in Pressbooks: <b>{{$analytics['otb_count']}}</b></h4>
         <hr>
@@ -284,6 +285,7 @@
     <div role="tabpanel" id="open_stats" class="tab-pane">
 
         <h2>Summary</h2>
+        <p>This page lists usage and downloads stats for books in the BCcampus (opentextbc.ca) Pressbooks. The downloads stats only include files downloaded from the webbook home page.</p>
         <h4>Number of books in the collection: <b>{{$analytics['num_books']}}</b></h4>
         <h4>Number of visits to the site in the last 4 months: <b>{{$analytics['open_visits']}}</b></h4>
         <h4>Number of visits to the page 'find-open-textbooks': <b>{{$analytics['open_page_visits']}}</b></h4>
