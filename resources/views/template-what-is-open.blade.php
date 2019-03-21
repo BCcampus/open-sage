@@ -10,9 +10,9 @@
         @include('partials.what-is-open-card')
     </div>
     <div class="row">
-        @include('partials.what-is-open-cards')
-    </div>
-    <div class="row">
-        @include('partials.use-open-page-guides')
+        @while(have_posts())
+            {!! the_post() !!}
+            @include('partials/content-page')
+        @endwhile
     </div>
 @endsection
