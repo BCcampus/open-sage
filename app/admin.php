@@ -292,6 +292,140 @@ add_action(
 				'description' => __( 'Page with a featured image and excerpt' ),
 			]
 		);
+
+		// What is Open Ed section
+		$wp_customize->add_section(
+			'what_is_open', [
+				'title'    => __( 'What is Open Education', 'open-sage' ),
+				'priority' => 140,
+			]
+		);
+
+		$wp_customize->add_setting(
+			'what_is_open_1', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'what_is_open_1', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'First card', 'open-sage' ),
+				'section'     => 'what_is_open',
+				'settings'    => 'what_is_open_1',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'what_is_open_2', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'what_is_open_2', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Second card', 'open-sage' ),
+				'section'     => 'what_is_open',
+				'settings'    => 'what_is_open_2',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'what_is_open_3', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'what_is_open_3', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Third card', 'open-sage' ),
+				'section'     => 'what_is_open',
+				'settings'    => 'what_is_open_3',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'what_is_open_4', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'what_is_open_4', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Fourth card', 'open-sage' ),
+				'section'     => 'what_is_open',
+				'settings'    => 'what_is_open_4',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'what_is_open_5', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'what_is_open_5', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Fifth card', 'open-sage' ),
+				'section'     => 'what_is_open',
+				'settings'    => 'what_is_open_5',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'what_is_open_6', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'what_is_open_6', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Sixth card', 'open-sage' ),
+				'section'     => 'what_is_open',
+				'settings'    => 'what_is_open_6',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		$wp_customize->add_setting(
+			'what_is_open_7', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'what_is_open_7', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Seventh card', 'open-sage' ),
+				'section'     => 'what_is_open',
+				'settings'    => 'what_is_open_7',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
 	}
 );
 
