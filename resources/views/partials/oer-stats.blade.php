@@ -239,10 +239,10 @@
 
         <h2>Summary</h2>
         <p>This page contains download and access stats from the last four months for all books in the B.C. Open Textbook Collection.</p>
-        <h4>Number of books in the collection: <b>{{$analytics['num_books']}}</b></h4>
-        <h4>Number of books in Pressbooks: <b>{{$analytics['otb_count']}}</b></h4>
+        <p>Number of books in the collection: <b>{{$analytics['num_books']}}</b></p>
+        <p>Number of books in Pressbooks: <b>{{$analytics['otb_count']}}</b></p>
         <hr>
-        <h3>Percentage of books in the collection that have been imported into Pressbooks:</h3>
+        <p>Percentage of books in the collection that have been imported into Pressbooks:</p>
         <div class='progress'>
             <div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar'
                  aria-valuemin='0' aria-valuenow='{{$analytics['otb_count']}}'
@@ -286,11 +286,11 @@
 
         <h2>Summary</h2>
         <p>This page lists usage and downloads stats for books in the BCcampus (opentextbc.ca) Pressbooks. The downloads stats only include files downloaded from the webbook home page.</p>
-        <h4>Number of books in the collection: <b>{{$analytics['num_books']}}</b></h4>
-        <h4>Number of visits to the site in the last 4 months: <b>{{$analytics['open_visits']}}</b></h4>
-        <h4>Number of visits to the page 'find-open-textbooks': <b>{{$analytics['open_page_visits']}}</b></h4>
+        <p>Number of books in the collection: <b>{{$analytics['num_books']}}</b></p>
+        <p>Number of visits to the site in the last 4 months: <b>{{$analytics['open_visits']}}</b></p>
+        <p>Number of visits to the page 'find-open-textbooks': <b>{{$analytics['open_page_visits']}}</b></p>
         <hr>
-        <h3>Percentage of total visits to the page 'fin-open-textbooks: </h3>
+        <p>Percentage of total visits to the page 'fin-open-textbooks: </p>
         <div class='progress'>
             <div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar'
                  aria-valuemin='0'
@@ -333,9 +333,9 @@
         @endphp
 
         <h2>Summary</h2>
-        <h4>Number of books in the collection: {{$subject_stats['summary']['cumulative']}}</h4>
-        <h4>Number of main subject areas: {{$subject_stats['summary']['num_sub1']}}</h4>
-        <h4>Number of secondary subject areas: {{$subject_stats['summary']['num_sub2']}}</h4>
+        <p>Number of books in the collection: <b>{{$subject_stats['summary']['cumulative']}}</b></p>
+        <p>Number of main subject areas: <b>{{$subject_stats['summary']['num_sub1']}}</b></p>
+        <p>Number of secondary subject areas: <b>{{$subject_stats['summary']['num_sub2']}}</b></p>
         <hr>
         @php
             unset($subject_stats['summary'])
