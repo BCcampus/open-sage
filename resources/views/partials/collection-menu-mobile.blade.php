@@ -3,24 +3,31 @@
     $summary = false;
     $subject_areas = \App\Controllers\Page::getSubjectStats($summary,$alpha)
 @endphp
-<div class="accordion" id="catalogue-menu">
-    <ul class="accordion-group list-unstyled">
-        <div class="accordion-group">
-            <li class="accordion-heading"><a class="accordion-toggle" href="?subject=">All Subjects</a></li>
-        </div>
-        @foreach($subject_areas as $sub1=>$sub2)
-            <div class="accordion-group">
+
+<!-- Display the dropdown menu only on mobile -->
+<nav class="d-block d-md-none navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">Browse Subjects</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            style="background:#FFF">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            @foreach($subject_areas as $sub1=>$sub2)
                 @php($abr=substr($sub1,0,4))
-                <li class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse"
-                                                 data-parent="#catalogue-menu" href="#collapse{{$abr}}">{{$sub1}}</a></li>
-                <div id="collapse{{$abr}}" class="accordion-body collapse">
-                    <ul class="children">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{$sub1}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach($sub2 as $k=>$num)
-                            <li><a href="?subject={{$k}}">{{$k}}</a></li>
+                            <a class="dropdown-item" href="?subject={{$k}}">{{$k}}</a>
                         @endforeach
-                    </ul>
-                </div>
-            </div>
-        @endforeach
-    </ul>
-</div>
+                    </div>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+</nav>
