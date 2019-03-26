@@ -7,6 +7,7 @@
 @php(do_action('get_header'))
 @include('partials.header')
 <div class="wrap container-fluid" role="document">
+    @include('partials.breadcrumbs')
     <main class="main">
         @yield('content')
     </main>
