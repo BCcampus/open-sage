@@ -7,10 +7,7 @@ Template Name: OER Stats
 @section('content')
 @include('partials.page-header')
 <div class="row">
-	<div class="col-md-9">
-		@include('partials.sidebar')
-	</div>
-	<div class="col-md-3">
+	<div class="col-md-12">
 		@include('partials.oer-stats')
 	</div>
 </div>
