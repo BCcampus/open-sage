@@ -59,11 +59,11 @@ class FrontPage extends Controller {
 
 		$savings = $data->getStudentSavings();
 		$stats   = [
-			'savings-min'  => $savings['100'],
-			'savings-max'  => $savings['actual'],
+			'savings-min'  => number_format($savings['100']),
+			'savings-max'  => number_format($savings['actual']),
 			'faculty'      => $data->getNumFaculty(),
 			'institutions' => $data->getNumInstitutions(),
-			'students'     => $data->getNumStudents(),
+			'students'     => number_format($data->getNumStudents()),
 		];
 
 		return $stats;
