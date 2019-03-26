@@ -319,7 +319,7 @@ add_action(
 			]
 		);
 
-		// What is Open Ed section
+		// Advocate for Open Ed section
 		$wp_customize->add_section(
 			'advocate_open', [
 				'title'    => __( 'Advocate for Open Education', 'open-sage' ),
@@ -362,7 +362,7 @@ add_action(
 		);
 
 		$wp_customize->add_control(
-			'advocate_open', [
+			'projects_open', [
 				'type'        => 'dropdown-pages',
 				'label'       => __( 'Hero card', 'open-sage' ),
 				'section'     => 'projects_open',
@@ -370,7 +370,6 @@ add_action(
 				'description' => __( 'Page with a featured image and excerpt' ),
 			]
 		);
-
 	}
 );
 
