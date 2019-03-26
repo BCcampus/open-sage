@@ -309,7 +309,7 @@
             <tbody>
             @foreach($get_catalogue_titles as $uuid => $name)
                 <tr>
-                    <td><a href="{{get_home_url()}}/find-open-textbooks/{{$uuid}}" target="_blank"><i
+                    <td><a href="{{get_home_url()}}/find-open-textbooks/?uuid={{$uuid}}" target="_blank"><i
                                     class="fa fa-book"></i> - {{$name}}</a></td>
                     {{--<td><a href="analytics.php?uuid={{$uuid}}&view=single"><i class="fa fa-bar-chart-o"></i></a></td>--}}
                     <td><i class='fa fa-bar-chart-o'></i></td>
