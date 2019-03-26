@@ -5,6 +5,7 @@
 @extends('layouts.full')
 
 @section('content')
+    @include('partials.collection-menu-mobile')
     @include('partials.page-header')
     @while(have_posts()) @php the_post() @endphp
     @endwhile
