@@ -6,7 +6,6 @@
 
 @section('content')
     @include('partials.collection-menu-mobile')
-    @include('partials.page-header')
     @while(have_posts()) @php the_post() @endphp
     @endwhile
     <div class="row">
@@ -14,6 +13,7 @@
             @include('partials.collection-menu')
         </aside>
         <div class="col-md-9">
+            @include('partials.page-header')
             @include('partials.collection-find-oer')
         </div>
     </div>

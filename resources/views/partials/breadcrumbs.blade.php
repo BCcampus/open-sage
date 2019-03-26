@@ -1,6 +1,6 @@
 <div class="wrap container-fluid" role="document">
 	@if( (! is_front_page()) && ! is_page(['subscribe', 'subscribe-confirm']))
-		<nav class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+		<nav class="breadcrumb pt-3" itemscope itemtype="http://schema.org/BreadcrumbList">
 			@foreach ( $bread_crumbs as $key => $item )
 				<span class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 				@if ( empty( $item['link'] ) )

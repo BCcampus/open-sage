@@ -4,7 +4,7 @@
     $subject_areas = \App\Controllers\Page::getSubjectStats($summary,$alpha)
 @endphp
 <!-- Display everywhere except mobile -->
-<div class="d-none d-md-block accordion" id="catalogue-menu">
+<div class="d-none d-md-block accordion mt-2" id="catalogue-menu">
     <ul class="accordion-group list-unstyled">
         <div class="accordion-group">
             <li class="accordion-heading"><a class="accordion-toggle" href="?subject=">All Subjects</a></li>
