@@ -1,4 +1,4 @@
-<section class="d-flex flex-row flex-wrap full-width">
+<section class="d-flex flex-row flex-wrap full-width pb-3">
 <div class="col-md-6 bkgd-blue-navy p-3">
     <h2>{!! get_the_title($get_hero_projects) !!}</h2>
     <p class="py-3">{{\App\Controllers\App::getPostExcerpt($get_hero_projects)}}</p>
