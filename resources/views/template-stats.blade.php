@@ -8,10 +8,10 @@ Template Name: OER Stats
 @include('partials.page-header')
 <div class="row">
 	<div class="col-md-9">
-		@include('partials.oer-stats')
+		@include('partials.sidebar')
 	</div>
 	<div class="col-md-3">
-		@include('partials.sidebar')
+		@include('partials.oer-stats')
 	</div>
 </div>
 @endsection

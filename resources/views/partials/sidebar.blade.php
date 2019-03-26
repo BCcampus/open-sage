@@ -18,5 +18,5 @@
         @php(dynamic_sidebar('sidebar-primary'))
     @endif
 @else
-    @php(dynamic_sidebar('sidebar-primary'))
+    @php(dynamic_sidebar('sidebar-s'))
 @endif
