@@ -9,7 +9,7 @@
     <div class="wrap container-fluid" role="document">
       @include('partials.breadcrumbs')
       <div class="content row">
-        <aside id="sidebar" class="col-lg-3">
+        <aside id="sidebar" class="col-lg-3 mt-2">
           @include('partials.sidebar')
         </aside>
         <main class="main col-lg-8">
