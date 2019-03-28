@@ -6,7 +6,7 @@
     <!-- Prevent returning a menu of all pages when no children, display on child pages also -->
     @if((($isChild || $hasChildren )))
         <!-- Display everywhere except mobile -->
-        <ul class="d-none d-md-block children-menu">
+        <ul class="d-none d-md-block nav flex-column children-menu">
             {!! wp_list_pages( [
           'depth'        => 2,
           'child_of'     => \App\Controllers\App::getChildOf( $post->ID ),

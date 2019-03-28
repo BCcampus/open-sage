@@ -10,6 +10,7 @@
       @include('partials.breadcrumbs')
       <div class="content row">
         <aside id="sidebar" class="col-lg-3 mt-2">
+          @include('partials.child-menu-mobile')
           @include('partials.sidebar')
         </aside>
         <main class="main col-lg-8">
