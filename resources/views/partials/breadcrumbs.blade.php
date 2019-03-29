@@ -22,6 +22,6 @@
 						<span itemprop="name"><a href="{!! home_url() !!}">Home</a> / <a href="{!! get_permalink() !!}">{!! \App\Controllers\App::title() !!}</a> / Book page </span>
 					</span>
 				</span>
-		</nav>
 @endif
+		</nav>
 @endif

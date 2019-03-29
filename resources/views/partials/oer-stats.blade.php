@@ -6,9 +6,9 @@
     <li class="nav-item" role="presentation"><a class="nav-link active" href="#webform_stats" data-toggle="tab"
                                                 aria-controls="form" role="tab">Adoptions</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#opentext_stats" data-toggle="tab"
-                                                aria-controls="opentextbc" role="tab">Pressbooks</a></li>
+                                                aria-controls="opentextbc" role="tab">Collection</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#open_stats" data-toggle="tab"
-                                                aria-controls="open" role="tab">Collection</a></li>
+                                                aria-controls="open" role="tab">Pressbooks</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#review_stats" data-toggle="tab"
                                                 aria-controls="reviews" role="tab">Reviews</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#subject_stats" data-toggle="tab"
