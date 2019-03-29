@@ -18,7 +18,7 @@
 <div class="tab-content">
     <div role="tabpanel" id="webform_stats" class="tab-pane active">
         <h2>Known Open Textbook Adoptions in B.C.</h2>
-        <h4>2012 - {{$get_otb_stats['this_year']}}</h4>
+        <strong>2012 - {{$get_otb_stats['this_year']}}</strong>
         <table class='table bkgd-grey-light'>
             <tbody>
             <tr>
@@ -76,8 +76,8 @@
         <h2>Likely adoptions</h2>
         <h3>Based on visits <a class='btn btn btn-outline-primary' role='button' tabindex='0' data-target='#likely'
                                data-toggle='modal'
-                               title='Likely adoptions explained'>What is this?</a></h3></h3><h4>Date
-            range: {{$analytics['start']}} - {{$analytics['end']}}</h4><h5>Site: opentextbc.ca</h5>
+                               title='Likely adoptions explained'>What is this?</a></h3></h3><strong>Date
+            range: {{$analytics['start']}} - {{$analytics['end']}}</strong><h5>Site: opentextbc.ca</h5>
         <table class='table table-striped'>
             <tbody>
             <tr>
@@ -153,8 +153,8 @@
 
         <h3>Based on downloads <a class='btn btn btn-outline-primary' role='button' tabindex='0'
                                   data-target='#likely-downloads' data-toggle='modal'
-                                  title='Likely adoptions explained'>What is this?</a></h3></h3><h4>Date
-            range: {{$analytics['start']}} - {{$analytics['end']}}</h4><h5>Site: opentextbc.ca</h5>
+                                  title='Likely adoptions explained'>What is this?</a></h3></h3><strong>Date
+            range: {{$analytics['start']}} - {{$analytics['end']}}</strong><h5>Site: opentextbc.ca</h5>
         <table class='table table-striped'>
             <tbody>
             <tr>
