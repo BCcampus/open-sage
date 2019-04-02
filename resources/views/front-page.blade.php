@@ -14,6 +14,9 @@
 		<div class="row">
 			@include('partials.collection-stats')
 		</div>
+				<div class="row">
+			@include('partials.front-page-quote')
+		</div>
 		<div class="row">
 			@include('partials.collection-guides')
 		</div>

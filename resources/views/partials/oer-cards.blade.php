@@ -9,7 +9,7 @@
             <div class="row-fluid min-height-md">
                 <p class="p-3">{{\App\Controllers\App::getPostExcerpt($get_oer_left_card_id)}}</p>
                 <div class="col text-center">
-                    <a class="btn btn-primary mb-3" href="{{\App\Controllers\App::maybeGuid($get_oer_left_card_id, get_post_field('post_name', $get_oer_left_card_id))}}" role="button">Learn More</a>
+                    <a class="btn btn-primary mb-3" aria-label="Read more about {!!get_the_title($get_oer_left_card_id)!!}" href="{{\App\Controllers\App::maybeGuid($get_oer_left_card_id, get_post_field('post_name', $get_oer_left_card_id))}}" role="button">Learn More</a>
                 </div>
             </div>
             <meta itemprop="author" content="{{\App\Controllers\App::getPostAuthor($get_oer_left_card_id)}}"/>
@@ -34,7 +34,7 @@
         <div class="row-fluid min-height-md">
             <p class="p-3">{{\App\Controllers\App::getPostExcerpt($get_oer_right_card_id)}}</p>
             <div class="col text-center">
-                <a class="btn btn-primary mb-3" href="{{\App\Controllers\App::maybeGuid($get_oer_right_card_id, get_post_field('post_name', $get_oer_right_card_id))}}" role="button">Learn More</a>
+                <a class="btn btn-primary mb-3" aria-label="Read more about {!!get_the_title($get_oer_right_card_id)!!}" href="{{\App\Controllers\App::maybeGuid($get_oer_right_card_id, get_post_field('post_name', $get_oer_right_card_id))}}" role="button">Learn More</a>
             </div>
         </div>
         <meta itemprop="author" content="{{\App\Controllers\App::getPostAuthor($get_oer_right_card_id)}}"/>

@@ -125,3 +125,12 @@ add_filter(
 		return $comments_template;
 	}, 100
 );
+
+/**
+ * Custom search form replaces WP get_search_form() to make it more accessible
+ */
+add_filter(
+	'get_search_form', function () {
+		return \App\template( 'partials.searchform' );
+	}
+);

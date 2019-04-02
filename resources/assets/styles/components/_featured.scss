@@ -1,5 +1,5 @@
 .featured-topic {
-  min-height: 200px;
+  height: 330px;
 
   article:first-of-type {
     padding-left: 0;
@@ -32,5 +32,27 @@
 .homepage-cards {
   .row-fluid {
     background-color: $color-grey-light;
+  }
+}
+
+.featured-cards  {
+  background-size: cover;
+  background-position: center center;
+  height: 200px;
+}
+
+.quote {
+  color: $color-blue-light;
+  font-size: 1.4rem;
+  @include media-breakpoint-up(sm) {
+    font-size: 1.6rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.8rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 2rem;
   }
 }

@@ -103,12 +103,45 @@ class Page extends Controller {
 	}
 
 	/**
+	 * Returns the Hero Page ID that was set in the customizer menu for the "Advocate for OER" page
+	 *
+	 * @return string
+	 */
+	public function getHeroAdvocate() {
+		$id = get_theme_mod( 'advocate_hero', '' );
+
+		return intval( $id );
+	}
+
+	/**
+	 * Returns the Hero Page ID that was set in the customizer menu for the "Projects and Grant" page
+	 *
+	 * @return string
+	 */
+	public function getHeroProjects() {
+		$id = get_theme_mod( 'projects_hero', '' );
+
+		return intval( $id );
+	}
+
+	/**
 	 * Returns the PB section Page ID that was set in the customizer menu for the "Create OER" page
 	 *
 	 * @return string
 	 */
 	public function getPbCreateOer() {
 		$id = get_theme_mod( 'create_pb', '' );
+
+		return intval( $id );
+	}
+
+	/**
+	 * Returns the First Cards Page ID that was set in the customizer menu for the "What is Open Education" page
+	 *
+	 * @return string
+	 */
+	public function getWhatIsOpen1() {
+		$id = get_theme_mod( 'what_is_open_1', '' );
 
 		return intval( $id );
 	}

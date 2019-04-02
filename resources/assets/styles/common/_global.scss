@@ -21,7 +21,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.6875em;
+  font-size: 1.5875em;
   line-height: 1.2em;
   font-weight: bold;
 }
@@ -58,13 +58,14 @@ a {
 
   &:hover,
   &:focus {
-    text-decoration-style: solid;
+    text-decoration: none;
     color: $color-black;
   }
 }
 
 .blue-bkgd-special {
   color: $color-white;
+  font-weight:lighter;
   &:hover {
     background: $color-black;
   }

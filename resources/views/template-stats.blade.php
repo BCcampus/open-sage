@@ -5,13 +5,14 @@ Template Name: OER Stats
 @extends('layouts.full')
 
 @section('content')
-@include('partials.page-header')
+	@include('partials.child-menu-mobile')
+	@include('partials.page-header')
 <div class="row">
+	<aside id="sidebar" class="col-lg-3 mt-2">
+		@include('partials.sidebar')
+	</aside>
 	<div class="col-md-9">
 		@include('partials.oer-stats')
-	</div>
-	<div class="col-md-3">
-		@include('partials.sidebar')
 	</div>
 </div>
 @endsection

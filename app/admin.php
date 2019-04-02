@@ -91,6 +91,23 @@ add_action(
 			]
 		);
 
+		$wp_customize->add_setting(
+			'homepage_quote', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'homepage_quote', [
+				'type' => 'dropdown-pages',
+				'label'    => __( 'Quote section', 'open-sage' ),
+				'section'  => 'static_front_page',
+				'settings' => 'homepage_quote',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
 		// Use Open section
 		$wp_customize->add_section(
 			'use_open', [
@@ -272,6 +289,84 @@ add_action(
 				'label'    => __( 'Pressbooks section', 'open-sage' ),
 				'section'  => 'create_open',
 				'settings' => 'create_pb',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		// What is Open Ed section
+		$wp_customize->add_section(
+			'what_is_open', [
+				'title'    => __( 'What is Open Education', 'open-sage' ),
+				'priority' => 140,
+			]
+		);
+
+		$wp_customize->add_setting(
+			'what_is_open_1', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'what_is_open_1', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Hero card', 'open-sage' ),
+				'section'     => 'what_is_open',
+				'settings'    => 'what_is_open_1',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		// Advocate for Open Ed section
+		$wp_customize->add_section(
+			'advocate_open', [
+				'title'    => __( 'Advocate for Open Education', 'open-sage' ),
+				'priority' => 150,
+			]
+		);
+
+		$wp_customize->add_setting(
+			'advocate_hero', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'advocate_open', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Hero card', 'open-sage' ),
+				'section'     => 'advocate_open',
+				'settings'    => 'advocate_hero',
+				'description' => __( 'Page with a featured image and excerpt' ),
+			]
+		);
+
+		// Projects and Grants section
+		$wp_customize->add_section(
+			'projects_open', [
+				'title'    => __( 'Projects and Grants', 'open-sage' ),
+				'priority' => 160,
+			]
+		);
+
+		$wp_customize->add_setting(
+			'projects_hero', [
+				'default'    => '',
+				'capability' => 'edit_theme_options',
+
+			]
+		);
+
+		$wp_customize->add_control(
+			'projects_open', [
+				'type'        => 'dropdown-pages',
+				'label'       => __( 'Hero card', 'open-sage' ),
+				'section'     => 'projects_open',
+				'settings'    => 'projects_hero',
 				'description' => __( 'Page with a featured image and excerpt' ),
 			]
 		);
