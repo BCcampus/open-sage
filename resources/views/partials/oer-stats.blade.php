@@ -7,9 +7,9 @@
     <li class="nav-item" role="presentation"><a class="nav-link active" href="#webform_stats" data-toggle="tab"
                                                 aria-controls="form" role="tab">Adoptions</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#opentext_stats" data-toggle="tab"
-                                                aria-controls="opentextbc" role="tab">Pressbooks</a></li>
+                                                aria-controls="opentextbc" role="tab">Collection</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#open_stats" data-toggle="tab"
-                                                aria-controls="open" role="tab">open.bccampus.ca</a></li>
+                                                aria-controls="open" role="tab">Pressbooks</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#review_stats" data-toggle="tab"
                                                 aria-controls="reviews" role="tab">Reviews</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#subject_stats" data-toggle="tab"
@@ -19,7 +19,7 @@
 <div class="tab-content">
     <div role="tabpanel" id="webform_stats" class="tab-pane active">
         <h2>Known Open Textbook Adoptions in B.C.</h2>
-        <h4>2012 - {{$get_otb_stats['this_year']}}</h4>
+        <strong>2012 - {{$get_otb_stats['this_year']}}</strong>
         <table class='table bkgd-grey-light'>
             <tbody>
             <tr>
@@ -77,8 +77,8 @@
         <h2>Likely adoptions</h2>
         <h3>Based on visits <a class='btn btn btn-outline-primary' role='button' tabindex='0' data-target='#likely'
                                data-toggle='modal'
-                               title='Likely adoptions explained'>What is this?</a></h3></h3><h4>Date
-            range: {{$analytics['start']}} - {{$analytics['end']}}</h4><h5>Site: opentextbc.ca</h5>
+                               title='Likely adoptions explained'>What is this?</a></h3></h3><strong>Date
+            range: {{$analytics['start']}} - {{$analytics['end']}}</strong><h5>Site: opentextbc.ca</h5>
         <table class='table table-striped'>
             <tbody>
             <tr>
@@ -154,8 +154,8 @@
 
         <h3>Based on downloads <a class='btn btn btn-outline-primary' role='button' tabindex='0'
                                   data-target='#likely-downloads' data-toggle='modal'
-                                  title='Likely adoptions explained'>What is this?</a></h3></h3><h4>Date
-            range: {{$analytics['start']}} - {{$analytics['end']}}</h4><h5>Site: opentextbc.ca</h5>
+                                  title='Likely adoptions explained'>What is this?</a></h3><strong>Date
+            range: {{$analytics['start']}} - {{$analytics['end']}}</strong><h5>Site: opentextbc.ca</h5>
         <table class='table table-striped'>
             <tbody>
             <tr>
@@ -239,10 +239,11 @@
     <div role="tabpanel" id="opentext_stats" class="tab-pane">
 
         <h2>Summary</h2>
-        <h4>Number of books in the collection: <b>{{$analytics['num_books']}}</b></h4>
-        <h4>Number of books in Pressbooks: <b>{{$analytics['otb_count']}}</b></h4>
+        <p>This page contains download and access stats from the last four months for all books in the B.C. Open Textbook Collection.</p>
+        <p>Number of books in the collection: <b>{{$analytics['num_books']}}</b></p>
+        <p>Number of books in Pressbooks: <b>{{$analytics['otb_count']}}</b></p>
         <hr>
-        <h3>Percentage of books in the collection that have been imported into Pressbooks:</h3>
+        <p>Percentage of books in the collection that have been imported into Pressbooks:</p>
         <div class='progress'>
             <div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar'
                  aria-valuemin='0' aria-valuenow='{{$analytics['otb_count']}}'
@@ -303,11 +304,12 @@
     <div role="tabpanel" id="open_stats" class="tab-pane">
 
         <h2>Summary</h2>
-        <h4>Number of books in the collection: <b>{{$analytics['num_books']}}</b></h4>
-        <h4>Number of visits to the site in the last 4 months: <b>{{$analytics['open_visits']}}</b></h4>
-        <h4>Number of visits to the page 'find-open-textbooks': <b>{{$analytics['open_page_visits']}}</b></h4>
+        <p>This page lists usage and downloads stats for books in the BCcampus (opentextbc.ca) Pressbooks. The downloads stats only include files downloaded from the webbook home page.</p>
+        <p>Number of books in the collection: <b>{{$analytics['num_books']}}</b></p>
+        <p>Number of visits to the site in the last 4 months: <b>{{$analytics['open_visits']}}</b></p>
+        <p>Number of visits to the page 'find-open-textbooks': <b>{{$analytics['open_page_visits']}}</b></p>
         <hr>
-        <h3>Percentage of total visits to the page 'find-open-textbooks: </h3>
+        <p>Percentage of total visits to the page 'find-open-textbooks: </p>
         <div class='progress'>
             <div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar'
                  aria-valuemin='0'
@@ -326,7 +328,7 @@
             <tbody>
             @foreach($get_catalogue_titles as $uuid => $name)
                 <tr>
-                    <td><a href="{{get_home_url()}}/find-open-textbooks/{{$uuid}}" target="_blank"><i
+                    <td><a href="{{get_home_url()}}/find-open-textbooks/?uuid={{$uuid}}" target="_blank"><i
                                     class="fa fa-book"></i> - {{$name}}</a></td>
                     {{--<td><a class='muted' role='button' tabindex='0' data-target='#downloads{{$uuid}}'--}}
                            {{--data-toggle='modal' title='Single download stats'><i class='fa fa-bar-chart-o'></i></a></td>--}}
@@ -368,9 +370,9 @@
         @endphp
 
         <h2>Summary</h2>
-        <h4>Number of books in the collection: {{$subject_stats['summary']['cumulative']}}</h4>
-        <h4>Number of main subject areas: {{$subject_stats['summary']['num_sub1']}}</h4>
-        <h4>Number of secondary subject areas: {{$subject_stats['summary']['num_sub2']}}</h4>
+        <p>Number of books in the collection: <b>{{$subject_stats['summary']['cumulative']}}</b></p>
+        <p>Number of main subject areas: <b>{{$subject_stats['summary']['num_sub1']}}</b></p>
+        <p>Number of secondary subject areas: <b>{{$subject_stats['summary']['num_sub2']}}</b></p>
         <hr>
         @php
             unset($subject_stats['summary'])
