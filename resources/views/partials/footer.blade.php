@@ -8,23 +8,23 @@
 							<li class="social-media">
 								<a href="https://www.facebook.com/BCcampus"><img
 										src="@asset('images/icon-facebook.svg')"
-										alt="facebook icon"></a>
+										alt="facebook"></a>
 							</li>
 							<li class="social-media">
 								<a href="https://twitter.com/bcopentext"><img src="@asset('images/icon-twitter.svg')"
-																			alt="twitter icon"></a>
+																			alt="twitter"></a>
 							</li>
 							<li class="social-media">
 								<a href="https://www.flickr.com/photos/61642799@N03/"><img
-										src="@asset('images/icon-flickr.svg')" alt="flickr icon"></a>
+										src="@asset('images/icon-flickr.svg')" alt="flickr"></a>
 							</li>
 							<li class="social-media">
 								<a href="https://www.linkedin.com/company/bccampus"><img
-										src="@asset('images/icon-linkedin.svg')" alt="linkedin icon"></a>
+										src="@asset('images/icon-linkedin.svg')" alt="linkedin"></a>
 							</li>
 							<li class="social-media">
 								<a href="https://video.bccampus.ca/"><img src="@asset('images/icon-kaltura.svg')"
-																		  alt="kaltura icon"></a>
+																		  alt="kaltura"></a>
 							</li>
 						</ul>
 					</div>

@@ -7,7 +7,7 @@
         <h3 class="text-center text-blue-navy">Search the B.C. Open Textbook Collection</h3>
         <form class='form-group input-group mb-0' action='{{$link}}' method='get' role="search">
         <label for="find-oer-1" class="sr-only">Search the BC Open Textbook Collection</label>
-        <input type='text' class='form-control' placeholder='Search...' name='search' id='find-oer-1' aria-label="search terms" aria-describedby="find-oer-2"/>
+        <input type='text' class='form-control' placeholder='Search...' name='search' id='find-oer-1' aria-label="Search open textbook collection" aria-describedby="find-oer-2"/>
         <div class="input-group-append">
             <button type='submit' class='btn btn-primary' id="find-oer-2">Search</button>
         </div>
