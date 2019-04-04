@@ -10,7 +10,7 @@
 					</span>
 					@else
 						<a itemscope itemtype="http://schema.org/Thing" itemprop="item"
-						   href="{{ esc_url( $item['link'] ) }}"><span
+						   href="{!! $item['link'] !!}"><span
 									itemprop="name">{!! $item['title'] !!}</span></a>
 					@endif
 					<meta itemprop="position" content="<?php echo esc_attr( $key + 1 ); ?>"/>

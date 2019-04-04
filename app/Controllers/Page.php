@@ -341,4 +341,63 @@ class Page extends Controller {
 		return $results;
 	}
 
+	public static function getSingleSiteDownloads( $id ) {
+		$env         = Config::getInstance()->get();
+		$range_start = date( 'Y-m-d', strtotime( '4 months' ) );
+		$range_end   = date( 'Y-m-d', time() );
+		$rest_api    = new Matomo( $env['matomo']['url'], $env['matomo']['token'], $id, Matomo::FORMAT_JSON );
+		$rest_api->setPeriod( Matomo::PERIOD_RANGE );
+		$rest_api->setRange( $range_start, $range_end );
+		$data = new Models\Analytics( $rest_api, [ 'site_id' => $id ] );
+
+		$downloads = $data->getEventName( $id );
+
+		if ( $downloads ) {
+			return $downloads;
+		} else {
+			return [];
+		}
+	}
+
+	/**
+	 * Incomplete - not currently working - WIP
+	 *
+	 * @deprecated
+	 * @param $name
+	 * @param $uuid
+	 *
+	 * @return array
+	 */
+	public static function getOpenDownloads( $name, $uuid ) {
+		$event_actions_resource = [];
+		$env                    = Config::getInstance()->get();
+		$range_start            = date( 'Y-m-d', strtotime( '4 months' ) );
+		$range_end              = date( 'Y-m-d', time() );
+		$rest_api               = new Matomo( $env['matomo']['url'], $env['matomo']['token'], 12, Matomo::FORMAT_JSON );
+		$rest_api->setPeriod( Matomo::PERIOD_RANGE );
+		$rest_api->setRange( $range_start, $range_end );
+		$data = new Models\Analytics(
+			$rest_api, [
+				'type_of'     => 'site',
+				'range'       => 4,
+				'site_id'     => 12,
+				'uuid'        => $uuid,
+				'range_start' => $range_start,
+				'range_end'   => $range_end,
+			]
+		);
+
+		$segment       = 'eventAction==' . rawurlencode( $name );
+		$event_actions = $data->getEventActions( $segment );
+
+		// iterate through outlinks generated on open site
+		if ( is_object( $event_actions[0] ) && is_array( $event_actions ) ) {
+			foreach ( $event_actions[0]->subtable as $obj ) {
+				$event_actions_resource[ $obj->label ] = $obj->nb_events;
+			}
+		}
+
+		return $event_actions_resource;
+
+	}
 }
