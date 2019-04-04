@@ -1,6 +1,7 @@
 .bkgd-blue-navy {
-  h2, p {
-    color: $color-white;
+  color: $color-white;
+  font-weight:400;
+  h1, h2{
+    font-weight: lighter;
   }
 }
-
