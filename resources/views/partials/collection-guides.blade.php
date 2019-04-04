@@ -8,7 +8,7 @@
 @endphp
 <section class="bkgd-blue-navy d-flex flex-row flex-wrap full-width py-3 mt-3 text-center text-white">
     <div class="col-12">
-        <h4 class="text-center">Getting Started</h4>
+        <h3 class="text-center">Getting Started</h3>
     </div>
     @foreach(\App\Controllers\App::getLatestAdditions($args) as $book)
         <article class="col-md-3 mb-2" itemscope itemtype="http://schema.org/Article">
