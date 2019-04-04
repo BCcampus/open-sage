@@ -18,6 +18,11 @@
             requirements, and/or include ancillary materials (quizzes, test banks, slides, videos, etc.).</p>
     </div>
     <div class="row">
+        @while(have_posts()) @php the_post() @endphp
+        @include('partials.content-single-'.get_post_type())
+        @endwhile
+    </div>
+    <div class="row">
         @include('partials.collection-latest-additions')
     </div>
     <div class="row">
