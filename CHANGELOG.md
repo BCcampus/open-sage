@@ -1,3 +1,6 @@
+### 9.1.0: April 5, 2019
+* Initial BCcampus release, pre-cascadia launch
+
 ### 9.0.7: December 28th, 2018
 * Update sage-installer which now allows to opt-in for sending framework selection data ([#2137](https://github.com/roots/sage/pull/2137))
 
