@@ -13,7 +13,7 @@
             @include('partials.child-menu-mobile')
             @include('partials.sidebar')
         </aside>
-        <main class="main col-lg-8">
+        <main class="main col-lg-9">
             @yield('content')
         </main>
     </div>
