@@ -7,12 +7,10 @@
 @section('content')
     @include('partials.page-header')
     <div class="row">
-        @include('partials.use-open-page-cards')
+    @include('partials.use-open-page-cards')
     </div>
     <div class="row">
-        @include('partials.use-open-page-triple-cards')
+    @include('partials.use-open-page-triple-cards')
     </div>
-    <div class="row">
-        @include('partials.use-open-page-guides')
-    </div>
+    @include('partials.use-open-page-guides')
 @endsection
