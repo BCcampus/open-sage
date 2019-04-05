@@ -1,4 +1,4 @@
-<footer>
+<footer class="mt-3">
 	<section class="shady-bkgd full-width py-2">
 		<div class="container-fluid">
 			<div id="top-foot" class="clearfix">
