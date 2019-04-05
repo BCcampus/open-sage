@@ -26,8 +26,19 @@ nav {
       }
     }
   }
+
   &.primary_navigation {
     background-color: $color-grey-light;
+
+    ul {
+      li {
+        &:first-child {
+          a.nav-link {
+            padding-left: 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -47,6 +58,7 @@ Enable drop-down hover for desktop, keep on click for smaller devices
 
 .navbar-light .navbar-nav .nav-link {
   color: $color-black;
+
   &:hover, &:focus {
     color: $color-blue-light;
     text-decoration: none;
@@ -55,6 +67,7 @@ Enable drop-down hover for desktop, keep on click for smaller devices
 
 .nav-link, .banner .nav a {
   color: $color-blue-navy;
+
   &:hover, &:focus {
     color: $color-blue-light;
     background-color: transparent;
@@ -63,6 +76,7 @@ Enable drop-down hover for desktop, keep on click for smaller devices
 
 .dropdown-item {
   border-bottom: 1px solid $color-grey-light;
+
   &:last-child {
     border-bottom: 0;
   }

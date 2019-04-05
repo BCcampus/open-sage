@@ -24,11 +24,6 @@ aside#sidebar,aside#accordion-catalogue-menu {
         border-top-left-radius: 0.25rem;
         border-top-right-radius: 0.25rem;
       }
-      &:last-child {
-        margin-bottom: 0;
-        border-bottom-right-radius: 0.25rem;
-        border-bottom-left-radius: 0.25rem;
-      }
       &:hover, &:focus {
         background-color: $color-grey-light;
       }
