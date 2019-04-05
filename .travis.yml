@@ -63,3 +63,4 @@ deploy:
   on:
     tags: true
     repo: BCcampus/open-sage
+    branch: dev

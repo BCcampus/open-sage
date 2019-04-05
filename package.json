@@ -1,8 +1,8 @@
 {
   "name": "open-sage",
   "version": "9.1.0",
-  "author": "Brad <brad@bradpayne.ca>",
-  "homepage": "https://bradpayne.ca",
+  "author": "Brad Payne",
+  "homepage": "https://github.com/bdolor",
   "private": true,
   "repository": {
     "type": "git",
