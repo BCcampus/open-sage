@@ -57,4 +57,3 @@ deploy:
   file: open-sage-$TRAVIS_TAG.zip
   on:
     repo: BCcampus/open-sage
-    branch: dev
