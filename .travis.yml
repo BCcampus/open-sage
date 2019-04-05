@@ -52,8 +52,10 @@ before_deploy:
 - cd $TRAVIS_BUILD_DIR
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: Gvo75t6gy3tbGRK0YtufLtB1oNEzzPLnzYxelkwUBhYzqD+Otm5Q1N5Zq+YHdU2ZaAWIjaNrbvoMhbQEUDgvmagQUDG0PYbXSHAwy+Z7Neo9dQMmvfEXP+My7Tt/QBFAMZJ8EzT6puvnxT6It6cLsnKiwz5q3dUgLfL6zydV75JqSL1gjRkYJEw6U1bcdZZvNIYrWeGR/ezzMc23FbJ+brOewXJLaDYgs/7WH3UsIb+QuxDBdJhRnHxL+ascZaoDWSjPpO+1v1gtuRMd52lmpQI2r8feRx7H6pJDbv3ZPlJGRuZpYzjtZhOvgmW4s7Re/jAjJ5s0bfGX39Ni+8KfByAaPREcpQBfpPwKikNmbccavNmwAC0Zxu86S7iU+39/s+QhVVrS9OGZAVrzP1wvjeyjYK2u6yn3mtKIEBJKpUzAsHtmhl89OKcY9IM2qDM2T2FmBc3vZffrQ/SPl9AIYIIjqUrFCiIseG5uwufkZQI9KWkyuu07lvhceW+aycy5EGTNeeC5uY5TwufafFY01t3BSTyxrZeS8sksz73rfNpZsBiGqZdESka7nZilZKwAamgsI0ACYt8w1MKsNngqRdE0sSPsVxeUcYM669hVWCo25ywR+888WeXPy1NZvRQH9S37HOSLZ8h0ExiRvtoZ1weXqOPNQPefYXRgHQan35w=
   file: open-sage-$TRAVIS_TAG.zip
   on:
     repo: BCcampus/open-sage
+    branch: dev
