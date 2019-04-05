@@ -6,7 +6,7 @@
     ];
 @endphp
 <h3>Getting Started</h3>
-<section class="d-flex flex-row flex-wrap full-width py-3 mt-3 text-center bkgd-grey-light">
+<section class="d-flex flex-row flex-wrap full-width pt-3 mt-3 text-center bkgd-grey-light">
     <div class="col-12">
         <h4 class="text-left">Latest Additions</h4>
     </div>
