@@ -1,4 +1,4 @@
-<section class="d-flex flex-row flex-wrap full-width">
+<section class="d-flex flex-row flex-wrap full-width no-gutters mt-3">
 <div class="col-md-6">
     <h2>{!! get_the_title($get_pb_create_oer) !!}</h2>
     <p class="py-3">{{\App\Controllers\App::getPostExcerpt($get_pb_create_oer)}}</p>
