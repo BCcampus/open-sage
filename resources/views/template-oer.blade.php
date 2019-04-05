@@ -16,6 +16,5 @@
     @endwhile
     @include('partials.collection-latest-additions')
     @include('partials.collection-guides-toolkits')
-
     @include('partials.oer-cards')
 @endsection
