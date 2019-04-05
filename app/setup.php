@@ -109,13 +109,13 @@ add_action(
 		];
 		register_sidebar(
 			[
-				'name'          => __( 'Primary', 'sage' ),
+				'name'          => __( 'Primary', 'open-sage' ),
 				'id'            => 'sidebar-primary',
 			] + $config
 		);
 		register_sidebar(
 			[
-				'name'          => __( 'Footer', 'sage' ),
+				'name'          => __( 'Footer', 'open-sage' ),
 				'id'            => 'sidebar-footer',
 			] + $config
 		);

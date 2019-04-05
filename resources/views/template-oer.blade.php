@@ -12,7 +12,7 @@
         and specialties. Discover open textbooks that have been reviewed by faculty, meet our accessibility
         requirements, and/or include ancillary materials (quizzes, test banks, slides, videos, etc.).</p>
     @while(have_posts()) @php the_post() @endphp
-    @include('partials.content-single-'.get_post_type())
+    @include('partials.content-single-in-template')
     @endwhile
     @include('partials.collection-latest-additions')
     @include('partials.collection-guides-toolkits')

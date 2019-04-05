@@ -7,7 +7,7 @@
     @include('partials.page-header')
     @include('partials.create-oer-hero')
     @while(have_posts()) @php the_post() @endphp
-    @include('partials.content-single-'.get_post_type())
+    @include('partials.content-single-in-template')
     @endwhile
     @include('partials.collection-guides-toolkits')
     @include('partials.create-oer-pb')
