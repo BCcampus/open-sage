@@ -2,7 +2,7 @@
 <section class="bkgd-blue-navy d-flex flex-row flex-wrap full-width mt-3">
     <div class="col-12 py-4 text-white text-left">
         <h3 class="text-center">Open Education at BCcampus</h3>
-        At BCcampus, we’re using open technologies to facilitate, evaluate, and create open educational resources to share across the province and around the world; saving millions of student-dollars through hundreds of open textbooks adopted in thousands of classrooms:
+        <p class="text-center">At BCcampus, we’re using open technologies to facilitate, evaluate, and create open educational resources to share across the province and around the world; saving millions of student-dollars through hundreds of open textbooks adopted in thousands of classrooms:</p>
     </div>
     <span class="col-md-3 text-center text-white mb-2"><a href="{{$link}}" class="stats-icons">
             <img src="@asset('images/statsicon-institution.svg')" alt="Stats for BC Institutions"></a>
