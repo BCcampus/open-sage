@@ -1,4 +1,4 @@
-<section class="oer-cards d-flex flex-row flex-wrap full-width">
+<section class="oer-cards d-flex flex-row flex-wrap full-width mt-3 no-gutters">
         <article class="homepage-cards-item col-md-6 mb-2" itemscope itemtype="http://schema.org/Article">
             <a href="{{ get_permalink($get_oer_left_card_id) }}" class="img-link">
                 <div class="featured-topic row-fluid d-flex" style="background-image: url({{\App\Controllers\App::getThumbUrl($get_oer_left_card_id)}});">
@@ -24,7 +24,7 @@
 			</span>
         </article>
 
-    <article class="oer-cards col-md-6 mb-2" itemscope itemtype="http://schema.org/Article">
+    <article class="oer-cards col-md-6 mb-2 pl-2" itemscope itemtype="http://schema.org/Article">
         <a href="{{ get_permalink($get_oer_right_card_id) }}" class="img-link">
             <div class="featured-topic row-fluid d-flex" style="background-image: url({{\App\Controllers\App::getThumbUrl($get_oer_right_card_id)}});">
                 <h4 itemprop="name" class="blue-bkgd-special text-inverse col-sm mt-auto text-center m-0 p-2">{!!get_the_title($get_oer_right_card_id)!!}
