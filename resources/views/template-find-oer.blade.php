@@ -1,5 +1,5 @@
 {{--
-  Template Name: Browse OER
+  Template Name: Find OER
 --}}
 
 @extends('layouts.full')
