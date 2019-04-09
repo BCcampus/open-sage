@@ -57,5 +57,5 @@ deploy:
     secure: Uq2Ci7DoFAgN2pZl9HvbsOdwFj20WKb9ZGTEwCxlwpkaiIvYRv/qzpyX8IYdn6BopCSLFrkDPHoFBNxTvhouudMsw3UOcJzb9BHEq1yU3VNOZeJOlNODBItA87R7Bi5MaH8uUZk/Fu/+fZSr6oVF0nlyD0WvCME7kkk5Hp9VIGxIuMr0ID3d9m3L/R3MaXcgKk6uVAk4zPFDu4plV4fBCbQB0wqwyRBRLMcdhrh0q5qgA6MAM38d5iyaB7TZ4H2cq0kKtIHhE7uj7Lkgmno4PSM6dzr4yBfBeZcTyK+JHCxPzFUCtEE64u5oGR81ko0ODA+IyoARc/bPOtzDQkw7SgYYeFTqtrrlZMkqWCB684Sqe71gaglBwk6KqRx5R72tceYcadBeXbjUcYK+8yI5DxF+scxbivcHTCBjH4mc+XkmhcR6XcYeR5xegmFoNgqYMGILw6skoY8DEnuUuQm2k38FGFAWGrFnkTKvxa9pZSjECR2zFhS84EGgmjKU73dHWDFti8Av4PcnCwAvQD2rfLMivah4nkudq4zFxB3aSk4r/mQiI0DaUPpmS039DKzZNiHDeH2V9fDSapbKS0o42vPCjQQBtyWyfH6HJmaG6BpFpuKDY/YecleMyxPzdbxWLmkFey5hFCjc2aiNNfTHMsV4ERIIc+Lno1c97GudpxQ=
   file: open-sage-$TRAVIS_TAG.zip
   on:
-  tags: true   
-  repo: BCcampus/open-sage
+    tags: true
+    repo: BCcampus/open-sage
