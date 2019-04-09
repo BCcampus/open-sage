@@ -1,5 +1,5 @@
 {{--
-  Template Name: Find OER
+  Template Name: OER
 --}}
 
 @extends('layouts.app')
