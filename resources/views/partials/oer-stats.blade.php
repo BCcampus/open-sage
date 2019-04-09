@@ -7,9 +7,9 @@
     <li class="nav-item" role="presentation"><a class="nav-link active" href="#webform_stats" data-toggle="tab"
                                                 aria-controls="form" role="tab">Adoptions</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#opentext_stats" data-toggle="tab"
-                                                aria-controls="opentextbc" role="tab">Collection</a></li>
+                                                aria-controls="opentextbc" role="tab">Pressbooks</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#open_stats" data-toggle="tab"
-                                                aria-controls="open" role="tab">Pressbooks</a></li>
+                                                aria-controls="open" role="tab">Collection</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#review_stats" data-toggle="tab"
                                                 aria-controls="reviews" role="tab">Reviews</a></li>
     <li class="nav-item" role="presentation"><a class="nav-link" href="#subject_stats" data-toggle="tab"
@@ -237,9 +237,8 @@
 
     <!-- opentextbc stats -->
     <div role="tabpanel" id="opentext_stats" class="tab-pane">
-
         <h2>Summary</h2>
-        <p>This page contains download and access stats from the last four months for all books in the B.C. Open Textbook Collection.</p>
+        <p>This page lists usage and downloads stats for books in the BCcampus (opentextbc.ca) Pressbooks. The downloads stats only include files downloaded from the webbook home page.</p>
         <p>Number of books in the collection: <b>{{$analytics['num_books']}}</b></p>
         <p>Number of books in Pressbooks: <b>{{$analytics['otb_count']}}</b></p>
         <hr>
@@ -304,7 +303,7 @@
     <div role="tabpanel" id="open_stats" class="tab-pane">
 
         <h2>Summary</h2>
-        <p>This page lists usage and downloads stats for books in the BCcampus (opentextbc.ca) Pressbooks. The downloads stats only include files downloaded from the webbook home page.</p>
+        <p>This page contains download and access stats from the last four months for all books in the B.C. Open Textbook Collection.</p>
         <p>Number of books in the collection: <b>{{$analytics['num_books']}}</b></p>
         <p>Number of visits to the site in the last 4 months: <b>{{$analytics['open_visits']}}</b></p>
         <p>Number of visits to the page 'find-open-textbooks': <b>{{$analytics['open_page_visits']}}</b></p>
