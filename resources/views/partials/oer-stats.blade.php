@@ -58,9 +58,6 @@
                 sections. A faculty member is only counted once.
             </dd>
             <dt>Savings</dt>
-            <dd>Savings include a range as reported in our blog,
-                <a href='{{get_home_url()}}/2015/02/18/calculating-student-savings/'>Calculating Student Savings</a>.
-            </dd>
             <dd>The number at the lower end is calculated as follows: number of students (see "Students") x $100 (This
                 number was derived by OpenStax College based on a formula that takes into account used textbook
                 purchases and rental costs as well as new textbook costs.)
