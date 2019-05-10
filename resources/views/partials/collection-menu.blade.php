@@ -12,8 +12,10 @@
         @foreach($subject_areas as $sub1=>$sub2)
             <div class="accordion-group">
                 @php($abr=substr($sub1,0,4))
-                <li class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse"
-                                                 data-parent="#catalogue-menu" href="#collapse{{$abr}}">{{$sub1}}</a></li>
+                @php( $abr=str_replace(['/', ' '],'', $abr))
+                <li class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#catalogue-menu" href="#collapse{{$abr}}">{{$sub1}}</a>
+                </li>
                 <div id="collapse{{$abr}}" class="accordion-body collapse">
                     <ul class="children">
                         @foreach($sub2 as $k=>$num)
