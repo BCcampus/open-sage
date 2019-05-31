@@ -3,7 +3,6 @@
 @include('partials.head')
 <body @php body_class() @endphp>
 @include('partials.microdata-open')
-@include('partials.uio')
 @php do_action('get_header') @endphp
 @include('partials.header')
 <div class="wrap container-fluid" role="document">
@@ -21,7 +20,6 @@
 @php do_action('get_footer') @endphp
 @include('partials.footer')
 @php wp_footer() @endphp
-@include('partials.uio-script')
 @include('partials.microdata-close')
 </body>
 </html>
