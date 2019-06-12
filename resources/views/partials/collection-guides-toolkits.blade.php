@@ -1,7 +1,7 @@
 @php
     $link_browse = get_home_url() . '/find-open-textbooks/?subject=Support%20Resources';
     $args = [
-    	'subject_class_level2' => 'Use OER, Create/Adapt OER',
+    	'subject_class_level2' => 'Use OER,Create/Adapt OER,Open Education - General',
         'limit'                 => 3,
         'random' => true,
     ];
