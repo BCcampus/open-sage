@@ -305,51 +305,6 @@
         <p>Number of visits to the site in the last 4 months: <b>{{$analytics['open_visits']}}</b></p>
         <p>Number of visits to the page 'find-open-textbooks': <b>{{$analytics['open_page_visits']}}</b></p>
         <hr>
-        <p>Percentage of total visits to the page 'find-open-textbooks: </p>
-        <div class='progress'>
-            <div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar'
-                 aria-valuemin='0'
-                 aria-valuenow='{{$analytics['open_visits']}}' aria-valuemax='{{$analytics['open_visits']}}'
-                 style='width:{{$analytics['open_percentage']}}%;'>{{$analytics['open_percentage']}}%
-            </div>
-        </div>
-
-        <table id='opentext' class='table table-striped tablesorter'>
-            <thead>
-            <tr>
-                <th>Title&nbsp;<i class='fa fa-sort'></i></th>
-                {{--<th>Download Stats</th>--}}
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($get_catalogue_titles as $uuid => $name)
-                <tr>
-                    <td><a href="{{get_home_url()}}/find-open-textbooks/?uuid={{$uuid}}" target="_blank"><i
-                                    class="fa fa-book"></i> - {{$name}}</a></td>
-                    {{--<td><a class='muted' role='button' tabindex='0' data-target='#downloads{{$uuid}}'--}}
-                           {{--data-toggle='modal' title='Single download stats'><i class='fa fa-bar-chart-o'></i></a></td>--}}
-                </tr>
-                {{--<div class='modal fade' id='downloads{{$uuid}}' tabindex='-1' role='dialog' aria-labelledby='downloads{{$uuid}}'>--}}
-                    {{--<div class='modal-dialog' role='document'>--}}
-                        {{--<div class='modal-content'>--}}
-                            {{--<div class='modal-header'>--}}
-                                {{--<h4 class='modal-title' id='myModalLabel'>Downloads since {{$range_start}}</h4>--}}
-                                {{--<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span--}}
-                                            {{--aria-hidden='true'>&times;</span></button>--}}
-                            {{--</div>--}}
-                            {{--<div class='modal-body'>--}}
-                                {{--<ul>--}}
-                                    {{--@foreach(\App\Controllers\Page::getOpenDownloads( $name, $uuid ) as $label=>$num)--}}
-                                        {{--<li>{{$label}}: <b>{{$num}}</b></li>--}}
-                                    {{--@endforeach--}}
-                                {{--</ul>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            @endforeach
-            </tbody>
-        </table>
 
     </div>
 
