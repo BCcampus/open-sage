@@ -1,6 +1,6 @@
 @php
     $analytics = \App\Controllers\Page::getOpenAnalytics([]);
-    $range_start = date( 'M j, Y', strtotime('4 months') );
+    $range_start = date( 'M j, Y', strtotime('-4 months') );
 @endphp
 
 <ul class="nav nav-tabs no-bullets" role="tablist">
