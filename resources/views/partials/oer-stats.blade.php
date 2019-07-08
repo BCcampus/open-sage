@@ -250,7 +250,7 @@
 
         <div id='table-responsive'>
             <table id='opentextbc' class='table table-striped tablesorter'>
-                <caption>Stats below based on the date range: {{$analytics['start']}} to {{$analytics['end']}}</caption>
+                <caption>Stats above based on the date range: {{$analytics['start']}} to {{$analytics['end']}}</caption>
                 <thead>
                 <tr>
                     <th>Title&nbsp;<i class='fa fa-sort'></i></th>
