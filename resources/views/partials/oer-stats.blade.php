@@ -53,6 +53,11 @@
             <dd>Each adoption refers to a course section within a specific term and year for which an open textbook has
                 replaced a a primary textbook or educational resource that must be purchased.
             </dd>
+
+            <dt>Book (refers to an open textbook)</dt>
+            <dd>A comprehensive compilation of content organized into chapters that includes a table of contents, learning outcomes, and learning activities created to meet course objectives in a specific subject-area and is assigned an <a href="https://creativecommons.org/">open-copyright licence</a> or released into the <a href ="https://en.wikipedia.org/wiki/Public_domain">public domain</a>.
+            </dd>
+
             <dt>Faculty</dt>
             <dd>The number of individual instructors who have adopted one or more open textbooks for one or more course
                 sections. A faculty member is only counted once.
